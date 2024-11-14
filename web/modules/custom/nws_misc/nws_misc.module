@@ -1,0 +1,430 @@
+<?php
+
+/**
+ * @file
+ * Functions to support the matrics reports module.
+ */
+
+
+/**
+ * Implements hook_theme().
+ */
+function nws_misc_theme()
+{
+	return [
+		'map_block' => [
+			'variables' => ['items' => NULL, 'data' => NULL, 'events' => NULL],
+			'template' => 'map-block',
+		],
+	];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function nws_misc_preprocess_views_view(&$variables)
+{
+	$view = $variables['view'];
+        $cat_url = "";
+	if ($view->id() == 'peer_reviewed_research') {
+		$title_url = "";
+		$year_url = "";
+		if (isset($_GET['title_1'])) {
+			$variables['title_filter'] = $_GET['title_1'];
+			$year_url = "title_1=" . $_GET['title_1'];
+			$cat_url = "title_1=" . $_GET['title_1'];
+		}
+
+		if (isset($_GET['field_years_value']) && $_GET['field_years_value'] != "All") {
+			$variables['year'] = str_replace("_", " ", $_GET['field_years_value']);
+			$title_url = "field_years_value=" . $_GET['field_years_value'];
+			$cat_url .= "&field_years_value=" . $_GET['field_years_value'];
+		}
+
+		$cat_url_make = "";
+		if (isset($_GET['field_category_value'])) {
+			$cat = $_GET['field_category_value'];
+			$cat1 = $_GET['field_category_value'];
+			$i = 0;
+			if (is_array($cat)) {
+			  foreach ($cat as $cate) {
+				if (isset($_GET['title_1'])) {
+					$cat_url = "title_1=" . $_GET['title_1'];
+				}
+				if (isset($_GET['field_years_value']) && $_GET['field_years_value'] != "All") {
+					$cat_url .= "&field_years_value=" . $_GET['field_years_value'];
+				}
+				$cat_url_make = "";
+				$variables['cate'][$i]['cat_text'] = str_replace("_", " ", $cate);
+				$title_url .= "&field_category_value[" . $cate . "]=" . $cate;
+				$year_url .= "&field_category_value[" . $cate . "]=" . $cate;
+				foreach ($cat1 as $cate1) {
+					if ($cate != $cate1) {
+						$cat_url_make .= "&field_category_value[" . $cate1 . "]=" . $cate1;
+					}
+				}
+				$cat_url .= $cat_url_make;
+				$variables['cate'][$i]['cat_url'] = $cat_url;
+				$i++;
+			  }
+			}
+		}
+		$variables['title_url'] = $title_url;
+		$variables['year_url'] = $year_url;
+	}
+
+
+	if ($view->id() == 'primary') {
+  	 if (isset($_GET['field_primary_year_value'])) {
+   		$year = $_GET['field_primary_year_value'];
+   		$year1 = $_GET['field_primary_year_value'];
+   		$i = 0;
+   		foreach($year as $years) {
+   			$year_url = "";
+   		        $year_url_make = "";
+   			$variables['year_data'][$i]['year_text'] = str_replace("_", " ", $years);
+   			foreach($year1 as $years1) {
+   				if ($years != $years1) {
+   					
+   					$year_url_make .= "&field_primary_year_value[".$years1."]=".$years1;
+   				}
+    			}
+    			$year_url .= $year_url_make;
+    			
+    			if (isset($_GET['field_science_stand_value'])) {
+		   		$science = $_GET['field_science_stand_value'];
+		   		$science_url_make1 = "";
+		   		foreach($science as $sci) {
+		   			$science_url_make1 .= "&field_science_stand_value[".$sci."]=".$sci;
+		    		}
+		    		$year_url .= $science_url_make1;
+		   	}
+		   	if (isset($_GET['field_primary_category_value'])) {
+		   		$cat = $_GET['field_primary_category_value'];
+		   		$cat_url_make1 = "";
+		   		foreach($cat as $cate) {
+		   			$cat_url_make1 .= "&field_primary_category_value[".$cate."]=".$cate;
+		    		}
+		    		$year_url .= $cat_url_make1;
+		   	}
+			
+   	
+    			$variables['year_data'][$i]['year_url'] = $year_url;
+    			$i++;
+    		}
+   	}
+   	if (isset($_GET['field_science_stand_value'])) {
+   		$science = $_GET['field_science_stand_value'];
+   		$science1 = $_GET['field_science_stand_value'];
+   		$i = 0;
+   		foreach($science as $sci) {
+   			$science_url = "";
+   		        $science_url_make = "";
+   			$variables['science_data'][$i]['science_text'] = str_replace("_", " ", $sci);
+   			foreach($science1 as $sci1) {
+   				if ($sci != $sci1) {
+   					
+   					$science_url_make .= "&field_science_stand_value[".$sci1."]=".$sci1;
+   				}
+    			}
+    			
+    			if (isset($_GET['field_primary_year_value'])) {
+		   		$science = $_GET['field_primary_year_value'];
+		   		$science_url_make1 = "";
+		   		foreach($science as $sci) {
+		   			$science_url_make1 .= "&field_primary_year_value[".$sci."]=".$sci;
+		    		}
+		    		$science_url .= $science_url_make1;
+		   	}
+		   	if (isset($_GET['field_primary_category_value'])) {
+		   		$cat = $_GET['field_primary_category_value'];
+		   		$cat_url_make1 = "";
+		   		foreach($cat as $cate) {
+		   			$cat_url_make1 .= "&field_primary_category_value[".$cate."]=".$cate;
+		    		}
+		    		$science_url .= $cat_url_make1;
+		   	}
+		   	
+    			$science_url .= $science_url_make;
+    			$variables['science_data'][$i]['science_url'] = $science_url;
+    			$i++;
+    		}
+   	}
+   	
+   	$cat_url_make = "";
+   	if (isset($_GET['field_primary_category_value'])) {
+   		$cat = $_GET['field_primary_category_value'];
+   		$cat1 = $_GET['field_primary_category_value'];
+   		$i = 0;
+   		foreach($cat as $cate) {
+   			$cat_url = "";
+   		        $cat_url_make = "";
+   			$variables['cate'][$i]['cat_text'] = str_replace("_", " ", $cate);
+   			foreach($cat1 as $cate1) {
+   				if ($cate != $cate1) {
+   					
+   					$cat_url_make .= "&field_primary_category_value[".$cate1."]=".$cate1;
+   				}
+    			}
+    			
+    			if (isset($_GET['field_primary_year_value'])) {
+		   		$science = $_GET['field_primary_year_value'];
+		   		$science_url_make1 = "";
+		   		foreach($science as $sci) {
+		   			$science_url_make1 .= "&field_primary_year_value[".$sci."]=".$sci;
+		    		}
+		    		$cat_url .= $science_url_make1;
+		   	}
+		   	if (isset($_GET['field_science_stand_value'])) {
+		   		$cat = $_GET['field_science_stand_value'];
+		   		$cat_url_make1 = "";
+		   		foreach($cat as $cate) {
+		   			$cat_url_make1 .= "&field_science_stand_value[".$cate."]=".$cate;
+		    		}
+		    		$cat_url .= $cat_url_make1;
+		   	}
+		   	
+    			$cat_url .= $cat_url_make;
+    			$variables['cate'][$i]['cat_url'] = $cat_url;
+    			$i++;
+    		}
+   	}
+
+  }
+
+	if ($view->id() == 'upper_secondary') {
+		if (isset($_GET['field_upper_secondary_year_value'])) {
+			$year = $_GET['field_upper_secondary_year_value'];
+			$year1 = $_GET['field_upper_secondary_year_value'];
+			$i = 0;
+			foreach ($year as $years) {
+				$year_url = "";
+				$year_url_make = "";
+				$variables['year_data'][$i]['year_text'] = str_replace("_", " ", $years);
+				foreach ($year1 as $years1) {
+					if ($years != $years1) {
+
+						$year_url_make .= "&field_upper_secondary_year_value[" . $years1 . "]=" . $years1;
+					}
+				}
+				$year_url .= $year_url_make;
+
+				if (isset($_GET['field_subjects_value'])) {
+					$science = $_GET['field_subjects_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_subjects_value[" . $sci . "]=" . $sci;
+					}
+					$year_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_course_value'])) {
+					$cat = $_GET['field_course_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_course_value[" . $cate . "]=" . $cate;
+					}
+					$year_url .= $cat_url_make1;
+				}
+
+
+				$variables['year_data'][$i]['year_url'] = $year_url;
+				$i++;
+			}
+		}
+		if (isset($_GET['field_subjects_value'])) {
+			$science = $_GET['field_subjects_value'];
+			$science1 = $_GET['field_subjects_value'];
+			$i = 0;
+			foreach ($science as $sci) {
+				$science_url = "";
+				$science_url_make = "";
+				$variables['science_data'][$i]['science_text'] = str_replace("_", " ", $sci);
+				foreach ($science1 as $sci1) {
+					if ($sci != $sci1) {
+
+						$science_url_make .= "&field_subjects_value[" . $sci1 . "]=" . $sci1;
+					}
+				}
+
+				if (isset($_GET['field_upper_secondary_year_value'])) {
+					$science = $_GET['field_upper_secondary_year_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_upper_secondary_year_value[" . $sci . "]=" . $sci;
+					}
+					$science_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_course_value'])) {
+					$cat = $_GET['field_course_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_course_value[" . $cate . "]=" . $cate;
+					}
+					$science_url .= $cat_url_make1;
+				}
+
+				$science_url .= $science_url_make;
+				$variables['science_data'][$i]['science_url'] = $science_url;
+				$i++;
+			}
+		}
+
+		$cat_url_make = "";
+		if (isset($_GET['field_course_value'])) {
+			$cat = $_GET['field_course_value'];
+			$cat1 = $_GET['field_course_value'];
+			$i = 0;
+			foreach ($cat as $cate) {
+				$cat_url = "";
+				$cat_url_make = "";
+				$variables['course'][$i]['cat_text'] = str_replace("_", " ", $cate);
+				foreach ($cat1 as $cate1) {
+					if ($cate != $cate1) {
+
+						$cat_url_make .= "&field_course_value[" . $cate1 . "]=" . $cate1;
+					}
+				}
+
+				if (isset($_GET['field_upper_secondary_year_value'])) {
+					$science = $_GET['field_upper_secondary_year_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_upper_secondary_year_value[" . $sci . "]=" . $sci;
+					}
+					$cat_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_subjects_value'])) {
+					$cat = $_GET['field_subjects_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_subjects_value[" . $cate . "]=" . $cate;
+					}
+					$cat_url .= $cat_url_make1;
+				}
+
+				$cat_url .= $cat_url_make;
+				$variables['course'][$i]['cat_url'] = $cat_url;
+				$i++;
+			}
+		}
+	}
+
+
+	if ($view->id() == 'lower_secondary') {
+		if (isset($_GET['field_lower_secondary_year_value'])) {
+			$year = $_GET['field_lower_secondary_year_value'];
+			$year1 = $_GET['field_lower_secondary_year_value'];
+			$i = 0;
+			foreach ($year as $years) {
+				$year_url = "";
+				$year_url_make = "";
+				$variables['year_data'][$i]['year_text'] = str_replace("_", " ", $years);
+				foreach ($year1 as $years1) {
+					if ($years != $years1) {
+
+						$year_url_make .= "&field_lower_secondary_year_value[" . $years1 . "]=" . $years1;
+					}
+				}
+				$year_url .= $year_url_make;
+
+				if (isset($_GET['field_lower_secondary_subject_value'])) {
+					$science = $_GET['field_lower_secondary_subject_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_lower_secondary_subject_value[" . $sci . "]=" . $sci;
+					}
+					$year_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_lower_secondary_category_value'])) {
+					$cat = $_GET['field_lower_secondary_category_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_lower_secondary_category_value[" . $cate . "]=" . $cate;
+					}
+					$year_url .= $cat_url_make1;
+				}
+
+
+				$variables['year_data'][$i]['year_url'] = $year_url;
+				$i++;
+			}
+			
+		}
+		if (isset($_GET['field_lower_secondary_subject_value'])) {
+			$science = $_GET['field_lower_secondary_subject_value'];
+			$science1 = $_GET['field_lower_secondary_subject_value'];
+			$i = 0;
+			foreach ($science as $sci) {
+				$science_url = "";
+				$science_url_make = "";
+				$variables['science_data'][$i]['science_text'] = str_replace("_", " ", $sci);
+				foreach ($science1 as $sci1) {
+					if ($sci != $sci1) {
+
+						$science_url_make .= "&field_lower_secondary_subject_value[" . $sci1 . "]=" . $sci1;
+					}
+				}
+
+				if (isset($_GET['field_lower_secondary_year_value'])) {
+					$science = $_GET['field_lower_secondary_year_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_lower_secondary_year_value[" . $sci . "]=" . $sci;
+					}
+					$science_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_lower_secondary_category_value'])) {
+					$cat = $_GET['field_lower_secondary_category_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_lower_secondary_category_value[" . $cate . "]=" . $cate;
+					}
+					$science_url .= $cat_url_make1;
+				}
+
+				$science_url .= $science_url_make;
+				$variables['science_data'][$i]['science_url'] = $science_url;
+				$i++;
+			}
+		}
+
+		$cat_url_make = "";
+		if (isset($_GET['field_lower_secondary_category_value'])) {
+			$cat = $_GET['field_lower_secondary_category_value'];
+			$cat1 = $_GET['field_lower_secondary_category_value'];
+			$i = 0;
+			foreach ($cat as $cate) {
+				$cat_url = "";
+				$cat_url_make = "";
+				$variables['course'][$i]['cat_text'] = str_replace("_", " ", $cate);
+				foreach ($cat1 as $cate1) {
+					if ($cate != $cate1) {
+
+						$cat_url_make .= "&field_lower_secondary_category_value[" . $cate1 . "]=" . $cate1;
+					}
+				}
+
+				if (isset($_GET['field_lower_secondary_year_value'])) {
+					$science = $_GET['field_lower_secondary_year_value'];
+					$science_url_make1 = "";
+					foreach ($science as $sci) {
+						$science_url_make1 .= "&field_lower_secondary_year_value[" . $sci . "]=" . $sci;
+					}
+					$cat_url .= $science_url_make1;
+				}
+				if (isset($_GET['field_lower_secondary_subject_value'])) {
+					$cat = $_GET['field_lower_secondary_subject_value'];
+					$cat_url_make1 = "";
+					foreach ($cat as $cate) {
+						$cat_url_make1 .= "&field_lower_secondary_subject_value[" . $cate . "]=" . $cate;
+					}
+					$cat_url .= $cat_url_make1;
+				}
+
+				$cat_url .= $cat_url_make;
+				$variables['course'][$i]['cat_url'] = $cat_url;
+				$i++;
+			}
+		}
+	}
+}
