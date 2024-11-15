@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flatback Turtles Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 100vh;
+        width:auto;
+      }
+      .red-box {
+        background-color: red;
+        padding: 5px;
+        color: white;
+      }
+      .logo {
+        min-width: 52px !important;
+        min-height: 52px !important;
+        cursor: pointer;
+      }
+      .leaflet-popup {
+        opacity: 1 !important;
+      }
+
+      .marker-link {
+        color: #000 !important; font-weight:bold;
+        text-decoration: none;
+      }
+      .leaflet-popup-content-wrapper,
+      .leaflet-popup-tip {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      .leaflet-popup-close-button {
+        display: none !important;
+      }
+      .leaflet-popup-content {
+        text-align: center;
+      }
+      #filter-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1000;
+      }
+      #filter-controls h4 {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="filter-controls" style="displaY:none;">
+      <h4>Towns</h4>
+      <div id="towns-filters"></div>
+      <h4>TO Groups</h4>
+      <div id="togroups-filters"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+    <style>
+      .red-box {
+        border: 0px solid red !important;
+        background: none !important;
+        color: rgb(0, 0, 0) !important;
+        width: 40px !important;
+      }
+      img.leaflet-marker-icon {
+        background: #c0f055;
+        border-radius: 50%;
+      }
+    </style>
+  </body>
+</html>
