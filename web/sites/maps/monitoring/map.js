@@ -1,23 +1,23 @@
 let map;
 let ISWAG_LAYER;
 
-
 // Initialize the map
 const initializeMap = () => {
-  map = L.map('map').setView([-16.947, 122.234], 6);
-  
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  map = L.map("map").setView([-16.947, 122.234], 6);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 };
 
 // Create the Thevenard marker
 const createThevMarker = () => {
   const Thev = {
-    lat: -21.456048, 
+    lat: -21.456048,
     long: 115.001675,
-    image: 'icons/pin.webp',
-    name: 'Thevenard Island',
+    image: "icons/pin.webp",
+    name: "Thevenard Island",
   };
   const marker = L.marker([Thev.lat, Thev.long], {
     icon: L.icon({
@@ -25,9 +25,9 @@ const createThevMarker = () => {
       iconSize: [40, 40],
       name: Thev.name,
     }),
-  });  
+  });
   // Add tooltip for Thevenard
-  marker.bindTooltip(Thev.name, { permanent: true, direction: 'top' });
+  marker.bindTooltip(Thev.name, { permanent: true, direction: "top" });
   return marker;
 };
 // Create the Cape Domett marker
@@ -35,8 +35,8 @@ const createCapeDomettMarker = () => {
   const CapeDomett = {
     lat: -14.830302167840283,
     long: 128.38368615722658,
-    image: 'icons/pin.webp',
-    name: 'Cape Domett',
+    image: "icons/pin.webp",
+    name: "Cape Domett",
   };
   const marker = L.marker([CapeDomett.lat, CapeDomett.long], {
     icon: L.icon({
@@ -44,17 +44,17 @@ const createCapeDomettMarker = () => {
       iconSize: [40, 40],
       name: CapeDomett.name,
     }),
-  });  
+  });
   // Add tooltip for Cape Domett
-  marker.bindTooltip(CapeDomett.name, { permanent: true, direction: 'top' });
+  marker.bindTooltip(CapeDomett.name, { permanent: true, direction: "top" });
   return marker;
 };
 const createYawuruMarker = () => {
   const Yawuru = {
-    lat: -20.594438, 
+    lat: -20.594438,
     long: 117.173859,
-    image: 'icons/black-dot.png',
-    name: 'Cape Lambert',
+    image: "icons/black-dot.png",
+    name: "Cape Lambert",
   };
   const marker = L.marker([Yawuru.lat, Yawuru.long], {
     icon: L.icon({
@@ -64,15 +64,15 @@ const createYawuruMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Yawuru.name, { permanent: true, direction: 'bottom' });
+  marker.bindTooltip(Yawuru.name, { permanent: true, direction: "bottom" });
   return marker;
 };
 const createHedlandMarker = () => {
   const Hedland = {
-    lat: -20.306113, 
+    lat: -20.306113,
     long: 118.613829,
-    image: 'icons/black-dot.png',
-    name: 'Port Hedland',
+    image: "icons/black-dot.png",
+    name: "Port Hedland",
   };
   const marker = L.marker([Hedland.lat, Hedland.long], {
     icon: L.icon({
@@ -82,15 +82,15 @@ const createHedlandMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Hedland.name, { permanent: true, direction: 'bottom' });
+  marker.bindTooltip(Hedland.name, { permanent: true, direction: "bottom" });
   return marker;
 };
 const createDelambreMarker = () => {
   const Delambre = {
     lat: -20.45022690521864,
     long: 117.07068465312501,
-    image: 'icons/pin.webp',
-    name: 'Delambre Island',
+    image: "icons/pin.webp",
+    name: "Delambre Island",
   };
   const marker = L.marker([Delambre.lat, Delambre.long], {
     icon: L.icon({
@@ -100,15 +100,15 @@ const createDelambreMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Delambre.name, { permanent: true, direction: 'top' });
+  marker.bindTooltip(Delambre.name, { permanent: true, direction: "top" });
   return marker;
 };
 const createNgarlaMarker = () => {
   const Ngarla = {
     lat: -19.575317892869453,
     long: 120.98144531250001,
-    image: 'icons/black-dot.png',
-    name: 'Eighty Mile Beach',
+    image: "icons/black-dot.png",
+    name: "Eighty Mile Beach",
   };
   const marker = L.marker([Ngarla.lat, Ngarla.long], {
     icon: L.icon({
@@ -118,15 +118,15 @@ const createNgarlaMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Ngarla.name, { permanent: true, direction: 'bottom' });
+  marker.bindTooltip(Ngarla.name, { permanent: true, direction: "bottom" });
   return marker;
 };
 const createRoebuckMarker = () => {
   const Roebuck = {
     lat: -18.126591,
     long: 122.129154,
-    image: 'icons/pin.webp',
-    name: 'Roebuck Bay',
+    image: "icons/pin.webp",
+    name: "Roebuck Bay",
   };
   const marker = L.marker([Roebuck.lat, Roebuck.long], {
     icon: L.icon({
@@ -135,7 +135,7 @@ const createRoebuckMarker = () => {
       name: Roebuck.name,
     }),
   });
-  marker.bindTooltip(Roebuck.name, { permanent: true, direction: 'left' });
+  marker.bindTooltip(Roebuck.name, { permanent: true, direction: "left" });
   return marker;
 };
 
@@ -143,8 +143,8 @@ const createThalanyjiMarker = () => {
   const Thalanyji = {
     lat: -17.932866056533406,
     long: 122.21354484558107,
-    image: 'icons/black-dot.png',
-    name: 'Cable Beach',
+    image: "icons/black-dot.png",
+    name: "Cable Beach",
   };
   const marker = L.marker([Thalanyji.lat, Thalanyji.long], {
     icon: L.icon({
@@ -154,7 +154,7 @@ const createThalanyjiMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Thalanyji.name, { permanent: true, direction: 'top' });
+  marker.bindTooltip(Thalanyji.name, { permanent: true, direction: "top" });
   return marker;
 };
 
@@ -162,8 +162,8 @@ const createEcoMarker = () => {
   const Eco = {
     lat: -18.3296392277336,
     long: 122.08206523799898,
-    image: 'icons/pin.webp',
-    name: 'Eco Beach',
+    image: "icons/pin.webp",
+    name: "Eco Beach",
   };
   const marker = L.marker([Eco.lat, Eco.long], {
     icon: L.icon({
@@ -173,25 +173,25 @@ const createEcoMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Eco.name, { permanent: true, direction: 'right' });
+  marker.bindTooltip(Eco.name, { permanent: true, direction: "right" });
   return marker;
 };
 
 // Add TO group markers to the map and create persistent popups
 const addTOGroupMarkers = () => {
-  toGroups.forEach(group => {
+  toGroups.forEach((group) => {
     if (group.isVisible) {
       const marker = L.marker([group.lat, group.lon], {
         icon: L.icon({
           iconUrl: group.logo,
           iconSize: [32, 32],
-          className: 'logo',
+          className: "logo",
         }),
       }).addTo(map);
-      
+
       // Add tooltip instead of popup
-      marker.bindTooltip(group.name, { permanent: true, direction: 'bottom' });
-      
+      marker.bindTooltip(group.name, { permanent: true, direction: "bottom" });
+
       group.marker = marker; // Store marker reference
     }
   });
@@ -199,7 +199,7 @@ const addTOGroupMarkers = () => {
 
 // Toggle visibility of TO group markers
 const toggleTOGroupMarkers = () => {
-  toGroups.forEach(group => {
+  toGroups.forEach((group) => {
     if (group.marker) {
       if (group.isVisible) {
         map.addLayer(group.marker);
@@ -214,7 +214,7 @@ const toggleTOGroupMarkers = () => {
 
 // Toggle visibility of child markers of a TO group
 const toggleChildMarkers = (group, visible = true) => {
-  group.children.forEach(child => {
+  group.children.forEach((child) => {
     if (visible && map.getZoom() >= 7) {
       if (!child.marker) {
         // Create marker if it doesn't exist
@@ -222,9 +222,11 @@ const toggleChildMarkers = (group, visible = true) => {
           icon: L.icon({
             iconUrl: child.logo,
             iconSize: [32, 32],
-            className: 'logo',
+            className: "logo",
           }),
-        }).bindPopup(`<a class="marker-link" href="${child.page}">${child.name}</a>`);
+        }).bindPopup(
+          `<a class="marker-link" href="${child.page}">${child.name}</a>`,
+        );
       }
       map.addLayer(child.marker);
     } else {
@@ -242,15 +244,16 @@ const createPopup = (group, keepOpen = false) => {
     closeButton: !keepOpen,
   })
     .setLatLng([group.lat, group.lon])
-    .setContent(`<a class="marker-link" href="${group.page}">${group.name}</a>`);
+    .setContent(
+      `<a class="marker-link" href="${group.page}">${group.name}</a>`,
+    );
 };
-
 
 // Handle map zoom events
 const handleZoomEvents = () => {
-  map.on('zoomend', () => {
-    const zoomLevel = map.getZoom();   /*
-    if (zoomLevel >=8) { 
+  map.on("zoomend", () => {
+    const zoomLevel = map.getZoom(); /*
+    if (zoomLevel >=8) {
       towns.forEach(town => {
         //map.removeLayer(town);
       });
@@ -290,7 +293,7 @@ const handleZoomEvents = () => {
 //           className: 'logo',
 //         }),
 //       });
-      
+
 //       // Add tooltip instead of popup
 //       marker.bindTooltip(child.name, { permanent: false, direction: 'top' });
 //       marker.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
@@ -305,8 +308,8 @@ const handleZoomEvents = () => {
 
 // Create checkbox for towns
 const createTownCheckbox = (town, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
   checkbox.id = `town-${index}`;
   checkbox.checked = town.isVisible;
   checkbox.onchange = () => {
@@ -314,13 +317,13 @@ const createTownCheckbox = (town, index) => {
     toggleTownMarkers();
   };
 
-  const label = document.createElement('label');
+  const label = document.createElement("label");
   label.htmlFor = `town-${index}`;
   label.appendChild(document.createTextNode(town.name));
 
-  const br = document.createElement('br');
+  const br = document.createElement("br");
 
-  const townsFilters = document.getElementById('towns-filters');
+  const townsFilters = document.getElementById("towns-filters");
   townsFilters.appendChild(checkbox);
   townsFilters.appendChild(label);
   townsFilters.appendChild(br);
@@ -328,8 +331,8 @@ const createTownCheckbox = (town, index) => {
 
 // Create checkbox for TO Groups
 const createTOGroupCheckbox = (group, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
   checkbox.id = `group-${index}`;
   checkbox.checked = group.isVisible;
   checkbox.onchange = () => {
@@ -338,13 +341,13 @@ const createTOGroupCheckbox = (group, index) => {
     handleZoomEvents(); // Reapply zoom events to update child visibility
   };
 
-  const label = document.createElement('label');
+  const label = document.createElement("label");
   label.htmlFor = `group-${index}`;
   label.appendChild(document.createTextNode(group.name));
 
-  const br = document.createElement('br');
+  const br = document.createElement("br");
 
-  const toGroupsFilters = document.getElementById('togroups-filters');
+  const toGroupsFilters = document.getElementById("togroups-filters");
   toGroupsFilters.appendChild(checkbox);
   toGroupsFilters.appendChild(label);
   toGroupsFilters.appendChild(br);
@@ -382,25 +385,35 @@ const main = () => {
   map.addLayer(Thalanyji_LAYER);
   Eco_LAYER = createEcoMarker();
   map.addLayer(Eco_LAYER);
-  Thev_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/thevenard-island", '_parent');   });
-  CapeDomett_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/cape-domett", '_parent');   });
-  // Yawuru_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/cape-domett", '_blank');   });
-  Delambre_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/delambre-island", '_parent');   });
+  Thev_LAYER.on("click", function (e) {
+    window.open("/what-we-do/monitoring/thevenard-island", "_parent");
+  });
+  CapeDomett_LAYER.on("click", function (e) {
+    window.open("/what-we-do/monitoring/cape-domett", "_parent");
+  });
+  // Yawuru_LAYER.on('click', function(e) {     window.open("/what-we-do/monitoring/cape-domett", '_blank');   });
+  Delambre_LAYER.on("click", function (e) {
+    window.open("/what-we-do/monitoring/delambre-island", "_parent");
+  });
   // Yawuru_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
   // Ngarla_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
-  Roebuck_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/roebuck-bay", '_parent');   });
+  Roebuck_LAYER.on("click", function (e) {
+    window.open("/what-we-do/monitoring/roebuck-bay", "_parent");
+  });
   // Thalanyji_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
-  Eco_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/what-we-do/monitoring/eco-beach", '_parent');   });
+  Eco_LAYER.on("click", function (e) {
+    window.open("/what-we-do/monitoring/eco-beach", "_parent");
+  });
 
   addTOGroupMarkers();
   //addTownMarkers();
   createFilterControls();
   handleZoomEvents();
 
-  map.on('click', ev => {
-    const latlng = map.mouseEventToLatLng(ev.originalEvent);
-    console.log(`${latlng.lat}, ${latlng.lng}`);
-  });
+  // map.on("click", (ev) => {
+  //   const latlng = map.mouseEventToLatLng(ev.originalEvent);
+  //   console.log(`${latlng.lat}, ${latlng.lng}`);
+  // });
 };
 
 main();

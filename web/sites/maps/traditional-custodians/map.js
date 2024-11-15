@@ -3,67 +3,67 @@ let ISWAG_LAYER;
 
 const toGroups = [
   {
-    name: 'Kimberley',
+    name: "Kimberley",
     lat: -16.284106,
-    lon: 126.078670,
-    logo: 'icons/trans.png',
-    page: 'kariyara.html',
+    lon: 126.07867,
+    logo: "icons/trans.png",
+    page: "kariyara.html",
     isVisible: true,
     children: [
       {
-        name: 'Mayala',
+        name: "Mayala",
         lat: -16.3357,
         lon: 123.5887,
-        logo: 'icons/badge_mayala.png',
+        logo: "icons/badge_mayala.png",
         //page: 'kariyara-child1.html',
         marker: null,
       },
       {
-        name: 'Nyul Nyul',
+        name: "Nyul Nyul",
         lat: -17.174573,
-        lon:  121.605688,
-        logo: 'icons/badge_nyulnyul-rangers.png',
+        lon: 121.605688,
+        logo: "icons/badge_nyulnyul-rangers.png",
         //page: 'kariyara-child2.html',
         marker: null,
       },
       {
-        name: 'Bardi Jawi',
+        name: "Bardi Jawi",
         lat: -15.964416,
-        lon:  122.907453,
-        logo: 'icons/badge_bardijawi-rangers.png',
-        page: 'kariyara-child1.html',
+        lon: 122.907453,
+        logo: "icons/badge_bardijawi-rangers.png",
+        page: "kariyara-child1.html",
         marker: null,
       },
       {
-        name: 'Dambimangari',
+        name: "Dambimangari",
         lat: -15.237858,
         lon: 123.717576,
-        logo: 'icons/badge-dambimangari-rangers.png',
-        page: 'kariyara-child2.html',
+        logo: "icons/badge-dambimangari-rangers.png",
+        page: "kariyara-child2.html",
         marker: null,
       },
       {
-        name: 'Wunambal Gaambera',
+        name: "Wunambal Gaambera",
         lat: -14.180201,
-        lon:  125.641601,
-        logo: 'icons/badge_uunguu-rangers.png',
-        page: '#',
+        lon: 125.641601,
+        logo: "icons/badge_uunguu-rangers.png",
+        page: "#",
         marker: null,
       },
       {
-        name: 'Balanggarra',
+        name: "Balanggarra",
         lat: -14.086241,
-        lon:  127.544863,
-        logo: 'icons/badge_balanggarra-rangers.png',
-        page: '#',
+        lon: 127.544863,
+        logo: "icons/badge_balanggarra-rangers.png",
+        page: "#",
         marker: null,
       },
       {
-        name: 'Miriuwung-Gajerrong',
+        name: "Miriuwung-Gajerrong",
         lat: -14.575747,
-        lon:  128.624532,
-        logo: 'icons/badge_mg-rangers.png',
-        page: 'https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/miriuwung-gajerrong-country',
+        lon: 128.624532,
+        logo: "icons/badge_mg-rangers.png",
+        page: "/who-we-are/traditional-custodians/miriuwung-gajerrong-country",
         marker: null,
         addLink: true,
       },
@@ -77,15 +77,15 @@ const towns = [
   // { name: 'Karratha', lat: -20.736, lon: 115.846001, isVisible: true, marker: null },
   // { name: 'Port Hedland', lat: -20.3111, lon: 118.6094, isVisible: true, marker: null },
   // { name: 'Broome', lat: -17.9618, lon: 122.2370, isVisible: true, marker: null },
-  
 ];
 
 // Initialize the map
 const initializeMap = () => {
-  map = L.map('map').setView([-16.947, 122.234], 6);
-  
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  map = L.map("map").setView([-16.947, 122.234], 6);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 };
 
@@ -94,8 +94,8 @@ const createISWAGMarker = () => {
   const ISWAG = {
     lat: -14.562317701914843,
     long: 123.13476562500001,
-    image: 'icons/iswag.png',
-    name: 'ISWAG',
+    image: "icons/iswag.png",
+    name: "ISWAG",
   };
   const marker = L.marker([ISWAG.lat, ISWAG.long], {
     icon: L.icon({
@@ -104,17 +104,17 @@ const createISWAGMarker = () => {
       name: ISWAG.name,
     }),
   });
-  
+
   // Add tooltip for ISWAG
-  marker.bindTooltip(ISWAG.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(ISWAG.name, { permanent: false, direction: "top" });
   return marker;
 };
 const createNyangumartaMarker = () => {
   const Nyangumarta = {
     lat: -20.062317701914843,
     long: 121.33476562500001,
-    image: 'icons/logo_nyangumarta.png',
-    name: 'Nyangumarta',
+    image: "icons/logo_nyangumarta.png",
+    name: "Nyangumarta",
   };
   const marker = L.marker([Nyangumarta.lat, Nyangumarta.long], {
     icon: L.icon({
@@ -124,15 +124,15 @@ const createNyangumartaMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Nyangumarta.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Nyangumarta.name, { permanent: false, direction: "top" });
   return marker;
 };
 const createYawuruMarker = () => {
   const Yawuru = {
     lat: -18.762317701914843,
     long: 122.33476562500001,
-    image: 'icons/logo_yawuru.png',
-    name: 'Yawuru',
+    image: "icons/logo_yawuru.png",
+    name: "Yawuru",
   };
   const marker = L.marker([Yawuru.lat, Yawuru.long], {
     icon: L.icon({
@@ -142,15 +142,15 @@ const createYawuruMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Yawuru.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Yawuru.name, { permanent: false, direction: "top" });
   return marker;
 };
 const createKaraMarker = () => {
   const Kara = {
     lat: -18.762317701914843,
     long: 121.33476562500001,
-    image: 'icons/badge_karajarri-rangers.png',
-    name: 'Karajarri',
+    image: "icons/badge_karajarri-rangers.png",
+    name: "Karajarri",
   };
   const marker = L.marker([Kara.lat, Kara.long], {
     icon: L.icon({
@@ -160,15 +160,15 @@ const createKaraMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Kara.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Kara.name, { permanent: false, direction: "top" });
   return marker;
 };
 const createNgarlaMarker = () => {
   const Ngarla = {
     lat: -18.762317701914843,
     long: 120.83476562500001,
-    image: 'icons/logo_Wanparta_AC.png',
-    name: 'Ngarla',
+    image: "icons/logo_Wanparta_AC.png",
+    name: "Ngarla",
   };
   const marker = L.marker([Ngarla.lat, Ngarla.long], {
     icon: L.icon({
@@ -178,26 +178,25 @@ const createNgarlaMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Ngarla.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Ngarla.name, { permanent: false, direction: "top" });
   return marker;
 };
 const createNgarlumaMarker = () => {
   const Ngarluma = {
     lat: -20.262317701914843,
     long: 116.53476562500001,
-    image: 'icons/Ngarluma.png',
-    name: 'Ngarluma',
+    image: "icons/Ngarluma.png",
+    name: "Ngarluma",
   };
   const marker = L.marker([Ngarluma.lat, Ngarluma.long], {
     icon: L.icon({
       iconUrl: Ngarluma.image,
       iconSize: [60, 60],
       name: Ngarluma.name,
-
     }),
   });
 
-  marker.bindTooltip(Ngarluma.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Ngarluma.name, { permanent: false, direction: "top" });
   return marker;
 };
 
@@ -205,8 +204,8 @@ const createThalanyjiMarker = () => {
   const Thalanyji = {
     lat: -21.662317701914843,
     long: 115.33476562500001,
-    image: 'icons/logo_thalanyjiAC-2024.png',
-    name: 'Thalanyji',
+    image: "icons/logo_thalanyjiAC-2024.png",
+    name: "Thalanyji",
   };
   const marker = L.marker([Thalanyji.lat, Thalanyji.long], {
     icon: L.icon({
@@ -216,7 +215,7 @@ const createThalanyjiMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Thalanyji.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Thalanyji.name, { permanent: false, direction: "top" });
   return marker;
 };
 
@@ -224,8 +223,8 @@ const createKariyarraMarker = () => {
   const Kariyarra = {
     lat: -19.562317701914843,
     long: 118.93476562500001,
-    image: 'icons/logo_KariyarraAboriginalCorporation.png',
-    name: 'Kariyarra',
+    image: "icons/logo_KariyarraAboriginalCorporation.png",
+    name: "Kariyarra",
   };
   const marker = L.marker([Kariyarra.lat, Kariyarra.long], {
     icon: L.icon({
@@ -235,25 +234,25 @@ const createKariyarraMarker = () => {
     }),
   });
 
-  marker.bindTooltip(Kariyarra.name, { permanent: false, direction: 'top' });
+  marker.bindTooltip(Kariyarra.name, { permanent: false, direction: "top" });
   return marker;
 };
 
 // Add TO group markers to the map and create persistent popups
 const addTOGroupMarkers = () => {
-  toGroups.forEach(group => {
+  toGroups.forEach((group) => {
     if (group.isVisible) {
       const marker = L.marker([group.lat, group.lon], {
         icon: L.icon({
           iconUrl: group.logo,
           iconSize: [32, 32],
-          className: 'logo-with-link',
+          className: "logo-with-link",
         }),
       }).addTo(map);
-      
+
       // Add tooltip instead of popup
-      marker.bindTooltip(group.name, { permanent: false, direction: 'top' });
-      
+      marker.bindTooltip(group.name, { permanent: false, direction: "top" });
+
       group.marker = marker; // Store marker reference
     }
   });
@@ -261,7 +260,7 @@ const addTOGroupMarkers = () => {
 
 // Toggle visibility of TO group markers
 const toggleTOGroupMarkers = () => {
-  toGroups.forEach(group => {
+  toGroups.forEach((group) => {
     if (group.marker) {
       if (group.isVisible) {
         map.addLayer(group.marker);
@@ -276,7 +275,7 @@ const toggleTOGroupMarkers = () => {
 
 // Toggle visibility of child markers of a TO group
 const toggleChildMarkers = (group, visible = true) => {
-  group.children.forEach(child => {
+  group.children.forEach((child) => {
     if (visible && map.getZoom() >= 7) {
       if (!child.marker) {
         // Create marker if it doesn't exist
@@ -284,9 +283,11 @@ const toggleChildMarkers = (group, visible = true) => {
           icon: L.icon({
             iconUrl: child.logo,
             iconSize: [32, 32],
-            className: 'logo-with-link',
+            className: "logo-with-link",
           }),
-        }).bindPopup(`<a class="marker-link" href="${child.page}">${child.name}</a>`);
+        }).bindPopup(
+          `<a class="marker-link" href="${child.page}">${child.name}</a>`,
+        );
       }
       map.addLayer(child.marker);
     } else {
@@ -304,16 +305,18 @@ const createPopup = (group, keepOpen = false) => {
     closeButton: !keepOpen,
   })
     .setLatLng([group.lat, group.lon])
-    .setContent(`<a class="marker-link" href="${group.page}">${group.name}</a>`);
+    .setContent(
+      `<a class="marker-link" href="${group.page}">${group.name}</a>`,
+    );
 };
 
-// Add town markers to the map 
+// Add town markers to the map
 const addTownMarkers = () => {
-  towns.forEach(town => {
+  towns.forEach((town) => {
     if (town.isVisible) {
       const marker = L.marker([town.lat, town.lon], {
         icon: L.divIcon({
-          className: 'red-box',
+          className: "red-box",
           html: town.name,
         }),
       }).addTo(map);
@@ -337,10 +340,10 @@ const addTownMarkers = () => {
 
 // Handle map zoom events
 const handleZoomEvents = () => {
-  map.on('zoomend', () => {
+  map.on("zoomend", () => {
     const zoomLevel = map.getZoom();
-    if (zoomLevel >=8) { 
-      towns.forEach(town => {
+    if (zoomLevel >= 8) {
+      towns.forEach((town) => {
         //map.removeLayer(town);
       });
     }
@@ -348,7 +351,7 @@ const handleZoomEvents = () => {
       if (map.hasLayer(ISWAG_LAYER)) {
         map.removeLayer(ISWAG_LAYER);
       }
-      toGroups.forEach(group => {
+      toGroups.forEach((group) => {
         if (group.isVisible) {
           const bounds = map.getBounds();
           if (bounds.contains([group.lat, group.lon])) {
@@ -361,7 +364,7 @@ const handleZoomEvents = () => {
         map.addLayer(ISWAG_LAYER);
       }
       // Remove all child markers
-      toGroups.forEach(group => {
+      toGroups.forEach((group) => {
         toggleChildMarkers(group, false);
       });
     }
@@ -370,22 +373,24 @@ const handleZoomEvents = () => {
 
 // Add child markers to the map and keep track of them
 const addChildMarkers = (group) => {
-  group.children.forEach(child => {
-    if (!child.marker  ) {
+  group.children.forEach((child) => {
+    if (!child.marker) {
       const marker = L.marker([child.lat, child.lon], {
         icon: L.icon({
           iconUrl: child.logo,
           iconSize: [32, 32],
-          className: child.addLink ? 'logo-with-link':"logo-without-link",
+          className: child.addLink ? "logo-with-link" : "logo-without-link",
         }),
       });
-      
+
       // Add tooltip instead of popup
-      marker.bindTooltip(child.name, { permanent: false, direction: 'top' });
+      marker.bindTooltip(child.name, { permanent: false, direction: "top" });
       //marker.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
-	  if( child.addLink ){
-      marker.on('click', function(e) {     window.open( child.page, '_parent');   });
-	  }
+      if (child.addLink) {
+        marker.on("click", function (e) {
+          window.open(child.page, "_parent");
+        });
+      }
       child.marker = marker; // Store marker reference
     }
     if (group.isVisible && map.getZoom() >= 7) {
@@ -396,8 +401,8 @@ const addChildMarkers = (group) => {
 
 // Create checkbox for towns
 const createTownCheckbox = (town, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
   checkbox.id = `town-${index}`;
   checkbox.checked = town.isVisible;
   checkbox.onchange = () => {
@@ -405,13 +410,13 @@ const createTownCheckbox = (town, index) => {
     toggleTownMarkers();
   };
 
-  const label = document.createElement('label');
+  const label = document.createElement("label");
   label.htmlFor = `town-${index}`;
   label.appendChild(document.createTextNode(town.name));
 
-  const br = document.createElement('br');
+  const br = document.createElement("br");
 
-  const townsFilters = document.getElementById('towns-filters');
+  const townsFilters = document.getElementById("towns-filters");
   townsFilters.appendChild(checkbox);
   townsFilters.appendChild(label);
   townsFilters.appendChild(br);
@@ -419,8 +424,8 @@ const createTownCheckbox = (town, index) => {
 
 // Create checkbox for TO Groups
 const createTOGroupCheckbox = (group, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
   checkbox.id = `group-${index}`;
   checkbox.checked = group.isVisible;
   checkbox.onchange = () => {
@@ -429,13 +434,13 @@ const createTOGroupCheckbox = (group, index) => {
     handleZoomEvents(); // Reapply zoom events to update child visibility
   };
 
-  const label = document.createElement('label');
+  const label = document.createElement("label");
   label.htmlFor = `group-${index}`;
   label.appendChild(document.createTextNode(group.name));
 
-  const br = document.createElement('br');
+  const br = document.createElement("br");
 
-  const toGroupsFilters = document.getElementById('togroups-filters');
+  const toGroupsFilters = document.getElementById("togroups-filters");
   toGroupsFilters.appendChild(checkbox);
   toGroupsFilters.appendChild(label);
   toGroupsFilters.appendChild(br);
@@ -471,24 +476,49 @@ const main = () => {
   map.addLayer(Kariyarra_LAYER);
   Nyangumarta_LAYER = createNyangumartaMarker();
   map.addLayer(Nyangumarta_LAYER);
-  Yawuru_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/yawuru-country", '_parent');   });
-  Kara_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/eighty-mile", '_parent');   });
-  Ngarla_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/eighty-mile", '_parent');   });
-  Yawuru_LAYER.on('click', function(e) {     window.open("#", '_self');   });
-  Nyangumarta_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/eighty-mile", '_parent');   });
-  Ngarluma_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/ngarluma-country", '_parent');   });
-  Thalanyji_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/thalanyji-country", '_parent');   });
-  Kariyarra_LAYER.on('click', function(e) {     window.open("https://nwsftcp.mediaonmars.dev/who-we-are/traditional-custodians/kariyarra-country", '_parent');   });
+  Yawuru_LAYER.on("click", function (e) {
+    window.open("/who-we-are/traditional-custodians/yawuru-country", "_parent");
+  });
+  Kara_LAYER.on("click", function (e) {
+    window.open("/who-we-are/traditional-custodians/eighty-mile", "_parent");
+  });
+  Ngarla_LAYER.on("click", function (e) {
+    window.open("/who-we-are/traditional-custodians/eighty-mile", "_parent");
+  });
+  Yawuru_LAYER.on("click", function (e) {
+    window.open("#", "_self");
+  });
+  Nyangumarta_LAYER.on("click", function (e) {
+    window.open("/who-we-are/traditional-custodians/eighty-mile", "_parent");
+  });
+  Ngarluma_LAYER.on("click", function (e) {
+    window.open(
+      "/who-we-are/traditional-custodians/ngarluma-country",
+      "_parent",
+    );
+  });
+  Thalanyji_LAYER.on("click", function (e) {
+    window.open(
+      "/who-we-are/traditional-custodians/thalanyji-country",
+      "_parent",
+    );
+  });
+  Kariyarra_LAYER.on("click", function (e) {
+    window.open(
+      "/who-we-are/traditional-custodians/kariyarra-country",
+      "_parent",
+    );
+  });
 
   addTOGroupMarkers();
   //addTownMarkers();
   createFilterControls();
   handleZoomEvents();
 
-  map.on('click', ev => {
-    const latlng = map.mouseEventToLatLng(ev.originalEvent);
-    console.log(`${latlng.lat}, ${latlng.lng}`);
-  });
+  // map.on("click", (ev) => {
+  //   const latlng = map.mouseEventToLatLng(ev.originalEvent);
+  //   console.log(`${latlng.lat}, ${latlng.lng}`);
+  // });
 };
 
 main();
