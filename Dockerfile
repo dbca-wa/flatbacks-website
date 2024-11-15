@@ -5,5 +5,5 @@ LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-websi
 
 WORKDIR /opt/drupal
 COPY composer.json composer.lock ./
-COPY vendor ./vendor
+RUN composer install
 USER www-data
