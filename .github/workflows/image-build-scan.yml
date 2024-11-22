@@ -4,8 +4,9 @@ on:
   push:
     # Publish `main` as `latest` image.
     branches: [main]
-    # Publish `1.*` tags as releases.
-    tags: ["1.*"]
+    # Publish tagged commits as releases.
+    tags:
+      - "*"
   pull_request:
     branches: [main]
 
