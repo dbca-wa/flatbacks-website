@@ -9,20 +9,24 @@ services:
   flatbacks:
     image: "ghcr.io/dbca-wa/flatbacks-website"
     env_file: ".env.flatbacks"
-    volumes:
-      - "flatbacks_site:/opt/drupal/web:ro"
-      - "${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro"
-      - "flatbacks_files:/opt/drupal/web/sites/default/files"
-  nginx:
-    image: "nginxinc/nginx-unprivileged:stable-alpine"
     ports:
       - "8080:8080"
-    environment:
-      TZ: "Australia/Perth"
     volumes:
-      - "${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro"
-      - "flatbacks_site:/var/www/html:ro"
-      - "flatbacks_files:/var/www/html/sites/default/files:ro"
+      - "${PWD}/ports.conf:/etc/apache2/ports.conf:ro"
+      - "${PWD}/default.conf:/etc/apache2/sites-enabled/000-default.conf:ro"
+      - "flatbacks_site:/opt/drupal/web:ro"
+      - "flatbacks_files:/opt/drupal/web/sites/default/files"
+      - "${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro"
+  # nginx:
+  #   image: "nginxinc/nginx-unprivileged:stable-alpine"
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     TZ: "Australia/Perth"
+  #   volumes:
+  #     - "${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro"
+  #     - "flatbacks_site:/var/www/html:ro"
+  #     - "flatbacks_files:/var/www/html/sites/default/files:ro"
   redis:
     image: "redis:7.2-alpine"
     ports:
