@@ -9,10 +9,11 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev
 
 # Copy customised elements into site
-#COPY web/core ./web/core
-#COPY web/modules/custom/nws_misc ./web/modules/custom/nws_misc
-#COPY web/sites/maps ./web/sites/maps
-#COPY web/themes/custom/nws ./web/themes/custom/nws
+COPY web/core ./web/core
+COPY web/libraries ./web/libraries
+COPY web/modules/custom/nws_misc ./web/modules/custom/nws_misc
+COPY web/sites/maps ./web/sites/maps
+COPY web/themes/custom/nws ./web/themes/custom/nws
 
 # Run as the non-root user
 USER www-data
