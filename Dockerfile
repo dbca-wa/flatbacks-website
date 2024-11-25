@@ -10,9 +10,9 @@ RUN composer install --no-dev
 
 # Copy customised elements into site
 COPY web/libraries ./web/libraries
-COPY web/modules/custom/nws_misc ./web/modules/custom/nws_misc
+COPY web/modules/custom ./web/modules/custom
 COPY web/sites/maps ./web/sites/maps
-COPY web/themes/custom/nws ./web/themes/custom/nws
+COPY web/themes/custom ./web/themes/custom
 
 # Run as the non-root user
 USER www-data
