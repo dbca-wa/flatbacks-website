@@ -23,5 +23,6 @@ web/core/
 web/README.md
 web/example.gitignore
 web/info.php
+web/libraries/jquery-ui-touch-punch
 web/web.config
 web/sites/development.services.yml
