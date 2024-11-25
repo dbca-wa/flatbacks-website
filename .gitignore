@@ -14,3 +14,14 @@ web/sites/*/services*.yml
 # Ignore paths that contain user-generated content.
 web/sites/*/files
 web/sites/*/private
+
+# Ignore installed modules that aren't custom ones.
+web/modules/contrib
+
+# Ignore files that Drupal manages.
+web/core/
+web/README.md
+web/example.gitignore
+web/info.php
+web/web.config
+web/sites/development.services.yml
