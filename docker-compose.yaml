@@ -14,7 +14,6 @@ services:
     volumes:
       - "${PWD}/ports.conf:/etc/apache2/ports.conf:ro"
       - "${PWD}/default.conf:/etc/apache2/sites-enabled/000-default.conf:ro"
-      # - "flatbacks_site:/opt/drupal/web:ro"
       - "flatbacks_files:/opt/drupal/web/sites/default/files"
       - "${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro"
   redis:
@@ -26,5 +25,4 @@ services:
 
 volumes:
   mysql11_data:
-  flatbacks_site:
   flatbacks_files:
