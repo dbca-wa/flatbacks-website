@@ -25,3 +25,6 @@ labels:
 patches:
   - path: deployment_patch.yaml
   - path: service_patch.yaml
+images:
+  - name: ghcr.io/dbca-wa/flatbacks-website
+    newTag: 10.3.9
