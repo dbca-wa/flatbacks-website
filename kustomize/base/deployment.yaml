@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flatbacks-deployment
+spec:
+  strategy:
+    type: RollingUpdate
+  template:
+    spec:
+      containers:
+        - name: flatbacks
+          image: ghcr.io/dbca-wa/flatbacks-website
+          imagePullPolicy: Always
+          env:
+            - name: TZ
+              value: "Australia/Perth"
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "20m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+          startupProbe:
+            exec:
+              command:
+                - apachectl
+                - configtest
+            failureThreshold: 3
+            periodSeconds: 15
+            successThreshold: 1
+            timeoutSeconds: 3
+          livenessProbe:
+            exec:
+              command:
+                - apachectl
+                - configtest
+            failureThreshold: 3
+            periodSeconds: 15
+            successThreshold: 1
+            timeoutSeconds: 3
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 33
+            privileged: false
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - name: tmpdir-ram
+              mountPath: /tmp
+            - name: apache2-rundir
+              mountPath: /var/run/apache2
+      volumes:
+        - name: tmpdir-ram
+          emptyDir:
+            medium: Memory
+        - name: apache2-rundir
+          emptyDir:
+            medium: Memory
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 180

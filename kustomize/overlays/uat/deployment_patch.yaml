@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flatbacks-deployment
+  labels:
+    app: flatbacks-deployment
+spec:
+  selector:
+    matchLabels:
+      app: flatbacks-deployment
+  template:
+    metadata:
+      labels:
+        app: flatbacks-deployment
+    spec:
+      containers:
+        - name: flatbacks
+          env:
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: DATABASE_HOST
+            - name: DATABASE_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: DATABASE_PORT
+            - name: DATABASE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: DATABASE_NAME
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: DATABASE_USERNAME
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: DATABASE_PASSWORD
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: REDIS_HOST
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: REDIS_PORT
+            - name: SALT_HASH
+              valueFrom:
+                secretKeyRef:
+                  name: flatbacks-env-uat
+                  key: SALT_HASH
+          volumeMounts:
+            - mountPath: /etc/apache2/ports.conf
+              name: flatbacks-configmap
+              readOnly: true
+              subPath: ports.conf
+            - mountPath: /etc/apache2/sites-enabled/000-default.conf
+              name: flatbacks-configmap
+              readOnly: true
+              subPath: default.conf
+            - mountPath: /opt/drupal/web/sites/default/settings.php
+              name: flatbacks-configmap
+              readOnly: true
+              subPath: settings.php
+            - mountPath: /opt/drupal/web/sites/default/files
+              name: flatbacks-files
+      volumes:
+        - name: flatbacks-configmap
+          configMap:
+            name: flatbacks-configmap-uat
+            defaultMode: 420
+            optional: false
+        - name: flatbacks-files
+          persistentVolumeClaim:
+            claimName: flatbacks-files-uat

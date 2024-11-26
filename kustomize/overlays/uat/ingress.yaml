@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flatbacks-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: flatbacks-uat.dbca.wa.gov.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: flatbacks-clusterip-uat
+                port:
+                  number: 8080

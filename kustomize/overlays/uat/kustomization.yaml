@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+nameSuffix: -uat
+resources:
+  - ../../base
+  - ingress.yaml
+  - pvc.yaml
+secretGenerator:
+  - name: flatbacks-env
+    type: Opaque
+    envs:
+      - .env
+configMapGenerator:
+  - name: flatbacks-configmap
+    files:
+      - default.conf
+      - ports.conf
+      - settings.php
+generatorOptions:
+  disableNameSuffixHash: true
+labels:
+  - includeSelectors: true
+    pairs:
+      variant: uat
+patches:
+  - path: deployment_patch.yaml
+  - path: service_patch.yaml
