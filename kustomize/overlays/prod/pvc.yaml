@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: flatbacks-files
 spec:
-  storageClassName: azurefile-csi-retain
+  storageClassName: azurefile-csi-retain-zrs
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
