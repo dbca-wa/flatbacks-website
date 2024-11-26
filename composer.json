@@ -1,12 +1,14 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
+    "name": "dbca-wa/flatbacks-website",
+    "description": "North West Shelf Flatback Turtles Conservation Program public website",
+    "version": "10.3.9",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
+    "homepage": "https://github.com/dbca-wa/flatbacks-website",
     "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
+        "source": "https://github.com/dbca-wa/flatbacks-website",
+        "issues": "https://github.com/dbca-wa/flatbacks-website/issues",
+        "security": "https://github.com/dbca-wa/flatbacks-website?tab=security-ov-file#readme"
     },
     "repositories": [
         {
