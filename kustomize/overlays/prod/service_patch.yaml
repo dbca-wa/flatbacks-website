@@ -5,5 +5,5 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: flatbacks-deployment
+    app: flatbacks-website
     variant: prod

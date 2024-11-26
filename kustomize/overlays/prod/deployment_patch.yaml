@@ -2,19 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flatbacks-deployment
-  labels:
-    app: flatbacks-deployment
 spec:
-  selector:
-    matchLabels:
-      app: flatbacks-deployment
   template:
-    metadata:
-      labels:
-        app: flatbacks-deployment
     spec:
       containers:
         - name: flatbacks
+          imagePullPolicy: IfNotPresent
           env:
             - name: DATABASE_HOST
               valueFrom:

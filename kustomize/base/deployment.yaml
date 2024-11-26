@@ -2,10 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flatbacks-deployment
+  labels:
+    app: flatbacks-website
 spec:
+  selector:
+    matchLabels:
+      app: flatbacks-website
   strategy:
     type: RollingUpdate
   template:
+    metadata:
+      labels:
+        app: flatbacks-website
     spec:
       containers:
         - name: flatbacks
