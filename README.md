@@ -12,6 +12,7 @@ Set up a local development environment like so:
 1. Install and set up Composer and any local dependencies.
 1. Clone the project locally.
 1. Change into the project directory and install dependencies: `composer install`
+1. Set up the required Drupal database and user.
 1. Create a local configuration file at `web/sites/default/settings.php` (should be gitignored).
 1. Develop and test the site as normal, taking care to commit any custom elements
    under `web/` into the project repository (while avoiding to commit "generic" elements).
@@ -36,7 +37,7 @@ Prerequisites:
 1. Local `.env.mysql` and `.env.flatbacks` files should be created, containing secrets.
 1. Start services: `docker compose up`
 1. After Docker volume is generated, copy any local contents of `web/sites/default/files`
-   into the relevant Docker volumes so that the Nginx container can serve those files.
+   into the relevant Docker volumes so that the webserver can serve those files.
 
 `.env.mysql` example:
 
