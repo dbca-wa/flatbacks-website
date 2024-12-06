@@ -3,6 +3,12 @@ FROM drupal:10.3-php8.3-apache
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
 
+# Install system dependencies
+RUN apt-get update -y \
+  && apt-get upgrade -y \
+  && apt-get install -y default-mysql-client \
+  && rm -rf /var/lib/apt/lists/*
+
 # Install project dependencies
 WORKDIR /opt/drupal
 COPY composer.json composer.lock ./
