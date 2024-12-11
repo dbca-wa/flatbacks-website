@@ -29,9 +29,9 @@ Use the included Compose file to start the required services to serve the projec
 Prerequisites:
 
 1. Docker image is built (see above).
-1. A local `ports.conf` and `default.conf` should be generated to configure Apache within
-   the running container (examples are in the `kustomize\overlays` directory). These
-   files will be bind-mounted in the container.
+1. Local `ports.conf`, `default.conf` and `php-config.ini` files should be generated to
+   configure Apache within the running container (examples are in the `kustomize\overlays`
+   directory). These files will be bind-mounted in the container.
 1. A local `settings.php` should be generated containing site configuration that will be
    bind-mounted at `web/sites/default/settings.php`.
 1. Local `.env.mysql` and `.env.flatbacks` files should be created, containing secrets.

@@ -61,6 +61,10 @@ spec:
               name: flatbacks-configmap
               readOnly: true
               subPath: settings.php
+            - mountPath: /usr/local/etc/php/conf.d/php-config.ini
+              name: flatbacks-configmap
+              readOnly: true
+              subPath: php-config.ini
             - mountPath: /opt/drupal/web/sites/default/files
               name: flatbacks-files
       volumes:
