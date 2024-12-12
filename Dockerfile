@@ -9,6 +9,9 @@ RUN apt-get update -y \
   && apt-get install -y default-mysql-client \
   && rm -rf /var/lib/apt/lists/*
 
+# Install PHP extension(s)
+RUN pecl install apcu
+
 # Install project dependencies
 WORKDIR /opt/drupal
 COPY composer.json composer.lock ./
