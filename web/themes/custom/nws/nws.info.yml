@@ -4,7 +4,7 @@ base theme: false
 description: "NWSFTCP website custom theme."
 package: Core
 core_version_requirement: ^9 || ^10
-version: VERSION
+version: "1.0"
 libraries:
   - nws/global-styling
   - nws/global-script
