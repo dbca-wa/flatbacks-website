@@ -1,21 +1,7 @@
-# This theme is marked as @internal. It is intended to evolve and change over
-# minor releases.
-# Change record https://www.drupal.org/node/2673014.
-# As the UI of Drupal improves between minor versions, the mark up and assets
-# in the coffee theme will change. The coffee theme is not backwards
-# compatible. If you wish to modify the output or assets of coffee you can:
-# 1. Copy the whole of coffee and rename it as your own theme. You will need to
-# manually manage your own updates if you want to stay up to date with coffee's
-# bug fixes and feature support.
-#
-# 2. Sub-theme coffee. This is only recommended if you want to make minor
-# tweaks and understand that coffee could break your modifications as it
-# changes.
-
 name: nws
 type: theme
 base theme: false
-description: " NWS is my custom theme."
+description: "NWSFTCP website custom theme."
 package: Core
 core_version_requirement: ^9 || ^10
 version: VERSION
