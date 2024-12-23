@@ -6,6 +6,12 @@ services:
     env_file: ".env.mysql"
     volumes:
       - "mysql11_data:/var/lib/mysql"
+  redis:
+    image: "redis:7.2-alpine"
+    ports:
+      - "6379:6379"
+    environment:
+      TZ: "Australia/Perth"
   flatbacks:
     image: "ghcr.io/dbca-wa/flatbacks-website"
     env_file: ".env.flatbacks"
@@ -17,12 +23,6 @@ services:
       - "flatbacks_files:/opt/drupal/web/sites/default/files"
       - "${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro"
       - "${PWD}/php-config.ini:/usr/local/etc/php/conf.d/php-config.ini:ro"
-  redis:
-    image: "redis:7.2-alpine"
-    ports:
-      - "6379:6379"
-    environment:
-      TZ: "Australia/Perth"
 
 volumes:
   mysql11_data:
