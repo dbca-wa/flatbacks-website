@@ -1,4 +1,9 @@
 .env*
+.editorconfig
+.gitattributes
+.dccache
+.DS_Store
+.vscode
 *.sql
 
 # Ignore dependencies that are managed with Composer.
@@ -15,8 +20,10 @@ web/sites/*/services*.yml
 web/sites/*/files
 web/sites/*/private
 
-# Ignore installed modules that aren't custom ones.
+# Ignore contributed modules and themes.
 web/modules/contrib
+web/profiles/contrib
+web/themes/contrib
 
 # Ignore files that Drupal manages.
 web/core/
