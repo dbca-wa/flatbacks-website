@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-        - name: flatbacks
+        - name: flatbacks-website
           imagePullPolicy: IfNotPresent
           env:
             - name: DATABASE_HOST

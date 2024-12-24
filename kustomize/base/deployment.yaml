@@ -16,7 +16,7 @@ spec:
         app: flatbacks-website
     spec:
       containers:
-        - name: flatbacks
+        - name: flatbacks-website
           image: ghcr.io/dbca-wa/flatbacks-website
           imagePullPolicy: Always
           env:
