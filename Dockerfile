@@ -15,7 +15,7 @@ RUN pecl install apcu
 # Install project dependencies
 WORKDIR /opt/drupal
 COPY composer.json composer.lock ./
-RUN composer install --no-dev
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Copy customised elements into site
 COPY web/libraries ./web/libraries
