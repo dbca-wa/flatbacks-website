@@ -47,7 +47,7 @@
         "drupal/video_embed_field": "^2.5",
         "drupal/we_megamenu": "^1.16",
         "drupal/webform": "^6.2",
-        "drush/drush": "^12.5",
+        "drush/drush": "^13.3",
         "predis/predis": "^2.2"
     },
     "conflict": {
