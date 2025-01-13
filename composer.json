@@ -21,7 +21,7 @@
         "drupal/admin_toolbar": "^3.4",
         "drupal/back_to_top": "^3.0",
         "drupal/backup_migrate": "^5.0",
-        "drupal/better_exposed_filters": "^6.0",
+        "drupal/better_exposed_filters": "^7.0",
         "drupal/colorbox": "^2.1",
         "drupal/colorbox_inline": "^2.0",
         "drupal/core-composer-scaffold": "10.4.0",
