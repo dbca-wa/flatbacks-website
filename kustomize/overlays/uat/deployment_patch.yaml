@@ -75,4 +75,4 @@ spec:
             optional: false
         - name: flatbacks-files
           persistentVolumeClaim:
-            claimName: flatbacks-files-uat
+            claimName: pvc-flatbacks-files-blob-uat

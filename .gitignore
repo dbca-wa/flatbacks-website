@@ -1,5 +1,6 @@
 # Local dev files
 .env*
+.azurestorageaccountsecret
 .editorconfig
 .gitattributes
 .dccache

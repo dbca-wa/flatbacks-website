@@ -10,6 +10,10 @@ secretGenerator:
     type: Opaque
     envs:
       - .env
+  - name: dbcaturtlesmedia-storage-secret
+    type: Opaque
+    envs:
+      - .azurestorageaccountsecret
 configMapGenerator:
   - name: flatbacks-configmap
     files:
@@ -28,4 +32,4 @@ patches:
   - path: service_patch.yaml
 images:
   - name: ghcr.io/dbca-wa/flatbacks-website
-    newTag: 10.4.2
+    newTag: 10.4.1

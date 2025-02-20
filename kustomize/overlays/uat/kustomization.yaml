@@ -10,6 +10,10 @@ secretGenerator:
     type: Opaque
     envs:
       - .env
+  - name: dbcaturtlesmedia-storage-secret
+    type: Opaque
+    envs:
+      - .azurestorageaccountsecret
 configMapGenerator:
   - name: flatbacks-configmap
     files:
