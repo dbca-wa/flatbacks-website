@@ -19,7 +19,7 @@
   "require": {
     "composer/installers": "^2.0",
     "drupal/admin_toolbar": "3.5.3",
-    "drupal/back_to_top": "3.0.2",
+    "drupal/back_to_top": "3.0.3",
     "drupal/backup_migrate": "5.1.0",
     "drupal/better_exposed_filters": "7.0.5",
     "drupal/colorbox": "2.1.2",
