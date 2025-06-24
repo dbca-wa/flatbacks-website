@@ -34,4 +34,4 @@ patches:
   - path: service_patch.yaml
 images:
   - name: ghcr.io/dbca-wa/flatbacks-website
-    newTag: 10.4.7
+    newTag: 10.5.0
