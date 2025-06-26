@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM drupal:10.5-php8.3-apache
+FROM drupal:10.5-php8.4-apache
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
 
