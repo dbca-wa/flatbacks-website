@@ -4,70 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8728af61a8b9413dafbef493e6653d7b",
+    "content-hash": "8502c4e863adc1df36db9d294549d6f0",
     "packages": [
-        {
-            "name": "abraham/twitteroauth",
-            "version": "4.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "b9302599e416e5c00742cf7f4455220897f8291d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/b9302599e416e5c00742cf7f4455220897f8291d",
-                "reference": "b9302599e416e5c00742cf7f4455220897f8291d",
-                "shasum": ""
-            },
-            "require": {
-                "composer/ca-bundle": "^1.2",
-                "ext-curl": "*",
-                "php": "^7.4 || ^8.0 || ^8.1"
-            },
-            "require-dev": {
-                "php-vcr/php-vcr": "^1",
-                "php-vcr/phpunit-testlistener-vcr": "dev-php-8",
-                "phpmd/phpmd": "^2",
-                "phpunit/phpunit": "^8 || ^9",
-                "rector/rector": "^0.12.19 || ^0.13.0",
-                "squizlabs/php_codesniffer": "^3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Abraham\\TwitterOAuth\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abraham Williams",
-                    "email": "abraham@abrah.am",
-                    "homepage": "https://abrah.am",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
-            "homepage": "https://twitteroauth.com",
-            "keywords": [
-                "Twitter API",
-                "Twitter oAuth",
-                "api",
-                "oauth",
-                "rest",
-                "social",
-                "twitter"
-            ],
-            "support": {
-                "issues": "https://github.com/abraham/twitteroauth/issues",
-                "source": "https://github.com/abraham/twitteroauth"
-            },
-            "time": "2022-08-18T23:30:33+00:00"
-        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.3.0",
@@ -123,75 +61,6 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.3.0"
             },
             "time": "2025-03-13T08:50:04+00:00"
-        },
-        {
-            "name": "carbonphp/carbon-doctrine-types",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/CarbonPHP/carbon-doctrine-types.git",
-                "reference": "18ba5ddfec8976260ead6e866180bd5d2f71aa1d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon-doctrine-types/zipball/18ba5ddfec8976260ead6e866180bd5d2f71aa1d",
-                "reference": "18ba5ddfec8976260ead6e866180bd5d2f71aa1d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1"
-            },
-            "conflict": {
-                "doctrine/dbal": "<4.0.0 || >=5.0.0"
-            },
-            "require-dev": {
-                "doctrine/dbal": "^4.0.0",
-                "nesbot/carbon": "^2.71.0 || ^3.0.0",
-                "phpunit/phpunit": "^10.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Carbon\\Doctrine\\": "src/Carbon/Doctrine/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KyleKatarn",
-                    "email": "kylekatarnls@gmail.com"
-                }
-            ],
-            "description": "Types to use Carbon in Doctrine",
-            "keywords": [
-                "carbon",
-                "date",
-                "datetime",
-                "doctrine",
-                "time"
-            ],
-            "support": {
-                "issues": "https://github.com/CarbonPHP/carbon-doctrine-types/issues",
-                "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/3.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/kylekatarnls",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/Carbon",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-02-09T16:56:22+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -252,82 +121,6 @@
                 "source": "https://github.com/Chi-teck/drupal-code-generator/tree/3.6.1"
             },
             "time": "2024-06-06T17:36:37+00:00"
-        },
-        {
-            "name": "composer/ca-bundle",
-            "version": "1.5.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "d665d22c417056996c59019579f1967dfe5c1e82"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/d665d22c417056996c59019579f1967dfe5c1e82",
-                "reference": "d665d22c417056996c59019579f1967dfe5c1e82",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "ext-pcre": "*",
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^8 || ^9",
-                "psr/log": "^1.0 || ^2.0 || ^3.0",
-                "symfony/process": "^4.0 || ^5.0 || ^6.0 || ^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\CaBundle\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
-            "keywords": [
-                "cabundle",
-                "cacert",
-                "certificate",
-                "ssl",
-                "tls"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.7"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-05-26T15:08:54+00:00"
         },
         {
             "name": "composer/installers",
@@ -1073,6 +866,55 @@
             "time": "2024-12-13T19:25:56+00:00"
         },
         {
+            "name": "dekor/php-array-table",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deniskoronets/php-array-table.git",
+                "reference": "ca40b21ba84eee6a9658a33fc5f897d76baaf8e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deniskoronets/php-array-table/zipball/ca40b21ba84eee6a9658a33fc5f897d76baaf8e5",
+                "reference": "ca40b21ba84eee6a9658a33fc5f897d76baaf8e5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "dekor\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Koronets",
+                    "email": "deniskoronets@woo.zp.ua",
+                    "homepage": "https://woo.zp.ua/"
+                }
+            ],
+            "description": "PHP Library for printing associative arrays as text table (similar to mysql terminal console)",
+            "keywords": [
+                "library",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/deniskoronets/php-array-table/issues",
+                "source": "https://github.com/deniskoronets/php-array-table/tree/2.0"
+            },
+            "time": "2023-02-10T10:13:42+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "source": {
@@ -1440,26 +1282,26 @@
         },
         {
             "name": "drupal/back_to_top",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/back_to_top.git",
-                "reference": "3.0.2"
+                "reference": "3.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/back_to_top-3.0.2.zip",
-                "reference": "3.0.2",
-                "shasum": "28e973b17a1ebdd624a7d04b740d3a7ce251f59d"
+                "url": "https://ftp.drupal.org/files/projects/back_to_top-3.0.3.zip",
+                "reference": "3.0.3",
+                "shasum": "6c4485316f5d25ac56ce17c2a7b077fbf0701b81"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.2",
-                    "datestamp": "1729503145",
+                    "version": "3.0.3",
+                    "datestamp": "1742893225",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3304,58 +3146,6 @@
             }
         },
         {
-            "name": "drupal/socialfeed",
-            "version": "2.0.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/socialfeed.git",
-                "reference": "2.0.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/socialfeed-2.0.0-beta2.zip",
-                "reference": "2.0.0-beta2",
-                "shasum": "a4f5f60c1569b0acceaf8317b1233f0fa9c77f90"
-            },
-            "require": {
-                "abraham/twitteroauth": "^4.0",
-                "drupal/core": "^8.8 || ^9 || ^10",
-                "espresso-dev/instagram-basic-display-php": "^1.1",
-                "facebook/php-business-sdk": "^14.0",
-                "nesbot/carbon": "^2.59"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-beta2",
-                    "datestamp": "1674464196",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Hemangi Gokhale",
-                    "homepage": "https://www.drupal.org/user/2008064"
-                }
-            ],
-            "description": "Provides users an option to easily fetch feeds from Facebook, Twitter, or Instagram and then display them accordingly using block.",
-            "homepage": "https://www.drupal.org/project/socialfeed",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/socialfeed",
-                "issues": "https://www.drupal.org/project/issues/socialfeed"
-            }
-        },
-        {
             "name": "drupal/svg_image",
             "version": "3.2.1",
             "source": {
@@ -3597,6 +3387,64 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/typed_data",
                 "issues": "https://www.drupal.org/project/issues/typed_data"
+            }
+        },
+        {
+            "name": "drupal/upgrade_status",
+            "version": "4.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/upgrade_status.git",
+                "reference": "4.3.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/upgrade_status-4.3.7.zip",
+                "reference": "4.3.7",
+                "shasum": "062d43be89caf5f4b2a463fe9bd35ab155ad714d"
+            },
+            "require": {
+                "dekor/php-array-table": "^2.0",
+                "drupal/core": "^9 || ^10 || ^11",
+                "mglaman/phpstan-drupal": "^1.2.11",
+                "nikic/php-parser": "^4.0.0|^5.0.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0.0",
+                "symfony/process": "^3.4|^4.0|^5.0|^6.0|^7.0",
+                "webflo/drupal-finder": "^1.2"
+            },
+            "require-dev": {
+                "drush/drush": "^11|^12|^13"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.3.7",
+                    "datestamp": "1746203409",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "gábor hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                }
+            ],
+            "description": "Review Drupal major upgrade readiness of the environment and components of the site.",
+            "homepage": "http://drupal.org/project/upgrade_status",
+            "support": {
+                "source": "https://git.drupalcode.org/project/upgrade_status"
             }
         },
         {
@@ -4101,97 +3949,6 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.21.0"
             },
             "time": "2025-01-13T09:32:25+00:00"
-        },
-        {
-            "name": "espresso-dev/instagram-basic-display-php",
-            "version": "v1.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/espresso-dev/instagram-basic-display-php.git",
-                "reference": "0a6997060301d28ca9ce33355166c3cb6222c386"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/espresso-dev/instagram-basic-display-php/zipball/0a6997060301d28ca9ce33355166c3cb6222c386",
-                "reference": "0a6997060301d28ca9ce33355166c3cb6222c386",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EspressoDev\\InstagramBasicDisplay\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Herman Schutte",
-                    "email": "herman@espresso.dev"
-                }
-            ],
-            "description": "A simple PHP class for accessing the Instagram Basic Display API",
-            "homepage": "https://github.com/espresso-dev/instagram-basic-display-php",
-            "keywords": [
-                "api",
-                "instagram"
-            ],
-            "support": {
-                "issues": "https://github.com/espresso-dev/instagram-basic-display-php/issues",
-                "source": "https://github.com/espresso-dev/instagram-basic-display-php/tree/v1.1.7"
-            },
-            "time": "2024-09-23T17:57:26+00:00"
-        },
-        {
-            "name": "facebook/php-business-sdk",
-            "version": "14.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facebook/facebook-php-business-sdk.git",
-                "reference": "6bf9444b97be16feaf24e593d6403357577de257"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-business-sdk/zipball/6bf9444b97be16feaf24e593d6403357577de257",
-                "reference": "6bf9444b97be16feaf24e593d6403357577de257",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.5 || ^7.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "1.3.3",
-                "phpunit/phpunit": "~8",
-                "symfony/finder": "~2.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FacebookAds\\": "src/FacebookAds/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "PHP SDK for Facebook Business",
-            "homepage": "https://developers.facebook.com/",
-            "keywords": [
-                "ads",
-                "business",
-                "facebook",
-                "instagram",
-                "page",
-                "sdk"
-            ],
-            "support": {
-                "source": "https://github.com/facebook/facebook-php-business-sdk/tree/14.0.0"
-            },
-            "time": "2022-07-12T19:58:36+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -4936,67 +4693,76 @@
             "time": "2025-03-07T19:44:14+00:00"
         },
         {
-            "name": "nesbot/carbon",
-            "version": "2.73.0",
+            "name": "mglaman/phpstan-drupal",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075"
+                "url": "https://github.com/mglaman/phpstan-drupal.git",
+                "reference": "973a4e89e19ea7dbd60af0aa939b18a873cf7f2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/9228ce90e1035ff2f0db84b40ec2e023ed802075",
-                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/973a4e89e19ea7dbd60af0aa939b18a873cf7f2f",
+                "reference": "973a4e89e19ea7dbd60af0aa939b18a873cf7f2f",
                 "shasum": ""
             },
             "require": {
-                "carbonphp/carbon-doctrine-types": "*",
-                "ext-json": "*",
-                "php": "^7.1.8 || ^8.0",
-                "psr/clock": "^1.0",
-                "symfony/polyfill-mbstring": "^1.0",
-                "symfony/polyfill-php80": "^1.16",
-                "symfony/translation": "^3.4 || ^4.0 || ^5.0 || ^6.0"
-            },
-            "provide": {
-                "psr/clock-implementation": "1.0"
+                "php": "^8.1",
+                "phpstan/phpstan": "^1.12",
+                "phpstan/phpstan-deprecation-rules": "^1.1.4",
+                "symfony/finder": "^4.2 || ^5.0 || ^6.0 || ^7.0",
+                "symfony/yaml": "^4.2|| ^5.0 || ^6.0 || ^7.0",
+                "webflo/drupal-finder": "^1.3.1"
             },
             "require-dev": {
-                "doctrine/dbal": "^2.0 || ^3.1.4 || ^4.0",
-                "doctrine/orm": "^2.7 || ^3.0",
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "kylekatarnls/multi-tester": "^2.0",
-                "ondrejmirtes/better-reflection": "<6",
-                "phpmd/phpmd": "^2.9",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12.99 || ^1.7.14",
-                "phpunit/php-file-iterator": "^2.0.5 || ^3.0.6",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
-                "squizlabs/php_codesniffer": "^3.4"
+                "behat/mink": "^1.8",
+                "composer/installers": "^1.9",
+                "drupal/core-recommended": "^10",
+                "drush/drush": "^10.0 || ^11 || ^12 || ^13@beta",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^8.5 || ^9 || ^10 || ^11",
+                "slevomat/coding-standard": "^7.1",
+                "squizlabs/php_codesniffer": "^3.3",
+                "symfony/phpunit-bridge": "^4.4 || ^5.4 || ^6.0 || ^7.0"
             },
-            "bin": [
-                "bin/carbon"
-            ],
-            "type": "library",
+            "suggest": {
+                "jangregor/phpstan-prophecy": "Provides a prophecy/prophecy extension for phpstan/phpstan.",
+                "phpstan/phpstan-deprecation-rules": "For catching deprecations, especially in Drupal core.",
+                "phpstan/phpstan-phpunit": "PHPUnit extensions and rules for PHPStan."
+            },
+            "type": "phpstan-extension",
             "extra": {
-                "laravel": {
-                    "providers": [
-                        "Carbon\\Laravel\\ServiceProvider"
-                    ]
-                },
                 "phpstan": {
                     "includes": [
-                        "extension.neon"
+                        "extension.neon",
+                        "rules.neon"
                     ]
                 },
                 "branch-alias": {
-                    "dev-2.x": "2.x-dev",
-                    "dev-master": "3.x-dev"
+                    "dev-main": "1.0-dev"
+                },
+                "installer-paths": {
+                    "tests/fixtures/drupal/core": [
+                        "type:drupal-core"
+                    ],
+                    "tests/fixtures/drupal/libraries/{$name}": [
+                        "type:drupal-library"
+                    ],
+                    "tests/fixtures/drupal/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ],
+                    "tests/fixtures/drupal/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "tests/fixtures/drupal/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "mglaman\\PHPStanDrupal\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5005,42 +4771,30 @@
             ],
             "authors": [
                 {
-                    "name": "Brian Nesbitt",
-                    "email": "brian@nesbot.com",
-                    "homepage": "https://markido.com"
-                },
-                {
-                    "name": "kylekatarnls",
-                    "homepage": "https://github.com/kylekatarnls"
+                    "name": "Matt Glaman",
+                    "email": "nmd.matt@gmail.com"
                 }
             ],
-            "description": "An API extension for DateTime that supports 281 different languages.",
-            "homepage": "https://carbon.nesbot.com",
-            "keywords": [
-                "date",
-                "datetime",
-                "time"
-            ],
+            "description": "Drupal extension and rules for PHPStan",
             "support": {
-                "docs": "https://carbon.nesbot.com/docs",
-                "issues": "https://github.com/briannesbitt/Carbon/issues",
-                "source": "https://github.com/briannesbitt/Carbon"
+                "issues": "https://github.com/mglaman/phpstan-drupal/issues",
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.3.9"
             },
             "funding": [
                 {
-                    "url": "https://github.com/sponsors/kylekatarnls",
+                    "url": "https://github.com/mglaman",
                     "type": "github"
                 },
                 {
-                    "url": "https://opencollective.com/Carbon#sponsor",
-                    "type": "opencollective"
+                    "url": "https://opencollective.com/phpstan-drupal",
+                    "type": "open_collective"
                 },
                 {
-                    "url": "https://tidelift.com/subscription/pkg/packagist-nesbot-carbon?utm_source=packagist-nesbot-carbon&utm_medium=referral&utm_campaign=readme",
+                    "url": "https://tidelift.com/funding/github/packagist/mglaman/phpstan-drupal",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-08T20:10:23+00:00"
+            "time": "2025-05-22T16:48:16+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -5567,6 +5321,111 @@
             "time": "2021-09-22T16:57:06+00:00"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "1.12.27",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "3a6e423c076ab39dfedc307e2ac627ef579db162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3a6e423c076ab39dfedc307e2ac627ef579db162",
+                "reference": "3a6e423c076ab39dfedc307e2ac627ef579db162",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-05-21T20:51:45+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-deprecation-rules",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
+                "reference": "f94d246cc143ec5a23da868f8f7e1393b50eaa82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/f94d246cc143ec5a23da868f8f7e1393b50eaa82",
+                "reference": "f94d246cc143ec5a23da868f8f7e1393b50eaa82",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.12"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "rules.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan rules for detecting usage of deprecated classes, methods, properties, constants and traits.",
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.2.1"
+            },
+            "time": "2024-09-11T15:52:35+00:00"
+        },
+        {
             "name": "predis/predis",
             "version": "v3.0.1",
             "source": {
@@ -5677,54 +5536,6 @@
                 "source": "https://github.com/php-fig/cache/tree/3.0.0"
             },
             "time": "2021-02-03T23:26:27+00:00"
-        },
-        {
-            "name": "psr/clock",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/clock.git",
-                "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/clock/zipball/e41a24703d4560fd0acb709162f73b8adfc3aa0d",
-                "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0 || ^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Clock\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for reading the clock.",
-            "homepage": "https://github.com/php-fig/clock",
-            "keywords": [
-                "clock",
-                "now",
-                "psr",
-                "psr-20",
-                "time"
-            ],
-            "support": {
-                "issues": "https://github.com/php-fig/clock/issues",
-                "source": "https://github.com/php-fig/clock/tree/1.0.0"
-            },
-            "time": "2022-11-25T14:36:26+00:00"
         },
         {
             "name": "psr/container",
@@ -7669,86 +7480,6 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.32.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "type": "library",
-            "extra": {
-                "thanks": {
-                    "url": "https://github.com/symfony/polyfill",
-                    "name": "symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ion Bazan",
-                    "email": "ion.bazan@gmail.com"
-                },
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-01-02T08:10:11+00:00"
-        },
-        {
             "name": "symfony/polyfill-php81",
             "version": "v1.32.0",
             "source": {
@@ -8395,101 +8126,6 @@
             "time": "2025-04-18T15:23:29+00:00"
         },
         {
-            "name": "symfony/translation",
-            "version": "v6.4.22",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "7e3b3b7146c6fab36ddff304a8041174bf6e17ad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/7e3b3b7146c6fab36ddff304a8041174bf6e17ad",
-                "reference": "7e3b3b7146c6fab36ddff304a8041174bf6e17ad",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1",
-                "symfony/deprecation-contracts": "^2.5|^3",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/translation-contracts": "^2.5|^3.0"
-            },
-            "conflict": {
-                "symfony/config": "<5.4",
-                "symfony/console": "<5.4",
-                "symfony/dependency-injection": "<5.4",
-                "symfony/http-client-contracts": "<2.5",
-                "symfony/http-kernel": "<5.4",
-                "symfony/service-contracts": "<2.5",
-                "symfony/twig-bundle": "<5.4",
-                "symfony/yaml": "<5.4"
-            },
-            "provide": {
-                "symfony/translation-implementation": "2.3|3.0"
-            },
-            "require-dev": {
-                "nikic/php-parser": "^4.18|^5.0",
-                "psr/log": "^1|^2|^3",
-                "symfony/config": "^5.4|^6.0|^7.0",
-                "symfony/console": "^5.4|^6.0|^7.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/finder": "^5.4|^6.0|^7.0",
-                "symfony/http-client-contracts": "^2.5|^3.0",
-                "symfony/http-kernel": "^5.4|^6.0|^7.0",
-                "symfony/intl": "^5.4|^6.0|^7.0",
-                "symfony/polyfill-intl-icu": "^1.21",
-                "symfony/routing": "^5.4|^6.0|^7.0",
-                "symfony/service-contracts": "^2.5|^3",
-                "symfony/yaml": "^5.4|^6.0|^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "Resources/functions.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides tools to internationalize your application",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/translation/tree/v6.4.22"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-05-29T07:06:44+00:00"
-        },
-        {
             "name": "symfony/translation-contracts",
             "version": "v3.5.1",
             "source": {
@@ -8976,15 +8612,204 @@
                 }
             ],
             "time": "2025-02-13T08:34:43+00:00"
+        },
+        {
+            "name": "webflo/drupal-finder",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-finder.git",
+                "reference": "73045060b0894c77962a10cff047f72872d8810c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webflo/drupal-finder/zipball/73045060b0894c77962a10cff047f72872d8810c",
+                "reference": "73045060b0894c77962a10cff047f72872d8810c",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.2",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^10.4",
+                "symfony/process": "^6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DrupalFinder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Weber",
+                    "email": "florian@webflo.org"
+                }
+            ],
+            "description": "Helper class to locate a Drupal installation.",
+            "support": {
+                "issues": "https://github.com/webflo/drupal-finder/issues",
+                "source": "https://github.com/webflo/drupal-finder/tree/1.3.1"
+            },
+            "time": "2024-06-28T13:45:36+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "palantirnet/drupal-rector",
+            "version": "0.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/palantirnet/drupal-rector.git",
+                "reference": "f5b508251c24d7f5d805a3990afa37d7f75e20b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/f5b508251c24d7f5d805a3990afa37d7f75e20b6",
+                "reference": "f5b508251c24d7f5d805a3990afa37d7f75e20b6",
+                "shasum": ""
+            },
+            "require": {
+                "rector/rector": "^1 || ^2",
+                "webflo/drupal-finder": "^1.2"
+            },
+            "replace": {
+                "drupal8-rector/drupal8-rector": "*",
+                "palantirnet/drupal8-rector": "*"
+            },
+            "require-dev": {
+                "cweagans/composer-patches": "^1.7.2",
+                "friendsofphp/php-cs-fixer": "^3.58",
+                "php": "^8.2",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^1.12 || ^2.0",
+                "phpstan/phpstan-deprecation-rules": "^1.2 || ^2.0",
+                "phpunit/phpunit": "^10.0",
+                "symfony/yaml": "^5 || ^6 || ^7",
+                "symplify/vendor-patches": "^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "enable-patching": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "DrupalRector\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dezső Biczó",
+                    "email": "mxr576@gmail.com"
+                },
+                {
+                    "name": "Ofer Shaal",
+                    "email": "shaal@palantir.net"
+                },
+                {
+                    "name": "Daniel Montgomery",
+                    "email": "montgomery@palantir.net"
+                },
+                {
+                    "name": "Matt Glaman",
+                    "email": "nmd.matt@gmail.com"
+                },
+                {
+                    "name": "Björn Brala",
+                    "email": "drupal@bjorn.dev"
+                },
+                {
+                    "name": "Ken Rickard",
+                    "email": "agentrickard@gmail.com"
+                }
+            ],
+            "description": "Instant fixes for your Drupal code by using Rector.",
+            "keywords": [
+                "Code style",
+                "ast",
+                "drupal",
+                "rector"
+            ],
+            "support": {
+                "source": "https://github.com/palantirnet/drupal-rector/tree/0.21.0"
+            },
+            "time": "2025-05-23T16:03:52+00:00"
+        },
+        {
+            "name": "rector/rector",
+            "version": "1.2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "40f9cf38c05296bd32f444121336a521a293fa61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/40f9cf38c05296bd32f444121336a521a293fa61",
+                "reference": "40f9cf38c05296bd32f444121336a521a293fa61",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.12.5"
+            },
+            "conflict": {
+                "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
+                "rector/rector-phpunit": "*",
+                "rector/rector-symfony": "*"
+            },
+            "suggest": {
+                "ext-dom": "To manipulate phpunit.xml via the custom-rule command"
+            },
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
+            "keywords": [
+                "automation",
+                "dev",
+                "migration",
+                "refactoring"
+            ],
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/1.2.10"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-11-08T13:59:10+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/htmlmail": 10,
-        "drupal/social_share": 10,
-        "drupal/socialfeed": 10
+        "drupal/social_share": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
