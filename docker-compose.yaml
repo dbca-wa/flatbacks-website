@@ -1,28 +1,28 @@
 services:
   mysql11:
-    image: "mariadb:11.4"
+    image: 'mariadb:11.4'
     ports:
-      - "3306:3306"
-    env_file: ".env.mysql"
+      - '3306:3306'
+    env_file: '.env.mysql'
     volumes:
-      - "mysql11_data:/var/lib/mysql"
+      - 'mysql11_data:/var/lib/mysql'
   redis:
-    image: "redis:7.2-alpine"
+    image: 'redis:7.2-alpine'
     ports:
-      - "6379:6379"
+      - '6379:6379'
     environment:
-      TZ: "Australia/Perth"
+      TZ: 'Australia/Perth'
   flatbacks:
-    image: "ghcr.io/dbca-wa/flatbacks-website"
-    env_file: ".env.flatbacks"
+    image: 'ghcr.io/dbca-wa/flatbacks-website'
+    env_file: '.env.flatbacks'
     ports:
-      - "8080:8080"
+      - '8080:8080'
     volumes:
-      - "${PWD}/ports.conf:/etc/apache2/ports.conf:ro"
-      - "${PWD}/default.conf:/etc/apache2/sites-enabled/000-default.conf:ro"
-      - "flatbacks_files:/opt/drupal/web/sites/default/files"
-      - "${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro"
-      - "${PWD}/php-config.ini:/usr/local/etc/php/conf.d/php-config.ini:ro"
+      - '${PWD}/ports.conf:/etc/apache2/ports.conf:ro'
+      - '${PWD}/default.conf:/etc/apache2/sites-enabled/000-default.conf:ro'
+      - 'flatbacks_files:/opt/drupal/web/sites/default/files'
+      - '${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro'
+      - '${PWD}/php-config.ini:/usr/local/etc/php/conf.d/php-config.ini:ro'
 
 volumes:
   mysql11_data:
