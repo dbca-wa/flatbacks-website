@@ -6,6 +6,7 @@ services:
     env_file: '.env.mysql'
     volumes:
       - 'mysql11_data:/var/lib/mysql'
+      # - '${PWD}/flatbacks.sql:/tmp/flatbacks.sql:ro'
   redis:
     image: 'redis:7.2-alpine'
     ports:
