@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM drupal:10.5-php8.4-apache
+FROM drupal:10.5-php8.3-apache
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
 
@@ -10,7 +10,7 @@ RUN apt-get update -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extension(s)
-RUN pecl install apcu
+RUN pecl install apcu uploadprogress
 
 # Install project dependencies
 WORKDIR /opt/drupal
