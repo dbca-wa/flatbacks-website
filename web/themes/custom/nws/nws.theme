@@ -66,17 +66,9 @@ function nws_preprocess_page(&$variables)
   $variables['twitter'] = theme_get_setting('twitter');
   $variables['linkedin'] = theme_get_setting('linkedin');
 
-  // dump("jhds isdh iu");
-
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
 
-    // if (is_numeric($node) && $node->getType() == 'detail_page') {
     if ($node->getType() == 'detail_page') {
-
-      // $banner_img = $node->field_banner_image->target_id;
-      // $file = File::load($banner_img);
-      // $uri = $file->getFileUri();
-      // $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
 
       $b_img = $node->field_image->target_id;
 

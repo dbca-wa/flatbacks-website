@@ -76,7 +76,7 @@
 				<div class="glb-img">
 					<img src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
 				</div>
-				
+
 				{% if node.field_link.title is not null %}
 					<a href="{{ node.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ node.field_link.title }}</a>
 				{% endif %}

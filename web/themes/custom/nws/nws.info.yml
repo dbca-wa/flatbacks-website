@@ -1,40 +1,40 @@
 name: nws
 type: theme
 base theme: false
-description: "NWSFTCP website custom theme."
+description: 'NWSFTCP website custom theme.'
 package: Core
-core_version_requirement: ^9 || ^10
-version: "1.0"
+core_version_requirement: ^10
+version: '1.1'
 libraries:
   - nws/global-styling
   - nws/global-script
   - core/normalize
 
 regions:
-  logo: "Logo"
-  search: "Search"
-  primary_menu: "Primary menu"
-  secondary_menu: "Secondary menu"
-  banner: "Banner"
-  features: "Features"
-  features2: "Features2"
-  what_we_do: "What we do"
-  latest_updates: "Latest updates"
-  on_the_socials: "On the socials"
-  get_involved: "Get involved"
-  banner_detail: "Banner Detail"
-  sidebar: "Sidebar"
-  content: "Content"
-  image_gallery: "Image Gallery"
-  feature_bottom: "Feature Bottom"
-  acknowledgement: "Acknowledgement"
-  footer_top: "Footer Top"
-  footer_social: "Footer Social"
-  footer_home: "Footer Home"
-  footer_who_we_are: "Footer Who we are"
-  footer_what_we_do: "Footer What we do"
-  footer_flatback_turtles: "Footer Flatback turtles"
-  footer_resources: "Footer Resources"
-  footer_get_involved: "Footer Get involved"
-  footer_bottom: "Footer Bottom"
-  footer_copy_write: "Footer Copy Write"
+  logo: 'Logo'
+  search: 'Search'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  banner: 'Banner'
+  features: 'Features'
+  features2: 'Features2'
+  what_we_do: 'What we do'
+  latest_updates: 'Latest updates'
+  on_the_socials: 'On the socials'
+  get_involved: 'Get involved'
+  banner_detail: 'Banner Detail'
+  sidebar: 'Sidebar'
+  content: 'Content'
+  image_gallery: 'Image Gallery'
+  feature_bottom: 'Feature Bottom'
+  acknowledgement: 'Acknowledgement'
+  footer_top: 'Footer Top'
+  footer_social: 'Footer Social'
+  footer_home: 'Footer Home'
+  footer_who_we_are: 'Footer Who we are'
+  footer_what_we_do: 'Footer What we do'
+  footer_flatback_turtles: 'Footer Flatback turtles'
+  footer_resources: 'Footer Resources'
+  footer_get_involved: 'Footer Get involved'
+  footer_bottom: 'Footer Bottom'
+  footer_copy_write: 'Footer Copy Write'
