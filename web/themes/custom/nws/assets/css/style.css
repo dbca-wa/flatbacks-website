@@ -309,6 +309,18 @@ h2.heading {
   left: 0;
 }
 
+.right-bar a,
+.f-menus a,
+.footer-bottom a {
+  text-decoration: none;
+}
+
+.right-bar a:hover,
+.f-menus a:hover,
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 a.link {
   font-size: 23px;
   font-weight: 400;
@@ -318,6 +330,7 @@ a.link {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease-in;
+  text-decoration: none;
 }
 
 a.link::after {
