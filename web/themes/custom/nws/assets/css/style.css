@@ -155,10 +155,12 @@ h5.title {
   color: #fff;
   opacity: 0.5;
   transition: all 0.3s ease-in;
+  text-decoration: none;
 }
 
 .f-menus a:hover {
   opacity: 1;
+  text-decoration: underline;
 }
 
 .f-inner {
@@ -310,13 +312,11 @@ h2.heading {
 }
 
 .right-bar a,
-.f-menus a,
 .footer-bottom a {
   text-decoration: none;
 }
 
 .right-bar a:hover,
-.f-menus a:hover,
 .footer-bottom a:hover {
   text-decoration: underline;
 }
@@ -655,6 +655,11 @@ section.banner-sm {
   font-weight: 400;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
 }
 
 section.banner-sm .banner-text {
@@ -824,6 +829,10 @@ section.banner-sm.xs .banner-text {
 .glb-box a {
   color: var(--deep);
   text-decoration: none;
+}
+
+.glb-box a:hover {
+  text-decoration: underline;
 }
 
 .glb-box h4 {
