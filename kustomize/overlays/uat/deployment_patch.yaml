@@ -77,10 +77,6 @@ spec:
           persistentVolumeClaim:
             claimName: pvc-flatbacks-files-blob-uat
       tolerations:
-        - effect: NoSchedule
-          key: kubernetes.azure.com/scalesetpriority
-          operator: Equal
-          value: spot
         - key: arch
           operator: Equal
           value: arm64
