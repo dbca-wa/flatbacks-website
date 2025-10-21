@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Monitoring Map</title>
@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
       #map {
-        height: 100vh;
-        width:auto;
+        height: 97vh;
+        width: auto;
       }
       .red-box {
         background-color: red;
@@ -25,7 +25,8 @@
       }
 
       .marker-link {
-        color: #000 !important; font-weight:bold;
+        color: #000 !important;
+        font-weight: bold;
         text-decoration: none;
       }
       .leaflet-popup-content-wrapper,
@@ -55,7 +56,7 @@
   </head>
   <body>
     <div id="map"></div>
-    <div id="filter-controls" style="displaY:none;">
+    <div id="filter-controls" style="display: none">
       <h4>Towns</h4>
       <div id="towns-filters"></div>
       <h4>TO Groups</h4>
@@ -70,22 +71,27 @@
         color: rgb(0, 0, 0) !important;
         width: 40px !important;
       }
-      .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { display: none;}
+      .leaflet-tooltip-top:before,
+      .leaflet-tooltip-bottom:before,
+      .leaflet-tooltip-left:before,
+      .leaflet-tooltip-right:before {
+        display: none;
+      }
       .leaflet-tooltip {
-          position: absolute;
-          padding: 6px;
-          background-color: transparent;
-          border: 0;
-          border-radius: 3px;
-          color: #222;
-          white-space: nowrap;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-          pointer-events: none;
-          box-shadow: none;
-          font-weight: bold;
+        position: absolute;
+        padding: 6px;
+        background-color: transparent;
+        border: 0;
+        border-radius: 3px;
+        color: #222;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        box-shadow: none;
+        font-weight: bold;
       }
     </style>
   </body>
