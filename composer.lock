@@ -8670,16 +8670,16 @@
     "packages-dev": [
         {
             "name": "palantirnet/drupal-rector",
-            "version": "0.21.0",
+            "version": "0.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/drupal-rector.git",
-                "reference": "f5b508251c24d7f5d805a3990afa37d7f75e20b6"
+                "reference": "060403e1d24eb374cbe3b5626f03c27648cdae09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/f5b508251c24d7f5d805a3990afa37d7f75e20b6",
-                "reference": "f5b508251c24d7f5d805a3990afa37d7f75e20b6",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/060403e1d24eb374cbe3b5626f03c27648cdae09",
+                "reference": "060403e1d24eb374cbe3b5626f03c27648cdae09",
                 "shasum": ""
             },
             "require": {
@@ -8748,22 +8748,22 @@
                 "rector"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/drupal-rector/tree/0.21.0"
+                "source": "https://github.com/palantirnet/drupal-rector/tree/0.21.1"
             },
-            "time": "2025-05-23T16:03:52+00:00"
+            "time": "2025-11-07T19:09:25+00:00"
         },
         {
             "name": "rector/rector",
-            "version": "2.2.3",
+            "version": "2.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "d27f976a332a87b5d03553c2e6f04adbe5da034f"
+                "reference": "022038537838bc8a4e526af86c2d6e38eaeff7ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/d27f976a332a87b5d03553c2e6f04adbe5da034f",
-                "reference": "d27f976a332a87b5d03553c2e6f04adbe5da034f",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/022038537838bc8a4e526af86c2d6e38eaeff7ef",
+                "reference": "022038537838bc8a4e526af86c2d6e38eaeff7ef",
                 "shasum": ""
             },
             "require": {
@@ -8802,7 +8802,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.2.3"
+                "source": "https://github.com/rectorphp/rector/tree/2.2.7"
             },
             "funding": [
                 {
@@ -8810,7 +8810,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-11T21:50:23+00:00"
+            "time": "2025-10-29T15:46:12+00:00"
         }
     ],
     "aliases": [],
