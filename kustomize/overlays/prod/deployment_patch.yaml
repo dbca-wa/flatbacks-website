@@ -8,47 +8,9 @@ spec:
       containers:
         - name: flatbacks-website
           imagePullPolicy: IfNotPresent
-          env:
-            - name: DATABASE_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: DATABASE_HOST
-            - name: DATABASE_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: DATABASE_PORT
-            - name: DATABASE_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: DATABASE_NAME
-            - name: DATABASE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: DATABASE_USERNAME
-            - name: DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: DATABASE_PASSWORD
-            - name: REDIS_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: REDIS_HOST
-            - name: REDIS_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: REDIS_PORT
-            - name: SALT_HASH
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-prod
-                  key: SALT_HASH
+          envFrom:
+            - secretRef:
+                name: flatbacks-env-prod
           volumeMounts:
             - mountPath: /etc/apache2/ports.conf
               name: flatbacks-configmap

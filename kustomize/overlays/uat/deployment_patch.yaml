@@ -7,47 +7,9 @@ spec:
     spec:
       containers:
         - name: flatbacks-website
-          env:
-            - name: DATABASE_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: DATABASE_HOST
-            - name: DATABASE_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: DATABASE_PORT
-            - name: DATABASE_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: DATABASE_NAME
-            - name: DATABASE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: DATABASE_USERNAME
-            - name: DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: DATABASE_PASSWORD
-            - name: REDIS_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: REDIS_HOST
-            - name: REDIS_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: REDIS_PORT
-            - name: SALT_HASH
-              valueFrom:
-                secretKeyRef:
-                  name: flatbacks-env-uat
-                  key: SALT_HASH
+          envFrom:
+            - secretRef:
+                name: flatbacks-env-uat
           volumeMounts:
             - mountPath: /etc/apache2/ports.conf
               name: flatbacks-configmap
