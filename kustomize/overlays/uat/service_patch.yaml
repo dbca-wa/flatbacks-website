@@ -7,3 +7,11 @@ spec:
   selector:
     app: flatbacks-website
     variant: uat
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flatbacks-valkey
+spec:
+  selector:
+    app: flatbacks-valkey
