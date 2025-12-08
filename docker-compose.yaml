@@ -7,8 +7,8 @@ services:
     volumes:
       - 'mysql11_data:/var/lib/mysql'
       # - '${PWD}/flatbacks.sql:/tmp/flatbacks.sql:ro'
-  redis:
-    image: 'redis:7.2-alpine'
+  valkey:
+    image: 'valkey/valkey:9-alpine'
     ports:
       - '6379:6379'
     environment:
