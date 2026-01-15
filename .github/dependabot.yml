@@ -11,7 +11,11 @@ updates:
       drupal-core:
         patterns:
           - 'drupal/core*'
+    commit-message:
+      prefix: '[composer] '
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
       interval: 'weekly'
+    commit-message:
+      prefix: '[actions] '
