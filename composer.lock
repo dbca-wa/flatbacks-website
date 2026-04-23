@@ -3342,17 +3342,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/video_embed_field.git",
-                "reference": "3.0.0"
+                "reference": "3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "38b2de905e93cccdaf21b0c2d8e9678b98801923"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-3.1.0.zip",
+                "reference": "3.1.0",
+                "shasum": "75923f11d3955890e226a48fd8d218ea49915cec"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -3364,8 +3364,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1765309708",
+                    "version": "3.1.0",
+                    "datestamp": "1776704164",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8770,5 +8770,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
