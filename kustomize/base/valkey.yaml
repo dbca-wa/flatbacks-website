@@ -19,19 +19,40 @@ spec:
       containers:
         - name: flatbacks-valkey
           image: valkey/valkey:9-alpine
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           env:
             - name: TZ
               value: 'Australia/Perth'
             - name: ALLOW_EMPTY_PASSWORD
               value: 'yes'
+          command:
+            - valkey-server
+            - /etc/valkey/valkey.conf
+          ports:
+            - containerPort: 6379
+              name: valkey
           resources:
             requests:
               memory: '32Mi'
-              cpu: '1m'
+              cpu: '10m'
             limits:
-              memory: '2048Mi'
-              cpu: '500m'
+              memory: '2Gi'
+              cpu: '1'
+          livenessProbe:
+            tcpSocket:
+              port: 6379
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - valkey-cli ping | grep PONG
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
           securityContext:
             runAsNonRoot: true
             privileged: false
@@ -41,19 +62,8 @@ spec:
               drop:
                 - ALL
             readOnlyRootFilesystem: true
-          volumeMounts:
-            - mountPath: /tmp
-              name: tmpfs-ram
-            - mountPath: /data
-              name: datafs-ram
-      volumes:
-        - name: tmpfs-ram
-          emptyDir:
-            medium: 'Memory'
-        - name: datafs-ram
-          emptyDir:
-            medium: 'Memory'
       restartPolicy: Always
+      terminationGracePeriodSeconds: 30
       automountServiceAccountToken: false
       tolerations:
         - key: arch

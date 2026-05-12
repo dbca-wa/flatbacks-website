@@ -22,6 +22,9 @@ configMapGenerator:
       - ports.conf
       - settings.php
       - php-config.ini
+  - name: valkey-configmap
+    files:
+      - valkey.conf
 generatorOptions:
   disableNameSuffixHash: true
 labels:
@@ -32,3 +35,4 @@ patches:
   - path: deployment_patch.yaml
   - path: deployment_hpa_patch.yaml
   - path: service_patch.yaml
+  - path: valkey_patch.yaml
