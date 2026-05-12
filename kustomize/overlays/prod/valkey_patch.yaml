@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flatbacks-valkey
+spec:
+  template:
+    spec:
+      containers:
+        - name: flatbacks-valkey
+          volumeMounts:
+            - name: valkey-config
+              mountPath: /etc/valkey
+              readOnly: true
+      volumes:
+        - name: valkey-config
+          configMap:
+            name: valkey-configmap-prod
+            optional: false
+      tolerations:
+        - key: arch
+          operator: Equal
+          value: arm64
+          effect: NoSchedule
