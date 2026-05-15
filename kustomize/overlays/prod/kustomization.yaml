@@ -15,6 +15,10 @@ secretGenerator:
     type: Opaque
     envs:
       - .azurestorageaccountsecret
+  - name: dhi-registry-secret
+    type: kubernetes.io/dockerconfigjson
+    files:
+      - .dockerconfigjson=dhi-registry-config.json
 configMapGenerator:
   - name: flatbacks-configmap
     files:

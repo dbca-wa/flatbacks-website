@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: flatbacks-valkey
-          image: valkey/valkey:9-alpine
+          image: dhi.io/valkey:9
           imagePullPolicy: IfNotPresent
           env:
             - name: TZ
@@ -47,17 +47,17 @@ spec:
           readinessProbe:
             exec:
               command:
-                - sh
-                - -c
-                - valkey-cli ping | grep PONG
+                - valkey-cli
+                - INFO
             initialDelaySeconds: 5
             periodSeconds: 5
-            failureThreshold: 3
+            timeoutSeconds: 2
+            failureThreshold: 5
           securityContext:
             runAsNonRoot: true
             privileged: false
             allowPrivilegeEscalation: false
-            runAsUser: 999
+            runAsUser: 65532
             capabilities:
               drop:
                 - ALL

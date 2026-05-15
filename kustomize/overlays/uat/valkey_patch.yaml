@@ -11,13 +11,10 @@ spec:
             - name: valkey-config
               mountPath: /etc/valkey
               readOnly: true
+      imagePullSecrets:
+        - name: dhi-registry-secret-uat
       volumes:
         - name: valkey-config
           configMap:
             name: valkey-configmap-uat
             optional: false
-      tolerations:
-        - key: arch
-          operator: Equal
-          value: arm64
-          effect: NoSchedule
