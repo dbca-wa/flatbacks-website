@@ -4,9 +4,10 @@ LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
 
 # Install system dependencies
-RUN apt-get update -y -q \
-  && apt-get upgrade -y -q \
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -q \
   && apt-get install -y -q default-mysql-client \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extension(s)
