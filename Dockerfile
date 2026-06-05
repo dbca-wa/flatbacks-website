@@ -18,8 +18,9 @@ WORKDIR /opt/drupal
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --quiet
 
-# Copy customised elements into site
+# Copy external downloaded plugin files into site
 COPY web/libraries ./web/libraries
+# Copy customised elements into site
 COPY web/modules/custom ./web/modules/custom
 COPY web/sites/maps ./web/sites/maps
 COPY web/themes/custom ./web/themes/custom
