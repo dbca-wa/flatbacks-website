@@ -22,7 +22,7 @@ secretGenerator:
 configMapGenerator:
   - name: flatbacks-configmap
     files:
-      - default.conf
+      - apache.conf
       - ports.conf
       - settings.php
       - php-config.ini

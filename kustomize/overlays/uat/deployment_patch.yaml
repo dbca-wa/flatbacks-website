@@ -18,7 +18,7 @@ spec:
             - mountPath: /etc/apache2/sites-enabled/000-default.conf
               name: flatbacks-configmap
               readOnly: true
-              subPath: default.conf
+              subPath: apache.conf
             - mountPath: /opt/drupal/web/sites/default/settings.php
               name: flatbacks-configmap
               readOnly: true
