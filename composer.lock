@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6136e7a0b44f55e8cbad7ddb0de8e95",
+    "content-hash": "f44ca9fe40c19a516c81509aeffd0995",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5214,11 +5214,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e5cc34d491a90e79c216d824f60fe21fd4d93bd6",
-                "reference": "e5cc34d491a90e79c216d824f60fe21fd4d93bd6",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4048833dd47b377287818841877fb3087289509c",
+                "reference": "4048833dd47b377287818841877fb3087289509c",
                 "shasum": ""
             },
             "require": {
@@ -5274,7 +5274,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-06-05T09:00:01+00:00"
+            "time": "2026-06-30T21:15:26+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -8723,20 +8723,20 @@
     "packages-dev": [
         {
             "name": "palantirnet/drupal-rector",
-            "version": "0.21.2",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/drupal-rector.git",
-                "reference": "421665d1777df769292b47c51e297c73ed417d00"
+                "reference": "5fa1a0f5068ed5770d17797f5abfccefabd103c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/421665d1777df769292b47c51e297c73ed417d00",
-                "reference": "421665d1777df769292b47c51e297c73ed417d00",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/5fa1a0f5068ed5770d17797f5abfccefabd103c1",
+                "reference": "5fa1a0f5068ed5770d17797f5abfccefabd103c1",
                 "shasum": ""
             },
             "require": {
-                "rector/rector": "^1 || ^2",
+                "rector/rector": "^2",
                 "webflo/drupal-finder": "^1.2"
             },
             "replace": {
@@ -8744,17 +8744,17 @@
                 "palantirnet/drupal8-rector": "*"
             },
             "require-dev": {
-                "cweagans/composer-patches": "^1.7.2",
-                "friendsofphp/php-cs-fixer": "^3.58",
+                "cweagans/composer-patches": "^2.0",
+                "friendsofphp/php-cs-fixer": "^3.95.1",
                 "php": "^8.2",
                 "phpstan/extension-installer": "^1.4.3",
-                "phpstan/phpstan": "^1.12 || ^2.0",
-                "phpstan/phpstan-deprecation-rules": "^1.2 || ^2.0",
-                "phpunit/phpunit": "^10.0",
-                "symfony/yaml": "^5 || ^6 || ^7",
-                "symplify/vendor-patches": "^11.0"
+                "phpstan/phpstan": "^2.1.54",
+                "phpstan/phpstan-deprecation-rules": "^2.0.4",
+                "phpunit/phpunit": "^12.5.24",
+                "symfony/yaml": "^5 || ^6 || ^7.4.8",
+                "symplify/vendor-patches": "^12.0.6"
             },
-            "type": "library",
+            "type": "rector-extension",
             "extra": {
                 "enable-patching": true
             },
@@ -8801,9 +8801,10 @@
                 "rector"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/drupal-rector/tree/0.21.2"
+                "issues": "https://github.com/palantirnet/drupal-rector/issues",
+                "source": "https://github.com/palantirnet/drupal-rector/tree/1.0.1"
             },
-            "time": "2026-05-08T14:23:45+00:00"
+            "time": "2026-07-02T15:36:10+00:00"
         },
         {
             "name": "rector/rector",

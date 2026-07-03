@@ -101,6 +101,6 @@
     }
   },
   "require-dev": {
-    "palantirnet/drupal-rector": "^0.21.1"
+    "palantirnet/drupal-rector": "^1.0.1"
   }
 }
