@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "894fde7f6f2bb7f3af817abd05a5917e",
+    "content-hash": "4d4ed5fa35b17a593b245d840e6f25fb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3577,6 +3577,57 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_deprecated",
+            "version": "6.3.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_deprecated.git",
+                "reference": "6.3.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_deprecated-6.3.0-beta4.zip",
+                "reference": "6.3.0-beta4",
+                "shasum": "57585489a9e2dfb45a6cc5d106801efe083d5a51"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11.0"
+            },
+            "require-dev": {
+                "drupal/webform": "*",
+                "drupal/webform_ui": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "6.3.0-beta4",
+                    "datestamp": "1756923753",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bramdriesen",
+                    "homepage": "https://www.drupal.org/user/3383264"
+                },
+                {
+                    "name": "jrockowitz",
+                    "homepage": "https://www.drupal.org/user/371407"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/webform_deprecated",
+            "support": {
+                "source": "https://git.drupalcode.org/project/webform_deprecated"
             }
         },
         {
@@ -8871,7 +8922,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/htmlmail": 10,
-        "drupal/social_share": 10
+        "drupal/social_share": 10,
+        "drupal/webform_deprecated": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

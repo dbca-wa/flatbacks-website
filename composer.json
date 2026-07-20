@@ -46,6 +46,7 @@
     "drupal/video_embed_field": "^3.1",
     "drupal/we_megamenu": "^1.16",
     "drupal/webform": "^6.2",
+    "drupal/webform_deprecated": "^6.3@beta",
     "drush/drush": "^13",
     "predis/predis": "^3.4"
   },
