@@ -51,7 +51,7 @@
 					<h2>{{ content.field_title }}</h2>
 					{# <h4 class="sun-color text-23">Protecting flatback turtles, their nesting beaches, and foraging habitats</h4> #}
 					{# {{ content.body.value|raw }} #}
-					{{ content['#block_content'].body.value|raw }}
+					{{ content.body }}
 				</div>
 			</div>
 
@@ -59,7 +59,7 @@
 			{% if content['#block_content'].field_credits.value is not null %}
 				<div class="credits">
 					<span class="banner-credits">
-						{{ content['#block_content'].field_credits.value|raw }}</span>
+						{{ content.field_credits }}</span>
 				</div>
 			{% endif %}
 
