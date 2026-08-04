@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Template\Attribute;
 use Drupal\views\Form\ViewsForm;
 use Drupal\file\Entity\File;
@@ -81,7 +82,8 @@ function nws_preprocess_page(&$variables)
       $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
 
       $variables['node_title'] = $node->title->value;
-      $variables['url'] = $url;
+      $safe_url = str_replace(["\\", "'"], ["\\\\", "\\'"], $url);
+      $variables['banner_bg_style'] = Markup::create("background-image: url('" . $safe_url . "');");
     }
   }
 }
@@ -139,20 +141,20 @@ function nws_preprocess_page_title(&$variables)
 }
 
 /**
- * Implements hook_preprocess_HOOK() for nwsntenance-page.html.twig.
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
  */
-function nws_preprocess_nwsntenance_page(&$variables)
+function nws_preprocess_maintenance_page(&$variables)
 {
   // By default, site_name is set to Drupal if no db connection is available
   // or during site installation. Setting site_name to an empty string makes
   // the site and update pages look cleaner.
-  // @see template_preprocess_nwsntenance_page
+  // @see template_preprocess_maintenance_page
   if (!$variables['db_is_active']) {
     $variables['site_name'] = '';
   }
 
-  // nws has custom styling for the nwsntenance page.
-  $variables['#attached']['library'][] = 'nws/nwsntenance_page';
+  // nws has custom styling for the maintenance page.
+  $variables['#attached']['library'][] = 'nws/maintenance_page';
 }
 
 
@@ -162,13 +164,10 @@ function nws_preprocess_nwsntenance_page(&$variables)
 function nws_theme_suggestions_page_alter(array &$suggestions, array $variables)
 {
   // Add a template suggestions for node type.
-  //@var \Drupal\node\NodeInterface $node /
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    if (is_numeric($node)) {
-      $node = Node::load($node);
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $suggestions[] = 'page__node__' . $node->bundle();
     }
-
-    $suggestions[] = 'page__node__' . $node->bundle();
   }
 }
 
