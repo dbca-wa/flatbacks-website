@@ -52,7 +52,7 @@ les, intended to be
 					class="involved-content">
 					{# <h4 class="text-33">{{ content['#block_content'].info.value }}</h4> #}
 
-					{{ content['#block_content'].body.value|raw }}
+					{{ content.body }}
 					{# {{ content.field_link }} #}
 					<a href="{{ content['#block_content'].field_link.get(0).getUrl().toString() }}" class="global-cta">{{ content['#block_content'].field_link.title }}</a>
 				</div>
