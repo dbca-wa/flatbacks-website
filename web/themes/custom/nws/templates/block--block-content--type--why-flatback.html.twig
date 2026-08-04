@@ -59,7 +59,7 @@ les, intended to be
 						<div class="col-md-6 col-12">
 							<div class="text-sec-content">
 								<h2 class="heading-sm">{{ content['#block_content'].field_heading.value|raw }}</h4>
-								{{ content['#block_content'].body.value|raw }}
+								{{ content.body }}
 								<a href="{{ content['#block_content'].field_link.get(0).getUrl().toString() }}" class="global-cta">{{ content['#block_content'].field_link.title }}
 								</a>
 							</div>
@@ -79,7 +79,7 @@ les, intended to be
 						<div class="col-md-6">
 							<div class="text-sec-content">
 								<h2 class="heading-sm">{{ content['#block_content'].field_heading.value|raw }}</h4>
-								{{ content['#block_content'].body.value|raw }}
+								{{ content.body }}
 								<a href="{{ content['#block_content'].field_link.get(0).getUrl().toString() }}" class="global-cta">{{ content['#block_content'].field_link.title }}
 								</a>
 							</div>
