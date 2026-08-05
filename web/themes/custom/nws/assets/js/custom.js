@@ -8,15 +8,6 @@ jQuery(document).ready(function () {
     return false;
   });
 
-  /* jQuery('.mobile-bottom-header.only-mob a.search').click(function (event) {
-        event.preventDefault();
-        jQuery("div#block-nws-searchform-2").toggle();
-    }); */
-
-  /* jQuery("#block-nws-primarymenu ul li:nth-child(2) a").click(function () {
-        jQuery("#block-nws-searchform").toggle();
-    }); */
-
   // Peer page
   jQuery('.view-filters.art-form .form-item-field-years-value').before(
     '<a href="/resources/peer-reviewed-research" class="clear-all art-year"><img src="/themes/custom/nws/assets/images/close.png" alt="">Clear all</a>'

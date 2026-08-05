@@ -24,7 +24,7 @@ header {
 }
 #block-nws-homebanner {
   margin-bottom: 60px;
-} /*JG*/
+}
 .container {
   max-width: 1280px;
 }
@@ -212,10 +212,8 @@ section.banner h2 {
 .banner-text {
   max-width: 530px;
 }
-/*.field--label-hidden { display:none; }*/
-/*.field__item:nth-child(2) { margin-top:30px; } /*JG cutting researchers circle heads off */
 section.text-sec {
-  padding: 30px 0; /*JG 120*/
+  padding: 30px 0;
 }
 .text-sec-image {
   border-radius: 12px;
@@ -345,7 +343,6 @@ a.link::after {
 }
 
 section.what-we-do .container {
-  /*border-top: 1px solid #E3E0DA; JG */
   padding-top: 40px;
 }
 
@@ -601,7 +598,6 @@ li.has-children > a {
 }
 
 section.banner-sm {
-  /* background-image: url(../images/banner-2.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -642,7 +638,7 @@ h4.text-19 {
 section.banner-sm {
   color: var(--deep);
   padding-top: 160px;
-  margin-bottom: 60px; /*JG*/
+  margin-bottom: 60px;
 }
 
 .breadcrumbs {
@@ -718,7 +714,7 @@ section.what-we-do.list .link:after {
 }
 
 section.what-we-do.list {
-  padding: 0px 0; /*JG 120*/
+  padding: 0px 0;
 }
 
 section.what-we-do.list.flatback_list .container h2 {
@@ -795,8 +791,7 @@ section.banner-sm.xs .banner-text {
 }
 
 .cmn-padding {
-  /* padding: 120px 0; JG */
-  padding-bottom: 0px; /*JG*/
+  padding-bottom: 0px;
 }
 
 .grid-4 {
@@ -1011,7 +1006,7 @@ body .full-width {
 }
 
 .pt-80 {
-  padding-top: 30px !important; /*JG 80px*/
+  padding-top: 30px !important;
 }
 
 .mt-200 {
@@ -1049,10 +1044,6 @@ section.video-message .text-sec-image.video {
 
 .mg-block .heading {
   margin-bottom: 1.5rem;
-}
-
-.mg-block {
-  /* margin-bottom: 5rem; */
 }
 
 .mg-block p {
@@ -1191,9 +1182,6 @@ section.main.cmn-padding section .container {
   text-decoration: underline;
 }
 
-.mb-80 {
-  /*margin-bottom: 80px !important;  JG rem*/
-}
 .programs {
   margin-bottom: 40px;
 }
@@ -1408,10 +1396,6 @@ a.link-l {
   color: var(--deep);
   text-decoration: underline;
 }
-
-/*.mb-200 {
-    margin-bottom: 200px;
-} JG */
 
 .detail-page-container {
   max-width: 830px;
@@ -1676,8 +1660,6 @@ section.primary-top {
   transform: rotate(180deg);
 }
 
-/********** 31 July ********************/
-
 .mm-item ul li ul.mega-sub li a {
   font-size: 1rem;
   font-weight: 500;
@@ -1755,7 +1737,6 @@ a.link:hover {
   text-decoration: none;
 }
 
-/********New CSS *****************/
 form#user-login-form {
   margin: 0 auto;
   max-width: 800px;
@@ -1801,11 +1782,6 @@ form#user-login-form {
 .cd-gallery {
   margin-bottom: 120px;
 }
-
-/* #search-block-form .form-type-search input{
-  display: none;
-  position: absolute;
-}*/
 
 .social-media-sharing .share {
   border-top: none;
@@ -1918,7 +1894,6 @@ form .js-form-item.form-item label.option {
 }
 
 .p-logo img {
-  /*width: 100%;*/
   height: auto;
 }
 .bef-toggle--deselect-all,
@@ -1930,7 +1905,6 @@ a.bef-toggle.bef-toggle--select-all:before {
   width: 28px;
   height: 28px;
   border: 1px solid #5b85ac;
-  /* padding: 2px 15px; */
   float: left;
   margin-right: 15px;
 }
@@ -1939,7 +1913,6 @@ a.bef-toggle.bef-toggle--deselect-all:before {
   width: 28px;
   height: 28px;
   border: 1px solid #5b85ac;
-  /* padding: 2px 15px; */
   float: left;
   background-image: url(../images/tick.png);
   background-repeat: no-repeat;

@@ -3,7 +3,6 @@
     display: none !important;
   }
 
-  /* 31 July */
   .bottom-header .container ul > li:hover .mega-menu {
     display: block;
   }
@@ -50,7 +49,7 @@
   }
 
   li.has-children > a:before {
-    content: "";
+    content: '';
     background-image: url(../images/ArrowRight.svg);
     width: 1rem;
     height: 1rem;
@@ -160,8 +159,6 @@
     gap: 30px;
   }
 
-  /* 31 july */
-
   header .bottom-header ul li {
     display: flex;
     flex-direction: row;
@@ -180,7 +177,6 @@
 
   .footer-menus .mobile-mega-menu-trigger {
     width: 0 !important;
-
   }
 
   .mega-menu {
@@ -214,44 +210,44 @@
     font-size: 14px;
   }
 
-  .footer-menus .mobile-mega-menu-trigger{
+  .footer-menus .mobile-mega-menu-trigger {
     display: none;
   }
-  .page-node-type-detail-page .right-bar .mobile-mega-menu-trigger{
+  .page-node-type-detail-page .right-bar .mobile-mega-menu-trigger {
     display: none;
   }
-
 }
 
 @media (max-width: 785px) {
-   .people-right {
-      width: 100%;
+  .people-right {
+    width: 100%;
   }
-  .leftside, .right-bar {
-	  flex: 1;
-	  max-width: 100%;
-	  width: 100%;
-	}
-   
-	.footer-bottom #backto-top a {
-	    font-size: 14px !IMPORTANT;
-	}
+  .leftside,
+  .right-bar {
+    flex: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer-bottom #backto-top a {
+    font-size: 14px !important;
+  }
   li.menu-item.has-submenu.show {
-    background: #FAF7F3;
+    background: #faf7f3;
     padding: 0;
   }
   li.menu-item.has-submenu.show ul.menu {
     background: #fff;
     padding-left: 20px;
     margin-left: 0;
-    }
-	header .bottom-header ul li {
-	    position: relative;
-	}
+  }
+  header .bottom-header ul li {
+    position: relative;
+  }
   ul.nav .has-submenu ul.menu {
     display: none;
   }
-   ul.nav li.show.has-submenu ul.menu {
+  ul.nav li.show.has-submenu ul.menu {
     display: block;
   }
   ul.nav li.show.has-submenu ul.menu li .mobile-mega-menu-trigger {
@@ -260,7 +256,7 @@
     rotate: -90deg;
     top: 17px;
     width: auto;
-}
+  }
   section.what-we-do.row-gap {
     padding: 60px 0;
   }
@@ -624,16 +620,11 @@
   #block-nws-otherbiologyresearchareas .bordered-top {
     margin-top: 0;
   }
-  /* #block-nws-otherbiologyresearchareas .bordered-top .container {
-    width: 90%;
-  } */
-
   .text-sec video {
     height: 240px;
   }
 
   .node-53 .involved {
-    /* margin-top: 0; */
   }
 
   .node-26 .field--name-field-content .field__item:nth-child(2) .text-sec {
@@ -650,11 +641,9 @@
     padding-bottom: 0;
   }
   .node-54 .field--name-field-content-detail .bordered-top {
-    /* margin-bottom: 30px; */
   }
   .node-54 .right-bar,
-  .node-57 .right-bar
-   {
+  .node-57 .right-bar {
     margin: 120px 0 -80px 0;
   }
   .node-56 .right-bar {
@@ -672,7 +661,7 @@
   }
 
   form .form-item-title-1::after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -688,7 +677,7 @@
   }
 
   form .form-item-field-years-value::after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -703,7 +692,7 @@
   }
 
   .view-search form .form-item-title::after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -727,7 +716,6 @@
   .form-item-field-years-value label {
     font-size: 20px !important;
     font-weight: 400;
-    /* line-height: 40px; */
   }
   .breadcrumb ol {
     display: block;
@@ -752,13 +740,10 @@
     max-width: 45rem;
   }
 
-  /* after live css  */
-
   .team-view-group {
     border-top: 1px solid #e3e0da;
     margin-bottom: 0rem;
     padding: 2.5rem 0;
-    /* padding-bottom: 2.5rem; */
   }
   .node-24 .involved {
     margin-top: 100px;
@@ -782,7 +767,7 @@
     left: 40px;
   }
 
-  .form-type-checkbox{
+  .form-type-checkbox {
     display: flex;
     gap: 5px;
     margin-bottom: 0.5rem !important;
@@ -791,18 +776,14 @@
   .page-node-type-latest-updates .latest-updates {
     padding-bottom: 0px;
     margin-top: 120px;
-   }
-   
-  
-  ul.nav .has-submenu ul{
+  }
+
+  ul.nav .has-submenu ul {
     display: block;
     margin-left: 1.5rem;
   }
 
-  .footer-menus .mobile-mega-menu-trigger{
+  .footer-menus .mobile-mega-menu-trigger {
     display: none !important;
   }
-
- 
-  
 }
