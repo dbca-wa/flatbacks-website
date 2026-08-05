@@ -43,18 +43,13 @@
 	{% endif %}
 	{{ title_suffix }}
 	{% block content %}
-
-
 		<section class="banner" style="background-image: url('{{ file_url(content['#block_content'].field_image.entity.field_media_image.entity.fileuri) }}')">
 			<div class="container">
 				<div class="banner-text">
 					<h2>{{ content.field_title }}</h2>
-					{# <h4 class="sun-color text-23">Protecting flatback turtles, their nesting beaches, and foraging habitats</h4> #}
-					{# {{ content.body.value|raw }} #}
 					{{ content.body }}
 				</div>
 			</div>
-
 
 			{% if content['#block_content'].field_credits.value is not null %}
 				<div class="credits">
@@ -64,6 +59,5 @@
 			{% endif %}
 
 		</section>
-
 	{% endblock %}
 </div>

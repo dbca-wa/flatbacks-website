@@ -48,12 +48,8 @@ les, intended to be
 	<section class="involved" style="background-image: url('{{ file_url(content['#block_content'].field_image.entity.field_media_image.entity.fileuri) }}')">
 		<div class="container">
 			<div class="get-involved" data-aos="fade-up-fast" data-aos-anchor-placement="top-bottom">
-				<div
-					class="involved-content">
-					{# <h4 class="text-33">{{ content['#block_content'].info.value }}</h4> #}
-
+				<div class="involved-content">
 					{{ content.body }}
-					{# {{ content.field_link }} #}
 					<a href="{{ content['#block_content'].field_link.get(0).getUrl().toString() }}" class="global-cta">{{ content['#block_content'].field_link.title }}</a>
 				</div>
 			</div>
