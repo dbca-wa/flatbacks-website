@@ -2,26 +2,62 @@ global-styling:
   version: '1.1'
   css:
     theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css': { type: external }
-      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css': { type: external, minified: true }
-      'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css': { type: external, minified: true }
-      assets/css/style.css: {}
-      assets/css/my.css: {}
-      assets/css/mobile.css: {}
+      'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css':
+        {
+          type: external,
+          minified: false,
+          integrity: '/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9',
+          crossorigin: 'anonymous',
+        }
+      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css':
+        {
+          type: external,
+          minified: true,
+          integrity: 'LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr',
+          crossorigin: 'anonymous',
+        }
+      'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css':
+        {
+          type: external,
+          minified: true,
+          integrity: 'ZwVa1S/NX6dEzJaHv2OILVrnj7ERqTH6pd/ubsDTHTrgAEz2kUufO/KLo6frtnOB',
+          crossorigin: 'anonymous',
+        }
+      assets/css/style.css: { preprocess: true }
+      assets/css/my.css: { preprocess: true }
+      assets/css/mobile.css: { preprocess: true }
 
 maintenance_page:
   version: '1.1'
   css:
     theme:
-      assets/css/style.css: {}
-      assets/css/my.css: {}
-      assets/css/mobile.css: {}
+      assets/css/style.css: { preprocess: true }
+      assets/css/my.css: { preprocess: true }
+      assets/css/mobile.css: { preprocess: true }
 
 global-script:
   js:
-    'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js': { type: external }
-    'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js': { type: external, minified: true }
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js': { type: external, minified: true }
+    'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js':
+      {
+        type: external,
+        minified: false,
+        integrity: 'n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ',
+        crossorigin: 'anonymous',
+      }
+    'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js':
+      {
+        type: external,
+        minified: true,
+        integrity: '7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK',
+        crossorigin: 'anonymous',
+      }
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js':
+      {
+        type: external,
+        minified: true,
+        integrity: 'OOQxAlvDeToeGLa7+PiUtbtpQyESK8Ej4fNM8foz5VaMpO8TCp1vbi2HIOIzMurt',
+        crossorigin: 'anonymous',
+      }
     assets/js/custom.js: {}
 
   dependencies:
