@@ -1,7 +1,7 @@
 {#
 /**
 * @file
-* Bartik's theme implementation to display a node.
+* nws theme's theme implementation to display a node.
 *
 * Available variables:
 * - node: The node entity with limited access to object properties and methods.
@@ -79,7 +79,7 @@
 				<h2 class="heading-large">{{ label }}</h2>
 				<h4 class="text-23">{{ node.field_region_name.value }}</h4>
 				{{ node.body.value|raw }}
-				
+
 				<div class="detail-block">
 					<a href="{{ node.field_visit_website.get(0).getUrl().toString() }}" class="global-cta">
 						{{ node.field_visit_website.title }}
