@@ -1,0 +1,28 @@
+{# Shared site header. Included by page.html.twig, page--front.html.twig, page--node--detail-page.html.twig. #}
+<header>
+	<div class="container header-top">
+		{{ page.logo }}
+
+		<div class="menus only-desk">
+			{{ page.primary_menu }}
+
+		</div>
+	</div>
+
+	<div class="mobile-bottom-header only-mob">
+		<a href="/"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/home.svg" alt=""></a>
+		<a href="/search" class="search"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/search.svg" alt=""></a>
+		<a href="/contact"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/email.svg" alt=""></a>
+		<div class="only-mob menu-open mobile-menu">
+			<img src="{{url('<front>')}}/themes/custom/nws/assets/images/humberger.svg" alt="" class="open">
+			<img src="{{url('<front>')}}/themes/custom/nws/assets/images/close.svg" alt="" class="close">
+		</div>
+		{{ page.search }}
+	</div>
+
+	<div class="bottom-header">
+		<div class="container">
+			{{ page.secondary_menu }}
+		</div>
+	</div>
+</header>

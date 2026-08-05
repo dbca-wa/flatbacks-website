@@ -51,85 +51,10 @@
 */
 #}
 
-<header>
-	<div class="container header-top">
-		{{ page.logo }}
-
-		<div class="menus only-desk">
-			{{ page.primary_menu }}
-
-		</div>
-	</div>
-
-	<div class="mobile-bottom-header only-mob">
-		<a href="/"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/home.svg" alt=""></a>
-		<a href="/search" class="search"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/search.svg" alt=""></a>
-		<a href="/contact"><img src="{{url('<front>')}}/themes/custom/nws/assets/images/email.svg" alt=""></a>
-		<div class="only-mob menu-open mobile-menu">
-			<img src="{{url('<front>')}}/themes/custom/nws/assets/images/humberger.svg" alt="" class="open">
-			<img src="{{url('<front>')}}/themes/custom/nws/assets/images/close.svg" alt="" class="close">
-		</div>
-		{{ page.search }}
-	</div>
-
-	<div class="bottom-header">
-		<div class="container">
-			{{ page.secondary_menu }}
-		</div>
-	</div>
-</header>
+{% include '@nws/includes/header.html.twig' %}
 
 <div>
 	{{ page.content }}
 </div>
 
-<footer>
-	<div class="container">
-		{{ page.footer_top }}
-
-		<div class="footer-middle">
-			{{ page.footer_social }}
-				<div class="footer-menus"> <div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_home }}
-					</div>
-				</div>
-
-				<div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_who_we_are }}
-					</div>
-				</div>
-
-				<div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_what_we_do }}
-					</div>
-				</div>
-
-				<div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_flatback_turtles }}
-
-					</div>
-				</div>
-
-				<div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_resources }}
-					</div>
-				</div>
-
-				<div class="f-menus">
-					<div class="f-inner">
-						{{ page.footer_get_involved }}
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="footer-bottom">
-			{{ page.footer_bottom }}
-		</div>
-	</div>
-</footer>
+{% include '@nws/includes/footer.html.twig' %}
