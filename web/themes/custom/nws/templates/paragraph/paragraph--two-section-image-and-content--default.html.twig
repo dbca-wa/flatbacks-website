@@ -50,14 +50,14 @@
 
 
 {% if paragraph.field_image_position.value == "right" %}
-	<section class="text-sec reversed"> 
+	<section class="text-sec reversed">
 	<!-- bordered-top mb-5 pt-0 JG -->
 		<div class="container">
 
 			<div class="row">
 				<div class="col-md-6">
 					<div class="text-sec-content">
-						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h4>
+						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
 						{{ paragraph.field_description.value|raw }}
 						{% if paragraph.field_link.title is not null %}
 							<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>
@@ -91,7 +91,7 @@
 				<div class="col-md-6 col-12">
 
 					<div class="text-sec-content">
-						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h4>
+						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
 						{{ paragraph.field_description.value|raw }}
 						{% if paragraph.field_link.title is not null %}
 							<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>

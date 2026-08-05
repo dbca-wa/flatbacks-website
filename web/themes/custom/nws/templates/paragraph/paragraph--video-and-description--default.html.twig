@@ -68,7 +68,7 @@ not paragraph.isPublished() ? 'paragraph--unpublished'
 			</div>
 			<div class="col-md-5 col-12">
 				<div class="text-sec-content">
-					<h2 class="heading-sm">{{ paragraph.field_title.value }}</h4>
+					<h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
 					{{ paragraph.field_description.value|raw }}
 					{% if paragraph.field_link.value is not empty %}
 						<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{
