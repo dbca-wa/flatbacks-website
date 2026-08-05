@@ -1,0 +1,21 @@
+# Schema for the configuration files of the nws theme.
+
+nws.settings:
+  type: theme_settings
+  label: 'nws settings'
+  mapping:
+    facebook:
+      type: string
+      label: 'Facebook URL'
+    instagram:
+      type: string
+      label: 'Instagram URL'
+    youtube:
+      type: string
+      label: 'YouTube URL'
+    twitter:
+      type: string
+      label: 'Twitter URL'
+    linkedin:
+      type: string
+      label: 'LinkedIn URL'
