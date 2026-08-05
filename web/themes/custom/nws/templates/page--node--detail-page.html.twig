@@ -52,36 +52,37 @@
 #}
 
 {% include '@nws/includes/header.html.twig' %}
+<main role="main" id="main-content">
+  <section class="banner-sm" style="{{ banner_bg_style }}">
+    <div class="container">
+      <div class="banner-text">
+        <div class="breadcrumbs">
+          {{ drupal_breadcrumb() }}
+        </div>
+        <h2>{{ node_title }}</h2>
+      </div>
+    </div>
+    {% if node.field_credits.value is not empty %}
+        <div class="credits"> <span class="banner-credits">
+          {{ node.field_credits.value }}</span>
+      </div>
+    {% endif %}
+  </section>
 
-<section class="banner-sm" style="{{ banner_bg_style }}">
-	<div class="container">
-		<div class="banner-text">
-			<div class="breadcrumbs">
-				{{ drupal_breadcrumb() }}
-			</div>
-			<h2>{{ node_title }}</h2>
-		</div>
-	</div>
-	{% if node.field_credits.value is not empty %}
-			<div class="credits"> <span class="banner-credits">
-				{{ node.field_credits.value }}</span>
-		</div>
-	{% endif %}
-</section>
+  <section class="main cmn-padding mb-40">
+    <div class="container">
+      <div class="sidebar-layout">
+        <div class="leftside">
+          {{ page.content }}
+        </div>
 
-<section class="main cmn-padding mb-40">
-	<div class="container">
-		<div class="sidebar-layout">
-			<div class="leftside">
-				{{ page.content }}
-			</div>
-
-			<div class="right-bar">
-				{{ page.sidebar }}
-			</div>
-		</div>
-    {{ page.image_gallery }}
-  </div>
-</section>
+        <div class="right-bar">
+          {{ page.sidebar }}
+        </div>
+      </div>
+      {{ page.image_gallery }}
+    </div>
+  </section>
+</main>
 
 {% include '@nws/includes/footer.html.twig' %}

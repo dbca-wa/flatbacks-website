@@ -52,24 +52,25 @@
 #}
 
 {% include '@nws/includes/header.html.twig' %}
+<main role="main" id="main-content">
+  {{ page.banner }}
+  {{ page.features }}
+  {{ page.features2 }}
 
-{{ page.banner }}
-{{ page.features }}
-{{ page.features2 }}
+  <section class="what-we-do">
+    <div class="container">
+      {{ page.what_we_do }}
+    </div>
+  </section>
 
-<section class="what-we-do">
-  <div class="container">
-    {{ page.what_we_do }}
-  </div>
-</section>
+  <section class="what-we-do latest-updates">
+    <div class="container">
+      {{ page.latest_updates }}
+    </div>
+  </section>
 
-<section class="what-we-do latest-updates">
-  <div class="container">
-    {{ page.latest_updates }}
-  </div>
-</section>
-
-{{ page.on_the_socials }}
-{{ page.get_involved }}
+  {{ page.on_the_socials }}
+  {{ page.get_involved }}
+</main>
 
 {% include '@nws/includes/footer.html.twig' %}
