@@ -37,6 +37,9 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
+  {% if not configuration.label_display %}
+    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+  {% endif %}
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
