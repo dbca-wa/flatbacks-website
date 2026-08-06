@@ -3,6 +3,10 @@
 :root {
   --deep: #01375e;
   --sun: #ffd572;
+  --steel: #5b85ac;
+  --warm-grey: #e3e0da;
+  --cream: #faf7f3;
+  --teal: #9bdbde;
 }
 
 body {
@@ -103,7 +107,7 @@ header ul li a {
 }
 
 .bottom-header li a:hover {
-  background: #faf7f3;
+  background: var(--cream);
 }
 
 footer {
@@ -299,7 +303,7 @@ h2.heading {
   display: block;
   width: 100%;
   height: 8px;
-  background: #9bdbde;
+  background: var(--teal);
   border-radius: 0 0 12px 12px;
   position: absolute;
   bottom: 0;
@@ -462,7 +466,7 @@ h5.text-19 {
   margin-top: 50px;
 }
 section.acknowledgement {
-  background: #9bdbde;
+  background: var(--teal);
   padding: 90px 0;
   color: var(--deep);
   margin-top: 30px;
@@ -531,7 +535,7 @@ a.card-box:hover .text-23 {
 }
 
 .mobile-bottom-header {
-  background: #5b85ac;
+  background: var(--steel);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -684,7 +688,7 @@ section.banner-sm h4 {
 }
 
 .bordered-top .container {
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
   padding-top: 3rem;
 }
 
@@ -712,12 +716,12 @@ section.what-we-do.list {
 }
 
 section.what-we-do.list.flatback_list .container h2 {
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
   padding-top: 40px;
 }
 
 section.map-sec.bordered-top .container h2 {
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
   padding-top: 3rem;
 }
 
@@ -741,7 +745,7 @@ section.what-we-do.list .container {
 }
 
 .bottom-header li a.active {
-  background: #faf7f3;
+  background: var(--cream);
 }
 
 .text-sec-content p:last-child {
@@ -879,7 +883,7 @@ h2.heading-large {
 .single-people-projects {
   margin-top: 5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
 }
 
 .single-people-projects .heading {
@@ -891,7 +895,7 @@ h2.heading-large {
 }
 
 .pubs {
-  border-top: 1px solid #9bdbde;
+  border-top: 1px solid var(--teal);
   padding: 1.5rem 0;
   display: flex;
   gap: 1.5rem;
@@ -923,7 +927,7 @@ h4.text-13 {
 }
 
 .team-group {
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
   padding-top: 2.5rem;
   margin-top: 5rem;
 }
@@ -985,7 +989,7 @@ body .full-width {
 }
 
 .dtd {
-  border-top: 1px solid #9bdbde;
+  border-top: 1px solid var(--teal);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1059,14 +1063,14 @@ section.video-message .text-sec-image.video {
 }
 
 .right-bar {
-  width: 19%;
-  flex: none;
+  flex: 0 0 auto;
+  max-width: 320px;
 }
 
 .sidebar-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   gap: 130px;
-  flex-wrap: wrap;
 }
 
 .leftside {
@@ -1088,8 +1092,8 @@ section.video-message .text-sec-image.video {
 
 .right-bar a:hover,
 .right-bar a.active {
-  background: #faf7f3;
-  border-color: #9bdbde;
+  background: var(--cream);
+  border-color: var(--teal);
   text-decoration: none;
 }
 
@@ -1111,7 +1115,7 @@ section.video-message .text-sec-image.video {
   padding: 1rem 1.5rem;
   display: block;
   width: 100%;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
   color: var(--deep);
 }
 
@@ -1121,7 +1125,7 @@ section.video-message .text-sec-image.video {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #5b85ac;
+  color: var(--steel);
   font-weight: 400;
 }
 
@@ -1184,6 +1188,7 @@ section.main.cmn-padding section .container {
   height: 293px;
 }
 
+/* AOS custom animations */
 [data-aos='fade-up-fast'] {
   opacity: 0;
   transition-property: transform, opacity;
@@ -1202,14 +1207,14 @@ section.main.cmn-padding section .container {
 }
 
 .art-form {
-  background: #faf7f3;
+  background: var(--cream);
   padding: 100px;
 }
 
 .form-group-container input,
 .form-group-container select {
   height: 66px;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
   border-radius: 5px;
   padding: 0 2rem;
   width: 100%;
@@ -1220,7 +1225,7 @@ section.main.cmn-padding section .container {
 }
 
 .form-group-container input::placeholder {
-  color: #5b85ac;
+  color: var(--steel);
   font-weight: 400;
 }
 
@@ -1229,7 +1234,7 @@ section.main.cmn-padding section .container {
 }
 
 .form-group-container {
-  border-bottom: 1px solid #5b85ac;
+  border-bottom: 1px solid var(--steel);
   padding-bottom: 60px;
   margin-bottom: 1.5rem;
   display: flex;
@@ -1280,7 +1285,7 @@ input.search {
   background: transparent;
   -webkit-appearance: none;
   appearance: none;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
   padding: 0;
   border-radius: 0;
 }
@@ -1625,7 +1630,7 @@ section.primary-top {
   margin: 0 !important;
 }
 .mg-block.bordered {
-  border-top: 1px solid #e3e0da;
+  border-top: 1px solid var(--warm-grey);
   padding-top: 1.5rem;
   margin-top: 80px;
 }
@@ -1674,7 +1679,7 @@ body header .mm-item ul ul.mega-sub {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  background: #faf7f3;
+  background: var(--cream);
   max-width: 1280px;
   margin: auto;
   padding: 4rem;
@@ -1823,8 +1828,8 @@ a.card-box:hover img {
   filter: brightness(0.8);
 }
 #block-nws-flatbackconservation li.menu-item.menu-item--active-trail a.is-active {
-  background: #faf7f3;
-  border-color: #9bdbde;
+  background: var(--cream);
+  border-color: var(--teal);
   text-decoration: none;
 }
 #block-nws-footerbottom .right {
@@ -1857,7 +1862,7 @@ form .js-form-item.form-item label.option {
   width: 23px;
   height: 23px;
   appearance: none;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
 }
 
 .form-type-checkbox input:checked {
@@ -1895,7 +1900,7 @@ a.bef-toggle.bef-toggle--select-all:before {
   content: '';
   width: 28px;
   height: 28px;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
   float: left;
   margin-right: 15px;
 }
@@ -1903,7 +1908,7 @@ a.bef-toggle.bef-toggle--deselect-all:before {
   content: '';
   width: 28px;
   height: 28px;
-  border: 1px solid #5b85ac;
+  border: 1px solid var(--steel);
   float: left;
   background-image: url(../images/tick.png);
   background-repeat: no-repeat;
@@ -1914,7 +1919,7 @@ a.bef-toggle.bef-toggle--deselect-all:before {
 body .bef-toggle--select-all,
 body .bef-toggle--deselect-all {
   position: static;
-  color: #01375e;
+  color: var(--deep);
   font-size: 1rem;
   font-weight: 400;
   padding-left: 0;
