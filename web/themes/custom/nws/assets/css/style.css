@@ -1064,13 +1064,13 @@ section.video-message .text-sec-image.video {
 
 .right-bar {
   flex: 0 0 auto;
-  max-width: 320px;
+  width: 19%;
 }
 
 .sidebar-layout {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   gap: 130px;
+  flex-wrap: wrap;
 }
 
 .leftside {
