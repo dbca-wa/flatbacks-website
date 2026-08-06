@@ -44,27 +44,26 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
 
-
-<section class="text-sec monitoring bordered-top" data-aos="fade-up-fast">
-	<div class="container pt-80">
-		<div class="row">
-			<div class="col-md-6 col-12">
-				<div class="text-sec-content">
-					<h4 class="text-27 mb-5">{{ paragraph.field_title.value }}</h4>
-					<div class="dt-downloads">
-						{{ content.field_accordion_details }}
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-12">
-				<div class="text-sec-image">
-					<img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="text-sec monitoring bordered-top" {{ include('@nws/includes/aos.html.twig') }}>
+    <div class="container pt-80">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="text-sec-content">
+                    <h4 class="text-27 mb-5">{{ paragraph.field_title.value }}</h4>
+                    <div class="dt-downloads">
+                        {{ content.field_accordion_details }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="text-sec-image">
+                    <img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

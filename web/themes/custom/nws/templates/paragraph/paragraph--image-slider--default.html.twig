@@ -44,19 +44,16 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
 
+    <section class="bordered-top cd-gallery">
+        <div class="container">
+            <h2 class="heading">{{ paragraph.field_title.value }}</h2>
+            <div class="gallery" {{ include('@nws/includes/aos.html.twig') }}>
+                {{ content.field_image_gallery }}
+            </div>
+        </div>
+    </section>
 
-	<section class="bordered-top cd-gallery">
-		<div class="container">
-			<h2 class="heading">{{ paragraph.field_title.value }}</h2>
-			<div class="gallery" data-aos="fade-up-fast">
-				{{ content.field_image_gallery }}
-			</div>
-		</div>
-	</section>
-
-
-                      

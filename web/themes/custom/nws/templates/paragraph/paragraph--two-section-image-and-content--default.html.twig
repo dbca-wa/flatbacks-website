@@ -44,61 +44,59 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
 
+{% if paragraph.field_image_position.value == 'right' %}
+    <section class="text-sec reversed">
+    <!-- bordered-top mb-5 pt-0 JG -->
+        <div class="container">
 
-{% if paragraph.field_image_position.value == "right" %}
-	<section class="text-sec reversed">
-	<!-- bordered-top mb-5 pt-0 JG -->
-		<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-sec-content">
+                        <h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
+                        {{ paragraph.field_description.value|raw }}
+                        {% if paragraph.field_link.title is not null %}
+                            <a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-sec-image" {{ include('@nws/includes/aos.html.twig') }}>
+                        <img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
+                    </div>
+                </div>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="text-sec-content">
-						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
-						{{ paragraph.field_description.value|raw }}
-						{% if paragraph.field_link.title is not null %}
-							<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>
-						{% endif %}
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="text-sec-image" data-aos="fade-up-fast">
-						<img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
+            </div>
+        </div>
+    </section>
 {% endif %}
 
+{% if paragraph.field_image_position.value == 'left' %}
+    <section class="text-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="text-sec-image" {{ include('@nws/includes/aos.html.twig') }}>
+                        {% if paragraph.field_image.entity.field_media_image.entity.fileuri is not empty %}
+                            <img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
+                        {% endif %}
+                        {{ paragraph.field_embed_code.value|raw }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
 
-{% if paragraph.field_image_position.value == "left" %}
-	<section class="text-sec">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-12">
-					<div class="text-sec-image" data-aos="fade-up-fast">
-						{% if paragraph.field_image.entity.field_media_image.entity.fileuri is not empty %}
-							<img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="">
-						{% endif %}
-						{{ paragraph.field_embed_code.value|raw }}
-					</div>
-				</div>
-				<div class="col-md-6 col-12">
-
-					<div class="text-sec-content">
-						<h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
-						{{ paragraph.field_description.value|raw }}
-						{% if paragraph.field_link.title is not null %}
-							<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>
-						{% endif %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                    <div class="text-sec-content">
+                        <h2 class="heading-sm">{{ paragraph.field_title.value }}</h2>
+                        {{ paragraph.field_description.value|raw }}
+                        {% if paragraph.field_link.title is not null %}
+                            <a href="{{ paragraph.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ paragraph.field_link.title }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endif %}

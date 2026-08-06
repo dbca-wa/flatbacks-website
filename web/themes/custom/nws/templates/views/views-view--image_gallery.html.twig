@@ -40,62 +40,61 @@
     ]
   %}
 
-
 <section class="bordered-top main cmn-padding">
-	<div class="container">
-		<h2 class="heading">Image gallery</h2>
-		<div{{attributes.addClass(classes)}}>
-			{{ title_prefix }}
-			{% if title %}
-				{{ title }}
-			{% endif %}
-			{{ title_suffix }}
-			{% if header %}
-				<div class="view-header">
-					{{ header }}
-				</div>
-			{% endif %}
+    <div class="container">
+        <h2 class="heading">Image gallery</h2>
+        <div{{ attributes.addClass(classes) }}>
+            {{ title_prefix }}
+            {% if title %}
+                {{ title }}
+            {% endif %}
+            {{ title_suffix }}
+            {% if header %}
+                <div class="view-header">
+                    {{ header }}
+                </div>
+            {% endif %}
 
-			{% if exposed %}
-				{{ exposed }}
-			{% endif %}
+            {% if exposed %}
+                {{ exposed }}
+            {% endif %}
 
-			{% if attachment_before %}
-				<div class="attachment attachment-before">
-					{{ attachment_before }}
-				</div>
-			{% endif %}
-			{% if rows %}
-				<div class="view-content gallery" data-aos="fade-up-fast">
-					{{ rows }}
-				</div>
-			{% elseif empty %}
-				<div class="view-empty">
-					{{ empty }}
-				</div>
-			{% endif %}
+            {% if attachment_before %}
+                <div class="attachment attachment-before">
+                    {{ attachment_before }}
+                </div>
+            {% endif %}
+            {% if rows %}
+                <div class="view-content gallery" {{ include('@nws/includes/aos.html.twig') }}>
+                    {{ rows }}
+                </div>
+            {% elseif empty %}
+                <div class="view-empty">
+                    {{ empty }}
+                </div>
+            {% endif %}
 
-			{% if pager %}
-				{{ pager }}
-			{% endif %}
-			{% if attachment_after %}
-				<div class="attachment attachment-after">
-					{{ attachment_after }}
-				</div>
-			{% endif %}
-			{% if more %}
-				{{ more }}
-			{% endif %}
-			{% if footer %}
-				<div class="view-footer">
-					{{ footer }}
-				</div>
-			{% endif %}
-			{% if feed_icons %}
-				<div class="feed-icons">
-					{{ feed_icons }}
-				</div>
-			{% endif %}
-		</div>
-	</div>
+            {% if pager %}
+                {{ pager }}
+            {% endif %}
+            {% if attachment_after %}
+                <div class="attachment attachment-after">
+                    {{ attachment_after }}
+                </div>
+            {% endif %}
+            {% if more %}
+                {{ more }}
+            {% endif %}
+            {% if footer %}
+                <div class="view-footer">
+                    {{ footer }}
+                </div>
+            {% endif %}
+            {% if feed_icons %}
+                <div class="feed-icons">
+                    {{ feed_icons }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
 </div></section>
