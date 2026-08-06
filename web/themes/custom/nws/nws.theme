@@ -10,15 +10,14 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Template\Attribute;
 use Drupal\views\Form\ViewsForm;
-use Drupal\file\Entity\File;
-use Drupal\media\Entity\Media;
+
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
 function nws_preprocess_paragraph(&$variables)
 {
-  if ($node = \Drupal::request()->attributes->get('node')) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $variables['nid'] = $node->id();
   }
 }
@@ -61,29 +60,24 @@ function nws_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
 
 function nws_preprocess_page(&$variables)
 {
-  $variables['facebook'] = theme_get_setting('facebook');
-  $variables['youtube'] = theme_get_setting('youtube');
-  $variables['instagram'] = theme_get_setting('instagram');
-  $variables['twitter'] = theme_get_setting('twitter');
-  $variables['linkedin'] = theme_get_setting('linkedin');
 
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
 
     if ($node->getType() == 'detail_page') {
+      $variables['node_title'] = $node->hasField('title') ? $node->getTitle() : '';
 
-      $b_img = $node->field_image->target_id;
-
-      $media = Media::load($b_img);
-      $fid = $media->field_media_image->target_id;
-
-      $file = File::load($fid);
-
-      $uri = $file->getFileUri();
-      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
-
-      $variables['node_title'] = $node->title->value;
-      $safe_url = str_replace(["\\", "'"], ["\\\\", "\\'"], $url);
-      $variables['banner_bg_style'] = Markup::create("background-image: url('" . $safe_url . "');");
+      if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+        $media = $node->get('field_image')->entity;
+        if ($media instanceof \Drupal\media\MediaInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+          $file = $media->get('field_media_image')->entity;
+          if ($file instanceof \Drupal\file\FileInterface) {
+            $uri = $file->getFileUri();
+            $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+            $safe_url = str_replace(["\\", "'"], ["\\\\", "\\'"], $url);
+            $variables['banner_bg_style'] = Markup::create("background-image: url('" . $safe_url . "');");
+          }
+        }
+      }
     }
   }
 }
@@ -94,22 +88,14 @@ function nws_preprocess_page(&$variables)
  */
 function nws_preprocess_html(&$variables)
 {
-  // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['attributes']['class'][] = 'layout-two-sidebars';
-  } elseif (!empty($variables['page']['sidebar_first'])) {
-    $variables['attributes']['class'][] = 'layout-one-sidebar';
-    $variables['attributes']['class'][] = 'layout-sidebar-first';
-  } elseif (!empty($variables['page']['sidebar_second'])) {
-    $variables['attributes']['class'][] = 'layout-one-sidebar';
-    $variables['attributes']['class'][] = 'layout-sidebar-second';
-  } else {
+  // Add a body class reflecting whether the sidebar region has content.
+  if (!empty($variables['page']['sidebar'])) {
+    $variables['attributes']['class'][] = 'layout-has-sidebar';
+  }
+  else {
     $variables['attributes']['class'][] = 'layout-no-sidebars';
   }
 
-  if (!empty($variables['page']['featured_top'])) {
-    $variables['attributes']['class'][] = 'has-featured-top';
-  }
   // Add node ID to the body class.
   $node = \Drupal::routeMatch()->getParameter('node');
   if (is_object($node)) {
@@ -244,11 +230,8 @@ function nws_form_alter(&$form, FormStateInterface $form_state, $form_id)
 
   // Add class to the Media Library views form.
   if ($form_object instanceof ViewsForm && strpos($form_object->getBaseFormId(), 'views_form_media_library') === 0) {
-    // The conditional below exists because the media-library-views-form class
-    // is currently added by Classy, but Umami will eventually not use Classy as
-    // a base theme.
-    // @todo remove conditional, keep class addition in
-    //   https://drupal.org/node/3110137
+    // Defensive Classy class addition because the theme ships Classy-derived
+    // templates.
     // @see https://www.drupal.org/node/3109287
     // @see classy_form_alter()
     if (!isset($form['#attributes']['class']) || !in_array('media-library-views-form', $form['#attributes']['class'])) {
@@ -269,11 +252,8 @@ function nws_form_alter(&$form, FormStateInterface $form_state, $form_id)
 function nws_preprocess_links__media_library_menu(array &$variables)
 {
   foreach ($variables['links'] as &$link) {
-    // This conditional exists because the media-library-menu__link class is
-    // currently added by Classy, but nws will eventually not use Classy as a
-    // base theme.
-    // @todo remove conditional, keep class addition in
-    //   https://drupal.org/node/3110137
+    // Defensive Classy class addition because the theme ships Classy-derived
+    // templates.
     // @see https://www.drupal.org/node/3109287
     // @see classy_preprocess_links__media_library_menu()
     if (!isset($link['link']['#options']['attributes']['class']) || !in_array('media-library-menu__link', $link['link']['#options']['attributes']['class'])) {
