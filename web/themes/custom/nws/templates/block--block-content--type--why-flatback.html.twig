@@ -37,15 +37,14 @@
   ]
 %}
 
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
 
-<div{{attributes.addClass(classes)}}>
-	{{ title_prefix }}
-	{% if label %}
-		<h2{{title_attributes}}>{{ label }}</h2>
-	{% endif %}
-	{{ title_suffix }}
-
-	{% block content %}
+    {% block content %}
     {% set image_left = content['#block_content'].field_image_position.value != 'right' %}
     <section class="{{ image_left ? 'text-sec' : 'text-sec reversed pt-0' }}">
       <div class="container">
@@ -66,5 +65,5 @@
         </div>
       </div>
     </section>
-	{% endblock %}
+    {% endblock %}
 </div>

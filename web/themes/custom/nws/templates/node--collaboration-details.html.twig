@@ -67,35 +67,34 @@
 */
 #}
 
-
 <section class="collaboration cmn-padding">
-	<div class="container">
-		<div class="collaboration-container">
-			<div class="c-content">
-				<div class="breadcrumbs">
-					{{ drupal_breadcrumb() }}
+    <div class="container">
+        <div class="collaboration-container">
+            <div class="c-content">
+                <div class="breadcrumbs">
+                    {{ drupal_breadcrumb() }}
 
-				</div>
-				<h2 class="heading-large">{{ label }}</h2>
-				<h4 class="text-23">{{ node.field_region_name.value }}</h4>
-				{{ node.body.value|raw }}
+                </div>
+                <h2 class="heading-large">{{ label }}</h2>
+                <h4 class="text-23">{{ node.field_region_name.value }}</h4>
+                {{ node.body.value|raw }}
 
-				<div class="detail-block">
-					<a href="{{ node.field_visit_website.get(0).getUrl().toString() }}" class="global-cta">
-						{{ node.field_visit_website.title }}
-					</a>
-				</div>
-			</div>
-			<div class="collaboration-logo">
-				<div class="cl-container">
-					<!-- <img src="" alt=""> -->
-					{% if node.field_language_logo.entity.uri.value is not null %}
-					<img src="{{ file_url(node.field_language_logo.entity.uri.value) }}" alt="">
-					{% endif %}
-					<p>Language Group logo (if available)</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="detail-block">
+                    <a href="{{ node.field_visit_website.get(0).getUrl().toString() }}" class="global-cta">
+                        {{ node.field_visit_website.title }}
+                    </a>
+                </div>
+            </div>
+            <div class="collaboration-logo">
+                <div class="cl-container">
+                    <!-- <img src="" alt=""> -->
+                    {% if node.field_language_logo.entity.uri.value is not null %}
+                    <img src="{{ file_url(node.field_language_logo.entity.uri.value) }}" alt="">
+                    {% endif %}
+                    <p>Language Group logo (if available)</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {{ content.field_collaboration_content }}

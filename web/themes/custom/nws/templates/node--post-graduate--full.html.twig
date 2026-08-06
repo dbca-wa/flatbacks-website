@@ -68,41 +68,39 @@
 #}
 
 <section class="detail-page">
-	<div class="container">
-		<div class="detail-page-container">
-			<div class="breadcrumbs">
-				{{ drupal_breadcrumb() }}
+    <div class="container">
+        <div class="detail-page-container">
+            <div class="breadcrumbs">
+                {{ drupal_breadcrumb() }}
 
-			</div>
-			<h2 class="heading-large">{{ label }}</h2>
-			<h4 class="text-13">{{ node.field_date.value|date("m/d/Y") }}
-			</h4>
-			{{ node.body.value|raw }}
-			<div class="detail-block">
-				<h4 class="text-27">{{ node.field_project_title.value }}</h4>
-				{{ node.field_projects_description.value|raw }}
-			</div>
-			<div class="detail-block">
-				{{ node.field_candidate.value|raw }}
-			</div>
-			<div class="detail-block">
-				{{ node.field_apply.value|raw }}
-			</div>
-			<div class="detail-block">
-				<a href="{{ node.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ node.field_link.title }}</a>
-			</div>
+            </div>
+            <h2 class="heading-large">{{ label }}</h2>
+            <h4 class="text-13">{{ node.field_date.value|date('m/d/Y') }}
+            </h4>
+            {{ node.body.value|raw }}
+            <div class="detail-block">
+                <h4 class="text-27">{{ node.field_project_title.value }}</h4>
+                {{ node.field_projects_description.value|raw }}
+            </div>
+            <div class="detail-block">
+                {{ node.field_candidate.value|raw }}
+            </div>
+            <div class="detail-block">
+                {{ node.field_apply.value|raw }}
+            </div>
+            <div class="detail-block">
+                <a href="{{ node.field_link.get(0).getUrl().toString() }}" class="global-cta">{{ node.field_link.title }}</a>
+            </div>
 
+            {% if node.field_social_share.value == 1 %}
+                <div class="share">
+                    <h4 class="text-27">Share with your networks</h4>
+                    <div class="socials">
+                        {{ content.field_social_share }}
+                    </div>
+                </div>
+            {% endif %}
 
-			{% if node.field_social_share.value == 1 %}
-				<div class="share">
-					<h4 class="text-27">Share with your networks</h4>
-					<div class="socials">
-						{{ content.field_social_share }}
-					</div>
-				</div>
-			{% endif %}
-
-
-		</div>
-	</div>
+        </div>
+    </div>
 </section>

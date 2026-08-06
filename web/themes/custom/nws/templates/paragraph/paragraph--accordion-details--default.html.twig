@@ -46,17 +46,15 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
 
-
 <div class="accordion">
-	<div class="dtd">
-		{{ paragraph.field_heading.value|raw }}
-		<a href="{{ paragraph.field_link.get(0).getUrl().toString() }}">
-			<img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt=""></a>
-	</div>
-	<div class="dtd-details">{{ paragraph.field_details.value|raw }}</div>
+    <div class="dtd">
+        {{ paragraph.field_heading.value|raw }}
+        <a href="{{ paragraph.field_link.get(0).getUrl().toString() }}">
+            <img src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt=""></a>
+    </div>
+    <div class="dtd-details">{{ paragraph.field_details.value|raw }}</div>
 </div>
-

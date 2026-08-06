@@ -67,32 +67,31 @@
 */
 #}
 
-
 <section class="single-people mb-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
 
-			<div class="col-md-6">
-				<div class="breadcrumbs">
-					{{ drupal_breadcrumb() }}
+            <div class="col-md-6">
+                <div class="breadcrumbs">
+                    {{ drupal_breadcrumb() }}
 
-				</div>
-				<h2 class="heading-large">{{ label }}</h2>
+                </div>
+                <h2 class="heading-large">{{ label }}</h2>
 
-				{{ node.body.value|raw }}
+                {{ node.body.value|raw }}
 
-				<p>Category:
-					{{ content.field_primary_category.0 }}</p>
+                <p>Category:
+                    {{ content.field_primary_category.0 }}</p>
 
-				<p>Year:
-					{{ content.field_primary_year.0 }}</p>
+                <p>Year:
+                    {{ content.field_primary_year.0 }}</p>
 
-				<p>Science stand:
-					{{ content.field_science_stand.0 }}</p>
+                <p>Science stand:
+                    {{ content.field_science_stand.0 }}</p>
 
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-	</div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
 </section>
