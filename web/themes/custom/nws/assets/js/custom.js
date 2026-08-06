@@ -142,13 +142,15 @@ jQuery(document).ready(function () {
     }
   });
 
-  AOS.init({
-    duration: 1900,
-    offset: 10,
-    once: true,
-    mirror: false,
-    anchorPlacement: 'top-bottom',
-  });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    AOS.init({
+      duration: 1900,
+      offset: 10,
+      once: true,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+    });
+  }
 
   var urlParams = new URLSearchParams(window.location.search);
   if (urlParams.size != '0') {

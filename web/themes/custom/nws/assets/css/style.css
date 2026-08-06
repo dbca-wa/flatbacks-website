@@ -1933,3 +1933,13 @@ body .bef-toggle--deselect-all {
   font-weight: 400;
   margin-bottom: 35px !important;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos^='fade'],
+  [data-aos^='zoom'],
+  [data-aos^='slide'] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
