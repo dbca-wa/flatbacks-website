@@ -85,12 +85,12 @@ function nws_misc_preprocess_views_view(&$variables)
    			$variables['year_data'][$i]['year_text'] = str_replace("_", " ", $years);
    			foreach($year1 as $years1) {
    				if ($years != $years1) {
-   					
+
    					$year_url_make .= "&field_primary_year_value[".$years1."]=".$years1;
    				}
     			}
     			$year_url .= $year_url_make;
-    			
+
     			if (isset($_GET['field_science_stand_value'])) {
 		   		$science = $_GET['field_science_stand_value'];
 		   		$science_url_make1 = "";
@@ -107,8 +107,8 @@ function nws_misc_preprocess_views_view(&$variables)
 		    		}
 		    		$year_url .= $cat_url_make1;
 		   	}
-			
-   	
+
+
     			$variables['year_data'][$i]['year_url'] = $year_url;
     			$i++;
     		}
@@ -123,11 +123,11 @@ function nws_misc_preprocess_views_view(&$variables)
    			$variables['science_data'][$i]['science_text'] = str_replace("_", " ", $sci);
    			foreach($science1 as $sci1) {
    				if ($sci != $sci1) {
-   					
+
    					$science_url_make .= "&field_science_stand_value[".$sci1."]=".$sci1;
    				}
     			}
-    			
+
     			if (isset($_GET['field_primary_year_value'])) {
 		   		$science = $_GET['field_primary_year_value'];
 		   		$science_url_make1 = "";
@@ -144,13 +144,13 @@ function nws_misc_preprocess_views_view(&$variables)
 		    		}
 		    		$science_url .= $cat_url_make1;
 		   	}
-		   	
+
     			$science_url .= $science_url_make;
     			$variables['science_data'][$i]['science_url'] = $science_url;
     			$i++;
     		}
    	}
-   	
+
    	$cat_url_make = "";
    	if (isset($_GET['field_primary_category_value'])) {
    		$cat = $_GET['field_primary_category_value'];
@@ -162,11 +162,11 @@ function nws_misc_preprocess_views_view(&$variables)
    			$variables['cate'][$i]['cat_text'] = str_replace("_", " ", $cate);
    			foreach($cat1 as $cate1) {
    				if ($cate != $cate1) {
-   					
+
    					$cat_url_make .= "&field_primary_category_value[".$cate1."]=".$cate1;
    				}
     			}
-    			
+
     			if (isset($_GET['field_primary_year_value'])) {
 		   		$science = $_GET['field_primary_year_value'];
 		   		$science_url_make1 = "";
@@ -183,7 +183,7 @@ function nws_misc_preprocess_views_view(&$variables)
 		    		}
 		    		$cat_url .= $cat_url_make1;
 		   	}
-		   	
+
     			$cat_url .= $cat_url_make;
     			$variables['cate'][$i]['cat_url'] = $cat_url;
     			$i++;
@@ -348,7 +348,7 @@ function nws_misc_preprocess_views_view(&$variables)
 				$variables['year_data'][$i]['year_url'] = $year_url;
 				$i++;
 			}
-			
+
 		}
 		if (isset($_GET['field_lower_secondary_subject_value'])) {
 			$science = $_GET['field_lower_secondary_subject_value'];

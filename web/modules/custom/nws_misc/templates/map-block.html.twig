@@ -36,8 +36,7 @@
       }
     </style>
     <div id="map"></div>
-    
-   
+
     <style>
       .red-box {
         border: 2px solid red !important;
@@ -175,19 +174,19 @@ function main() {
   var toGroups = [
     {% for item in items %}
         {
-            name: "{{ item['name']}}",
-            lat: {{ item['lat']}},
-            lon: {{ item['lon']}},
-            logo: "{{ item['logo']}}",
-            page: "{{ item['link']}}",
+            name: "{{ item['name'] }}",
+            lat: {{ item['lat'] }},
+            lon: {{ item['lon'] }},
+            logo: "{{ item['logo'] }}",
+            page: "{{ item['link'] }}",
             children: [
                 {% for children in item['children_map'] %}
                     {
-                        name: "{{ children['name']}}",
-                        lat: {{ children['lat']}},
-                        lon: {{ children['lon']}},
-                        logo: "{{ children['logo']}}",
-                        page: "{{ children['link']}}",
+                        name: "{{ children['name'] }}",
+                        lat: {{ children['lat'] }},
+                        lon: {{ children['lon'] }},
+                        logo: "{{ children['logo'] }}",
+                        page: "{{ children['link'] }}",
                     },
                 {% endfor %}
             ],
@@ -236,3 +235,4 @@ function main() {
 main();
 
 </script>
+
