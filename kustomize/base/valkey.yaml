@@ -36,8 +36,8 @@ spec:
               memory: '32Mi'
               cpu: '10m'
             limits:
-              memory: '2Gi'
-              cpu: '1'
+              memory: '3Gi'
+              cpu: '500m'
           livenessProbe:
             tcpSocket:
               port: 6379
