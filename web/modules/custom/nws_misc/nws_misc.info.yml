@@ -1,5 +1,8 @@
 name: Nws MISC
 description: Custom module for Drupal 10
 type: module
-core: 10.x
 core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:paragraphs

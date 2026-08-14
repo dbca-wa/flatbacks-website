@@ -1,0 +1,48 @@
+#map {
+  height: 600px;
+  margin-bottom: 80px;
+}
+
+.red-box {
+  background-color: red;
+  padding: 5px;
+  color: white;
+  border: 2px solid red !important;
+  background: none !important;
+  color: rgb(0, 0, 0) !important;
+  width: 40px !important;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.leaflet-popup {
+  opacity: 1 !important;
+}
+
+.marker-link {
+  color: purple !important;
+  text-decoration: none;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-close-button {
+  display: none !important;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+
+div#block-nws-mapblock {
+  width: 1200px;
+  margin: 0 auto;
+}
