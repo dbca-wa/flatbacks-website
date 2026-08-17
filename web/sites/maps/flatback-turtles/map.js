@@ -1,5 +1,4 @@
 let map;
-let ISWAG_LAYER;
 
 const initializeMap = () => {
   map = L.map('map').setView([-16.947, 122.234], 6);
@@ -16,7 +15,7 @@ const createAshburtonRDMarker = () => {
     name: 'Ashburton River Delta',
   };
   const marker = L.marker([AshburtonRD.lat, AshburtonRD.long], {
-    icon: L.icon({ iconUrl: AshburtonRD.image, iconSize: [20, 20], name: AshburtonRD.name }),
+    icon: L.icon({ iconUrl: AshburtonRD.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(AshburtonRD.name, { permanent: false, direction: 'top' });
   return marker;
@@ -30,7 +29,7 @@ const createBessieresMarker = () => {
     name: 'Bessieres Island',
   };
   const marker = L.marker([Bessieres.lat, Bessieres.long], {
-    icon: L.icon({ iconUrl: Bessieres.image, iconSize: [20, 20], name: Bessieres.name }),
+    icon: L.icon({ iconUrl: Bessieres.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Bessieres.name, { permanent: false, direction: 'top' });
   return marker;
@@ -44,7 +43,7 @@ const createLockerPtMarker = () => {
     name: 'Locker Point, Urala',
   };
   const marker = L.marker([LockerPt.lat, LockerPt.long], {
-    icon: L.icon({ iconUrl: LockerPt.image, iconSize: [20, 20], name: LockerPt.name }),
+    icon: L.icon({ iconUrl: LockerPt.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(LockerPt.name, { permanent: false, direction: 'top' });
   return marker;
@@ -58,7 +57,7 @@ const createTubridgiMarker = () => {
     name: 'Tubridgi Point',
   };
   const marker = L.marker([Tubridgi.lat, Tubridgi.long], {
-    icon: L.icon({ iconUrl: Tubridgi.image, iconSize: [20, 20], name: Tubridgi.name }),
+    icon: L.icon({ iconUrl: Tubridgi.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Tubridgi.name, { permanent: false, direction: 'top' });
   return marker;
@@ -72,7 +71,7 @@ const createSerrurierMarker = () => {
     name: 'Serrurier Island',
   };
   const marker = L.marker([Serrurier.lat, Serrurier.long], {
-    icon: L.icon({ iconUrl: Serrurier.image, iconSize: [20, 20], name: Serrurier.name }),
+    icon: L.icon({ iconUrl: Serrurier.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Serrurier.name, { permanent: false, direction: 'top' });
   return marker;
@@ -86,7 +85,7 @@ const createBeadonMarker = () => {
     name: 'Beadon Creek & Coolgra Creek',
   };
   const marker = L.marker([Beadon.lat, Beadon.long], {
-    icon: L.icon({ iconUrl: Beadon.image, iconSize: [20, 20], name: Beadon.name }),
+    icon: L.icon({ iconUrl: Beadon.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Beadon.name, { permanent: false, direction: 'top' });
   return marker;
@@ -100,7 +99,7 @@ const createAnketellMarker = () => {
     name: 'Anketell Point',
   };
   const marker = L.marker([Anketell.lat, Anketell.long], {
-    icon: L.icon({ iconUrl: Anketell.image, iconSize: [20, 20], name: Anketell.name }),
+    icon: L.icon({ iconUrl: Anketell.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Anketell.name, { permanent: false, direction: 'top' });
   return marker;
@@ -114,7 +113,7 @@ const createLockerMarker = () => {
     name: 'Locker Island',
   };
   const marker = L.marker([Locker.lat, Locker.long], {
-    icon: L.icon({ iconUrl: Locker.image, iconSize: [20, 20], name: Locker.name }),
+    icon: L.icon({ iconUrl: Locker.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Locker.name, { permanent: false, direction: 'top' });
   return marker;
@@ -128,7 +127,7 @@ const createCleavervilleMarker = () => {
     name: 'Cleaverville',
   };
   const marker = L.marker([Cleaverville.lat, Cleaverville.long], {
-    icon: L.icon({ iconUrl: Cleaverville.image, iconSize: [20, 20], name: Cleaverville.name }),
+    icon: L.icon({ iconUrl: Cleaverville.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Cleaverville.name, { permanent: false, direction: 'top' });
   return marker;
@@ -142,7 +141,7 @@ const createMontalivetMarker = () => {
     name: 'East Montalivet Island',
   };
   const marker = L.marker([Montalivet.lat, Montalivet.long], {
-    icon: L.icon({ iconUrl: Montalivet.image, iconSize: [20, 20], name: Montalivet.name }),
+    icon: L.icon({ iconUrl: Montalivet.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Montalivet.name, { permanent: false, direction: 'top' });
   return marker;
@@ -156,7 +155,7 @@ const createThevenardMarker = () => {
     name: 'Thevenard Island',
   };
   const marker = L.marker([Thevenard.lat, Thevenard.long], {
-    icon: L.icon({ iconUrl: Thevenard.image, iconSize: [20, 20], name: Thevenard.name }),
+    icon: L.icon({ iconUrl: Thevenard.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Thevenard.name, { permanent: false, direction: 'top' });
   return marker;
@@ -170,7 +169,7 @@ const createVaranusMarker = () => {
     name: 'Varanus Island',
   };
   const marker = L.marker([Varanus.lat, Varanus.long], {
-    icon: L.icon({ iconUrl: Varanus.image, iconSize: [20, 20], name: Varanus.name }),
+    icon: L.icon({ iconUrl: Varanus.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Varanus.name, { permanent: false, direction: 'top' });
   return marker;
@@ -184,7 +183,7 @@ const createAshburtonMarker = () => {
     name: 'Ashburton Island',
   };
   const marker = L.marker([Ashburton.lat, Ashburton.long], {
-    icon: L.icon({ iconUrl: Ashburton.image, iconSize: [20, 20], name: Ashburton.name }),
+    icon: L.icon({ iconUrl: Ashburton.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Ashburton.name, { permanent: false, direction: 'top' });
   return marker;
@@ -198,7 +197,7 @@ const createDirectionMarker = () => {
     name: 'Direction Island',
   };
   const marker = L.marker([Direction.lat, Direction.long], {
-    icon: L.icon({ iconUrl: Direction.image, iconSize: [20, 20], name: Direction.name }),
+    icon: L.icon({ iconUrl: Direction.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Direction.name, { permanent: false, direction: 'top' });
   return marker;
@@ -212,7 +211,7 @@ const createBellsMarker = () => {
     name: 'Bells Beach',
   };
   const marker = L.marker([Bells.lat, Bells.long], {
-    icon: L.icon({ iconUrl: Bells.image, iconSize: [20, 20], name: Bells.name }),
+    icon: L.icon({ iconUrl: Bells.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Bells.name, { permanent: false, direction: 'top' });
   return marker;
@@ -226,7 +225,7 @@ const createDixonMarker = () => {
     name: 'Dixon Island',
   };
   const marker = L.marker([Dixon.lat, Dixon.long], {
-    icon: L.icon({ iconUrl: Dixon.image, iconSize: [20, 20], name: Dixon.name }),
+    icon: L.icon({ iconUrl: Dixon.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Dixon.name, { permanent: false, direction: 'top' });
   return marker;
@@ -240,7 +239,7 @@ const createDelambreMarker = () => {
     name: 'Delambre Island',
   };
   const marker = L.marker([Delambre.lat, Delambre.long], {
-    icon: L.icon({ iconUrl: Delambre.image, iconSize: [20, 20], name: Delambre.name }),
+    icon: L.icon({ iconUrl: Delambre.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Delambre.name, { permanent: false, direction: 'top' });
   return marker;
@@ -254,7 +253,7 @@ const createHauyMarker = () => {
     name: 'Hauy Island',
   };
   const marker = L.marker([Hauy.lat, Hauy.long], {
-    icon: L.icon({ iconUrl: Hauy.image, iconSize: [20, 20], name: Hauy.name }),
+    icon: L.icon({ iconUrl: Hauy.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Hauy.name, { permanent: false, direction: 'top' });
   return marker;
@@ -268,7 +267,7 @@ const createLamarckMarker = () => {
     name: 'Lamarck Island',
   };
   const marker = L.marker([Lamarck.lat, Lamarck.long], {
-    icon: L.icon({ iconUrl: Lamarck.image, iconSize: [20, 20], name: Lamarck.name }),
+    icon: L.icon({ iconUrl: Lamarck.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Lamarck.name, { permanent: false, direction: 'top' });
   return marker;
@@ -282,7 +281,7 @@ const createBarrowMarker = () => {
     name: 'Barrow Island',
   };
   const marker = L.marker([Barrow.lat, Barrow.long], {
-    icon: L.icon({ iconUrl: Barrow.image, iconSize: [20, 20], name: Barrow.name }),
+    icon: L.icon({ iconUrl: Barrow.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Barrow.name, { permanent: false, direction: 'top' });
   return marker;
@@ -296,7 +295,7 @@ const createDomettMarker = () => {
     name: 'Cape Domett',
   };
   const marker = L.marker([Domett.lat, Domett.long], {
-    icon: L.icon({ iconUrl: Domett.image, iconSize: [20, 20], name: Domett.name }),
+    icon: L.icon({ iconUrl: Domett.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Domett.name, { permanent: false, direction: 'top' });
   return marker;
@@ -310,7 +309,7 @@ const createMaretMarker = () => {
     name: 'Maret Islands',
   };
   const marker = L.marker([Maret.lat, Maret.long], {
-    icon: L.icon({ iconUrl: Maret.image, iconSize: [20, 20], name: Maret.name }),
+    icon: L.icon({ iconUrl: Maret.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Maret.name, { permanent: false, direction: 'top' });
   return marker;
@@ -324,7 +323,7 @@ const createSMuironMarker = () => {
     name: 'South Muiron Island',
   };
   const marker = L.marker([SMuiron.lat, SMuiron.long], {
-    icon: L.icon({ iconUrl: SMuiron.image, iconSize: [20, 20], name: SMuiron.name }),
+    icon: L.icon({ iconUrl: SMuiron.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(SMuiron.name, { permanent: false, direction: 'top' });
   return marker;
@@ -338,7 +337,7 @@ const createNMuironMarker = () => {
     name: 'North Muiron Island',
   };
   const marker = L.marker([NMuiron.lat, NMuiron.long], {
-    icon: L.icon({ iconUrl: NMuiron.image, iconSize: [20, 20], name: NMuiron.name }),
+    icon: L.icon({ iconUrl: NMuiron.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(NMuiron.name, { permanent: false, direction: 'top' });
   return marker;
@@ -352,7 +351,7 @@ const createTableMarker = () => {
     name: 'Table Island',
   };
   const marker = L.marker([Table.lat, Table.long], {
-    icon: L.icon({ iconUrl: Table.image, iconSize: [20, 20], name: Table.name }),
+    icon: L.icon({ iconUrl: Table.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Table.name, { permanent: false, direction: 'top' });
   return marker;
@@ -366,7 +365,7 @@ const createFlatMarker = () => {
     name: 'Flat Island',
   };
   const marker = L.marker([Flat.lat, Flat.long], {
-    icon: L.icon({ iconUrl: Flat.image, iconSize: [20, 20], name: Flat.name }),
+    icon: L.icon({ iconUrl: Flat.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Flat.name, { permanent: false, direction: 'top' });
   return marker;
@@ -380,7 +379,7 @@ const createTortoiseMarker = () => {
     name: 'Tortoise Island',
   };
   const marker = L.marker([Tortoise.lat, Tortoise.long], {
-    icon: L.icon({ iconUrl: Tortoise.image, iconSize: [20, 20], name: Tortoise.name }),
+    icon: L.icon({ iconUrl: Tortoise.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Tortoise.name, { permanent: false, direction: 'top' });
   return marker;
@@ -394,7 +393,7 @@ const createNETwinMarker = () => {
     name: 'North-East Twin Island',
   };
   const marker = L.marker([NETwin.lat, NETwin.long], {
-    icon: L.icon({ iconUrl: NETwin.image, iconSize: [20, 20], name: NETwin.name }),
+    icon: L.icon({ iconUrl: NETwin.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(NETwin.name, { permanent: false, direction: 'top' });
   return marker;
@@ -408,7 +407,7 @@ const createSWTwinMarker = () => {
     name: 'South-West Twin Island',
   };
   const marker = L.marker([SWTwin.lat, SWTwin.long], {
-    icon: L.icon({ iconUrl: SWTwin.image, iconSize: [20, 20], name: SWTwin.name }),
+    icon: L.icon({ iconUrl: SWTwin.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(SWTwin.name, { permanent: false, direction: 'top' });
   return marker;
@@ -422,7 +421,7 @@ const createAirlieMarker = () => {
     name: 'Airlie Island',
   };
   const marker = L.marker([Airlie.lat, Airlie.long], {
-    icon: L.icon({ iconUrl: Airlie.image, iconSize: [20, 20], name: Airlie.name }),
+    icon: L.icon({ iconUrl: Airlie.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Airlie.name, { permanent: false, direction: 'top' });
   return marker;
@@ -436,7 +435,7 @@ const createRoundIMarker = () => {
     name: 'Round Island',
   };
   const marker = L.marker([RoundI.lat, RoundI.long], {
-    icon: L.icon({ iconUrl: RoundI.image, iconSize: [20, 20], name: RoundI.name }),
+    icon: L.icon({ iconUrl: RoundI.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(RoundI.name, { permanent: false, direction: 'top' });
   return marker;
@@ -450,7 +449,7 @@ const createBridledMarker = () => {
     name: 'Bridled Island',
   };
   const marker = L.marker([Bridled.lat, Bridled.long], {
-    icon: L.icon({ iconUrl: Bridled.image, iconSize: [20, 20], name: Bridled.name }),
+    icon: L.icon({ iconUrl: Bridled.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Bridled.name, { permanent: false, direction: 'top' });
   return marker;
@@ -464,7 +463,7 @@ const createLambertMarker = () => {
     name: 'Cape Lambert',
   };
   const marker = L.marker([Lambert.lat, Lambert.long], {
-    icon: L.icon({ iconUrl: Lambert.image, iconSize: [20, 20], name: Lambert.name }),
+    icon: L.icon({ iconUrl: Lambert.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Lambert.name, { permanent: false, direction: 'top' });
   return marker;
@@ -478,7 +477,7 @@ const createBezoutMarker = () => {
     name: 'Bezout Island',
   };
   const marker = L.marker([Bezout.lat, Bezout.long], {
-    icon: L.icon({ iconUrl: Bezout.image, iconSize: [20, 20], name: Bezout.name }),
+    icon: L.icon({ iconUrl: Bezout.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Bezout.name, { permanent: false, direction: 'top' });
   return marker;
@@ -492,7 +491,7 @@ const createAngelMarker = () => {
     name: 'Angel Island',
   };
   const marker = L.marker([Angel.lat, Angel.long], {
-    icon: L.icon({ iconUrl: Angel.image, iconSize: [20, 20], name: Angel.name }),
+    icon: L.icon({ iconUrl: Angel.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Angel.name, { permanent: false, direction: 'top' });
   return marker;
@@ -506,7 +505,7 @@ const createDolphinMarker = () => {
     name: 'Dolphin Island',
   };
   const marker = L.marker([Dolphin.lat, Dolphin.long], {
-    icon: L.icon({ iconUrl: Dolphin.image, iconSize: [20, 20], name: Dolphin.name }),
+    icon: L.icon({ iconUrl: Dolphin.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Dolphin.name, { permanent: false, direction: 'top' });
   return marker;
@@ -519,7 +518,7 @@ const createRosemaryMarker = () => {
     name: 'Rosemary Island',
   };
   const marker = L.marker([Rosemary.lat, Rosemary.long], {
-    icon: L.icon({ iconUrl: Rosemary.image, iconSize: [20, 20], name: Rosemary.name }),
+    icon: L.icon({ iconUrl: Rosemary.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Rosemary.name, { permanent: false, direction: 'top' });
   return marker;
@@ -532,7 +531,7 @@ const createGidleyMarker = () => {
     name: 'Gidley Island',
   };
   const marker = L.marker([Gidley.lat, Gidley.long], {
-    icon: L.icon({ iconUrl: Gidley.image, iconSize: [20, 20], name: Gidley.name }),
+    icon: L.icon({ iconUrl: Gidley.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Gidley.name, { permanent: false, direction: 'top' });
   return marker;
@@ -545,7 +544,7 @@ const createLegendreMarker = () => {
     name: 'Legendre Island',
   };
   const marker = L.marker([Legendre.lat, Legendre.long], {
-    icon: L.icon({ iconUrl: Legendre.image, iconSize: [20, 20], name: Legendre.name }),
+    icon: L.icon({ iconUrl: Legendre.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Legendre.name, { permanent: false, direction: 'top' });
   return marker;
@@ -558,7 +557,7 @@ const createMundabullanganaMarker = () => {
     name: 'Mundabullangana, Cape Thouin',
   };
   const marker = L.marker([Mundabullangana.lat, Mundabullangana.long], {
-    icon: L.icon({ iconUrl: Mundabullangana.image, iconSize: [20, 20], name: Mundabullangana.name }),
+    icon: L.icon({ iconUrl: Mundabullangana.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Mundabullangana.name, { permanent: false, direction: 'top' });
   return marker;
@@ -571,7 +570,7 @@ const createCemetryMarker = () => {
     name: 'Cemetry Beach, Port Hedland',
   };
   const marker = L.marker([Cemetry.lat, Cemetry.long], {
-    icon: L.icon({ iconUrl: Cemetry.image, iconSize: [20, 20], name: Cemetry.name }),
+    icon: L.icon({ iconUrl: Cemetry.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Cemetry.name, { permanent: false, direction: 'top' });
   return marker;
@@ -584,7 +583,7 @@ const createEightyMarker = () => {
     name: 'Eighty Mile Beach',
   };
   const marker = L.marker([Eighty.lat, Eighty.long], {
-    icon: L.icon({ iconUrl: Eighty.image, iconSize: [20, 20], name: Eighty.name }),
+    icon: L.icon({ iconUrl: Eighty.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Eighty.name, { permanent: false, direction: 'top' });
   return marker;
@@ -597,7 +596,7 @@ const createEcoMarker = () => {
     name: 'Eco Beach',
   };
   const marker = L.marker([Eco.lat, Eco.long], {
-    icon: L.icon({ iconUrl: Eco.image, iconSize: [20, 20], name: Eco.name }),
+    icon: L.icon({ iconUrl: Eco.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Eco.name, { permanent: false, direction: 'top' });
   return marker;
@@ -610,7 +609,7 @@ const createCableMarker = () => {
     name: 'Cable Beach, Roebuck Bay',
   };
   const marker = L.marker([Cable.lat, Cable.long], {
-    icon: L.icon({ iconUrl: Cable.image, iconSize: [20, 20], name: Cable.name }),
+    icon: L.icon({ iconUrl: Cable.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Cable.name, { permanent: false, direction: 'top' });
   return marker;
@@ -623,7 +622,7 @@ const createLacepedeMarker = () => {
     name: 'Lacepede Islands',
   };
   const marker = L.marker([Lacepede.lat, Lacepede.long], {
-    icon: L.icon({ iconUrl: Lacepede.image, iconSize: [20, 20], name: Lacepede.name }),
+    icon: L.icon({ iconUrl: Lacepede.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Lacepede.name, { permanent: false, direction: 'top' });
   return marker;
@@ -636,7 +635,7 @@ const createHelpmanMarker = () => {
     name: 'North Helpman Island (Janawan)',
   };
   const marker = L.marker([Helpman.lat, Helpman.long], {
-    icon: L.icon({ iconUrl: Helpman.image, iconSize: [20, 20], name: Helpman.name }),
+    icon: L.icon({ iconUrl: Helpman.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Helpman.name, { permanent: false, direction: 'top' });
   return marker;
@@ -649,7 +648,7 @@ const createMontgomeryMarker = () => {
     name: 'Montgomery Reef',
   };
   const marker = L.marker([Montgomery.lat, Montgomery.long], {
-    icon: L.icon({ iconUrl: Montgomery.image, iconSize: [20, 20], name: Montgomery.name }),
+    icon: L.icon({ iconUrl: Montgomery.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Montgomery.name, { permanent: false, direction: 'top' });
   return marker;
@@ -662,7 +661,7 @@ const createTurbinMarker = () => {
     name: 'Turbin Island',
   };
   const marker = L.marker([Turbin.lat, Turbin.long], {
-    icon: L.icon({ iconUrl: Turbin.image, iconSize: [20, 20], name: Turbin.name }),
+    icon: L.icon({ iconUrl: Turbin.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Turbin.name, { permanent: false, direction: 'top' });
   return marker;
@@ -675,7 +674,7 @@ const createAlbertMarker = () => {
     name: 'Albert Island',
   };
   const marker = L.marker([Albert.lat, Albert.long], {
-    icon: L.icon({ iconUrl: Albert.image, iconSize: [20, 20], name: Albert.name }),
+    icon: L.icon({ iconUrl: Albert.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Albert.name, { permanent: false, direction: 'top' });
   return marker;
@@ -688,7 +687,7 @@ const createMontebelloMarker = () => {
     name: 'Montebello Islands',
   };
   const marker = L.marker([Montebello.lat, Montebello.long], {
-    icon: L.icon({ iconUrl: Montebello.image, iconSize: [20, 20], name: Montebello.name }),
+    icon: L.icon({ iconUrl: Montebello.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Montebello.name, { permanent: false, direction: 'top' });
   return marker;
@@ -701,7 +700,7 @@ const createBurrup1Marker = () => {
     name: 'Enderby Island',
   };
   const marker = L.marker([Burrup1.lat, Burrup1.long], {
-    icon: L.icon({ iconUrl: Burrup1.image, iconSize: [20, 20], name: Burrup1.name }),
+    icon: L.icon({ iconUrl: Burrup1.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Burrup1.name, { permanent: false, direction: 'top' });
   return marker;
@@ -714,7 +713,7 @@ const createBurrup2Marker = () => {
     name: 'West Lewis Island',
   };
   const marker = L.marker([Burrup2.lat, Burrup2.long], {
-    icon: L.icon({ iconUrl: Burrup2.image, iconSize: [20, 20], name: Burrup2.name }),
+    icon: L.icon({ iconUrl: Burrup2.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Burrup2.name, { permanent: false, direction: 'top' });
   return marker;
@@ -727,101 +726,10 @@ const createBurrup3Marker = () => {
     name: 'Malus Island',
   };
   const marker = L.marker([Burrup3.lat, Burrup3.long], {
-    icon: L.icon({ iconUrl: Burrup3.image, iconSize: [20, 20], name: Burrup3.name }),
+    icon: L.icon({ iconUrl: Burrup3.image, iconSize: [20, 20] }),
   });
   marker.bindTooltip(Burrup3.name, { permanent: false, direction: 'top' });
   return marker;
-};
-
-// Add TO group markers to the map and create persistent popups
-const addTOGroupMarkers = () => {
-  toGroups.forEach((group) => {
-    if (group.isVisible) {
-      const marker = L.marker([group.lat, group.lon], {
-        icon: L.icon({
-          iconUrl: group.logo,
-          iconSize: [32, 32],
-          className: 'logo',
-        }),
-      }).addTo(map);
-
-      // Add tooltip instead of popup
-      marker.bindTooltip(group.name, { permanent: false, direction: 'top' });
-
-      group.marker = marker; // Store marker reference
-    }
-  });
-};
-
-// Toggle visibility of TO group markers
-const toggleTOGroupMarkers = () => {
-  toGroups.forEach((group) => {
-    if (group.marker) {
-      if (group.isVisible) {
-        map.addLayer(group.marker);
-        toggleChildMarkers(group); // Update child markers based on visibility
-      } else {
-        map.removeLayer(group.marker);
-        toggleChildMarkers(group, false); // Ensure child markers are hidden
-      }
-    }
-  });
-};
-
-// Toggle visibility of child markers of a TO group
-const toggleChildMarkers = (group, visible = true) => {
-  group.children.forEach((child) => {
-    if (visible && map.getZoom() >= 7) {
-      if (!child.marker) {
-        // Create marker if it doesn't exist
-        child.marker = L.marker([child.lat, child.lon], {
-          icon: L.icon({
-            iconUrl: child.logo,
-            iconSize: [32, 32],
-            className: 'logo',
-          }),
-        }).bindPopup(`<a class="marker-link" href="${child.page}">${child.name}</a>`);
-      }
-      map.addLayer(child.marker);
-    } else {
-      if (child.marker) {
-        map.removeLayer(child.marker);
-      }
-    }
-  });
-};
-
-// Create a popup
-const createPopup = (group, keepOpen = false) => {
-  return L.popup({
-    closeOnClick: !keepOpen,
-    closeButton: !keepOpen,
-  })
-    .setLatLng([group.lat, group.lon])
-    .setContent(`<a class="marker-link" href="${group.page}">${group.name}</a>`);
-};
-
-// Handle map zoom events
-const handleZoomEvents = () => {
-  map.on('zoomend', () => {
-    const zoomLevel = map.getZoom();
-
-    if (zoomLevel >= 8) {
-      ISWAG_LAYER.bindTooltip('ISWAG', { permanent: true, direction: 'top' });
-      Yawuru_LAYER.bindTooltip('Yawuru', { permanent: true, direction: 'top' });
-      Kara_LAYER.bindTooltip('Kara', { permanent: true, direction: 'top' });
-      Ngarla_LAYER.bindTooltip('testse', { permanent: true, direction: 'top' });
-      Ngarluma_LAYER.bindTooltip('Ngarluma', { permanent: true, direction: 'top' });
-      Thalanyji_LAYER.bindTooltip('Thalanyji', { permanent: true, direction: 'top' });
-    } else {
-      ISWAG_LAYER.bindTooltip('ISWAG', { permanent: false, direction: 'top' });
-      Yawuru_LAYER.bindTooltip('Yawuru', { permanent: false, direction: 'top' });
-      Kara_LAYER.bindTooltip('Kara', { permanent: false, direction: 'top' });
-      Ngarla_LAYER.bindTooltip('Ngarla', { permanent: false, direction: 'top' });
-      Ngarluma_LAYER.bindTooltip('Ngarluma', { permanent: false, direction: 'top' });
-      Thalanyji_LAYER.bindTooltip('Thalanyji', { permanent: false, direction: 'top' });
-    }
-  });
 };
 
 // Initialize the map and add all elements
@@ -944,9 +852,6 @@ const main = () => {
     window.open('#', '_self');
   });
 
-  addTOGroupMarkers();
-  createFilterControls();
-  handleZoomEvents();
 };
 
 main();

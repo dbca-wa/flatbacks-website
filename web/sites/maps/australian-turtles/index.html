@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Australian Turtles Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+          crossorigin="anonymous" />
+    <style>
+      #map {
+        height: 600px;
+        width: 100%;
+      }
+      body {
+        margin: 0px;
+      }
+      .legend {
+        background: white;
+        padding: 10px;
+        line-height: 24px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        font-size: 14px;
+      }
+      .legend .item {
+        cursor: pointer;
+        padding: 5px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .legend .item:hover {
+        background-color: #f0f0f0;
+      }
+      /* Custom style for square radio buttons */
+      input[type='radio'] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 2px solid #4573ce;
+        border-radius: 5px;
+        outline: none;
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      /* Add a square inside when the radio is checked */
+      input[type='radio']:checked::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        background-color: #4573ce;
+        border-radius: 2px; /* Ensure the inner shape is square */
+      }
+      /* Optional: add a slight hover effect */
+      input[type='radio']:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
+            crossorigin="anonymous"></script>
+    <script src="map.js"></script>
+  </body>
+</html>

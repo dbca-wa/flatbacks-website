@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Monitoring Map</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+          crossorigin="anonymous" />
     <style>
       #map {
         height: 97vh;
         width: auto;
-      }
-      .red-box {
-        background-color: red;
-        padding: 5px;
-        color: white;
       }
       .logo {
         min-width: 52px !important;
@@ -23,7 +21,6 @@
       .leaflet-popup {
         opacity: 1 !important;
       }
-
       .marker-link {
         color: #000 !important;
         font-weight: bold;
@@ -52,25 +49,6 @@
       #filter-controls h4 {
         margin-bottom: 5px;
       }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <div id="filter-controls" style="display: none">
-      <h4>Towns</h4>
-      <div id="towns-filters"></div>
-      <h4>TO Groups</h4>
-      <div id="togroups-filters"></div>
-    </div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="map.js"></script>
-    <style>
-      .red-box {
-        border: 0px solid red !important;
-        background: none !important;
-        color: rgb(0, 0, 0) !important;
-        width: 40px !important;
-      }
       .leaflet-tooltip-top:before,
       .leaflet-tooltip-bottom:before,
       .leaflet-tooltip-left:before,
@@ -94,5 +72,18 @@
         font-weight: bold;
       }
     </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="filter-controls" style="display: none">
+      <h4>Towns</h4>
+      <div id="towns-filters"></div>
+      <h4>TO Groups</h4>
+      <div id="togroups-filters"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
+            crossorigin="anonymous"></script>
+    <script src="map.js"></script>
   </body>
 </html>

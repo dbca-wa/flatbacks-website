@@ -20,7 +20,6 @@ const createThevMarker = () => {
     icon: L.icon({
       iconUrl: Thev.image,
       iconSize: [40, 40],
-      name: Thev.name,
     }),
   });
   marker.bindTooltip(Thev.name, { permanent: true, direction: 'top' });
@@ -38,7 +37,6 @@ const createCapeDomettMarker = () => {
     icon: L.icon({
       iconUrl: CapeDomett.image,
       iconSize: [40, 40],
-      name: CapeDomett.name,
     }),
   });
   marker.bindTooltip(CapeDomett.name, { permanent: true, direction: 'top' });
@@ -56,7 +54,6 @@ const createYawuruMarker = () => {
     icon: L.icon({
       iconUrl: Yawuru.image,
       iconSize: [20, 20],
-      name: Yawuru.name,
     }),
   });
   marker.bindTooltip(Yawuru.name, { permanent: true, direction: 'bottom' });
@@ -74,7 +71,6 @@ const createHedlandMarker = () => {
     icon: L.icon({
       iconUrl: Hedland.image,
       iconSize: [20, 20],
-      name: Hedland.name,
     }),
   });
   marker.bindTooltip(Hedland.name, { permanent: true, direction: 'bottom' });
@@ -92,7 +88,6 @@ const createDelambreMarker = () => {
     icon: L.icon({
       iconUrl: Delambre.image,
       iconSize: [40, 40],
-      name: Delambre.name,
     }),
   });
   marker.bindTooltip(Delambre.name, { permanent: true, direction: 'top' });
@@ -110,7 +105,6 @@ const createNgarlaMarker = () => {
     icon: L.icon({
       iconUrl: Ngarla.image,
       iconSize: [20, 20],
-      name: Ngarla.name,
     }),
   });
   marker.bindTooltip(Ngarla.name, { permanent: true, direction: 'bottom' });
@@ -128,7 +122,6 @@ const createRoebuckMarker = () => {
     icon: L.icon({
       iconUrl: Roebuck.image,
       iconSize: [40, 40],
-      name: Roebuck.name,
     }),
   });
   marker.bindTooltip(Roebuck.name, { permanent: true, direction: 'left' });
@@ -146,7 +139,6 @@ const createThalanyjiMarker = () => {
     icon: L.icon({
       iconUrl: Thalanyji.image,
       iconSize: [20, 20],
-      name: Thalanyji.name,
     }),
   });
   marker.bindTooltip(Thalanyji.name, { permanent: true, direction: 'top' });
@@ -164,66 +156,10 @@ const createEcoMarker = () => {
     icon: L.icon({
       iconUrl: Eco.image,
       iconSize: [40, 40],
-      name: Eco.name,
     }),
   });
   marker.bindTooltip(Eco.name, { permanent: true, direction: 'right' });
   return marker;
-};
-
-const addTOGroupMarkers = () => {
-  toGroups.forEach((group) => {
-    if (group.isVisible) {
-      const marker = L.marker([group.lat, group.lon], {
-        icon: L.icon({
-          iconUrl: group.logo,
-          iconSize: [32, 32],
-          className: 'logo',
-        }),
-      }).addTo(map);
-
-      // Add tooltip instead of popup
-      marker.bindTooltip(group.name, { permanent: true, direction: 'bottom' });
-
-      group.marker = marker; // Store marker reference
-    }
-  });
-};
-
-const toggleTOGroupMarkers = () => {
-  toGroups.forEach((group) => {
-    if (group.marker) {
-      if (group.isVisible) {
-        map.addLayer(group.marker);
-        toggleChildMarkers(group); // Update child markers based on visibility
-      } else {
-        map.removeLayer(group.marker);
-        toggleChildMarkers(group, false); // Ensure child markers are hidden
-      }
-    }
-  });
-};
-
-const toggleChildMarkers = (group, visible = true) => {
-  group.children.forEach((child) => {
-    if (visible && map.getZoom() >= 7) {
-      if (!child.marker) {
-        // Create marker if it doesn't exist
-        child.marker = L.marker([child.lat, child.lon], {
-          icon: L.icon({
-            iconUrl: child.logo,
-            iconSize: [32, 32],
-            className: 'logo',
-          }),
-        }).bindPopup(`<a class="marker-link" href="${child.page}">${child.name}</a>`);
-      }
-      map.addLayer(child.marker);
-    } else {
-      if (child.marker) {
-        map.removeLayer(child.marker);
-      }
-    }
-  });
 };
 
 const createPopup = (group, keepOpen = false) => {
@@ -233,96 +169,6 @@ const createPopup = (group, keepOpen = false) => {
   })
     .setLatLng([group.lat, group.lon])
     .setContent(`<a class="marker-link" href="${group.page}">${group.name}</a>`);
-};
-
-// Handle map zoom events
-const handleZoomEvents = () => {
-  map.on('zoomend', () => {
-    const zoomLevel = map.getZoom(); /*
-    if (zoomLevel >=8) {
-      towns.forEach(town => {
-        //map.removeLayer(town);
-      });
-    }
-    if (zoomLevel >= 6) {
-      if (map.hasLayer(ISWAG_LAYER)) {
-        map.removeLayer(ISWAG_LAYER);
-      }
-      toGroups.forEach(group => {
-        if (group.isVisible) {
-          const bounds = map.getBounds();
-          if (bounds.contains([group.lat, group.lon])) {
-            // addChildMarkers(group);
-          }
-        }
-      });
-    } else {
-      if (!map.hasLayer(ISWAG_LAYER)) {
-        map.addLayer(ISWAG_LAYER);
-      }
-      // Remove all child markers
-      toGroups.forEach(group => {
-        toggleChildMarkers(group, false);
-      });
-    }*/
-  });
-};
-
-const createTownCheckbox = (town, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.id = `town-${index}`;
-  checkbox.checked = town.isVisible;
-  checkbox.onchange = () => {
-    town.isVisible = checkbox.checked;
-    toggleTownMarkers();
-  };
-
-  const label = document.createElement('label');
-  label.htmlFor = `town-${index}`;
-  label.appendChild(document.createTextNode(town.name));
-
-  const br = document.createElement('br');
-
-  const townsFilters = document.getElementById('towns-filters');
-  townsFilters.appendChild(checkbox);
-  townsFilters.appendChild(label);
-  townsFilters.appendChild(br);
-};
-
-// Create checkbox for TO Groups
-const createTOGroupCheckbox = (group, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.id = `group-${index}`;
-  checkbox.checked = group.isVisible;
-  checkbox.onchange = () => {
-    group.isVisible = checkbox.checked;
-    toggleTOGroupMarkers();
-    handleZoomEvents(); // Reapply zoom events to update child visibility
-  };
-
-  const label = document.createElement('label');
-  label.htmlFor = `group-${index}`;
-  label.appendChild(document.createTextNode(group.name));
-
-  const br = document.createElement('br');
-
-  const toGroupsFilters = document.getElementById('togroups-filters');
-  toGroupsFilters.appendChild(checkbox);
-  toGroupsFilters.appendChild(label);
-  toGroupsFilters.appendChild(br);
-};
-
-// Create filter controls for toggling visibility
-const createFilterControls = () => {
-  towns.forEach((town, index) => {
-    createTownCheckbox(town, index);
-  });
-
-  toGroups.forEach((group, index) => {
-    createTOGroupCheckbox(group, index);
-  });
 };
 
 // Initialize the map and add all elements
@@ -352,23 +198,15 @@ const main = () => {
   CapeDomett_LAYER.on('click', function (e) {
     window.open('/what-we-do/monitoring/cape-domett', '_parent');
   });
-  // Yawuru_LAYER.on('click', function(e) {     window.open("/what-we-do/monitoring/cape-domett", '_blank');   });
   Delambre_LAYER.on('click', function (e) {
     window.open('/what-we-do/monitoring/delambre-island', '_parent');
   });
-  // Yawuru_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
-  // Ngarla_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
   Roebuck_LAYER.on('click', function (e) {
     window.open('/what-we-do/monitoring/roebuck-bay', '_parent');
   });
-  // Thalanyji_LAYER.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
   Eco_LAYER.on('click', function (e) {
     window.open('/what-we-do/monitoring/eco-beach', '_parent');
   });
-
-  addTOGroupMarkers();
-  createFilterControls();
-  handleZoomEvents();
 };
 
 main();

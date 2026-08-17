@@ -71,12 +71,6 @@ const toGroups = [
   },
 ];
 
-const towns = [
-  // { name: 'Karratha', lat: -20.736, lon: 115.846001, isVisible: true, marker: null },
-  // { name: 'Port Hedland', lat: -20.3111, lon: 118.6094, isVisible: true, marker: null },
-  // { name: 'Broome', lat: -17.9618, lon: 122.2370, isVisible: true, marker: null },
-];
-
 // Initialize the map
 const initializeMap = () => {
   map = L.map('map').setView([-16.947, 122.234], 6);
@@ -98,7 +92,6 @@ const createISWAGMarker = () => {
     icon: L.icon({
       iconUrl: ISWAG.image,
       iconSize: [80, 80],
-      name: ISWAG.name,
     }),
   });
 
@@ -117,7 +110,6 @@ const createNyangumartaMarker = () => {
     icon: L.icon({
       iconUrl: Nyangumarta.image,
       iconSize: [60, 60],
-      name: Nyangumarta.name,
     }),
   });
 
@@ -135,7 +127,6 @@ const createYawuruMarker = () => {
     icon: L.icon({
       iconUrl: Yawuru.image,
       iconSize: [60, 60],
-      name: Yawuru.name,
     }),
   });
 
@@ -153,7 +144,6 @@ const createKaraMarker = () => {
     icon: L.icon({
       iconUrl: Kara.image,
       iconSize: [60, 60],
-      name: Kara.name,
     }),
   });
 
@@ -171,7 +161,6 @@ const createNgarlaMarker = () => {
     icon: L.icon({
       iconUrl: Ngarla.image,
       iconSize: [60, 60],
-      name: Ngarla.name,
     }),
   });
 
@@ -189,7 +178,6 @@ const createNgarlumaMarker = () => {
     icon: L.icon({
       iconUrl: Ngarluma.image,
       iconSize: [60, 60],
-      name: Ngarluma.name,
     }),
   });
 
@@ -208,7 +196,6 @@ const createThalanyjiMarker = () => {
     icon: L.icon({
       iconUrl: Thalanyji.image,
       iconSize: [60, 60],
-      name: Thalanyji.name,
     }),
   });
 
@@ -227,7 +214,6 @@ const createKariyarraMarker = () => {
     icon: L.icon({
       iconUrl: Kariyarra.image,
       iconSize: [60, 60],
-      name: Kariyarra.name,
     }),
   });
 
@@ -303,43 +289,10 @@ const createPopup = (group, keepOpen = false) => {
     .setContent(`<a class="marker-link" href="${group.page}">${group.name}</a>`);
 };
 
-// Add town markers to the map
-const addTownMarkers = () => {
-  towns.forEach((town) => {
-    if (town.isVisible) {
-      const marker = L.marker([town.lat, town.lon], {
-        icon: L.divIcon({
-          className: 'red-box',
-          html: town.name,
-        }),
-      }).addTo(map);
-      town.marker = marker; // Store marker reference
-    }
-  });
-};
-
-// Toggle visibility of town markers
-const toggleTownMarkers = () => {
-  towns.forEach((town) => {
-    if (town.marker) {
-      if (town.isVisible) {
-        map.addLayer(town.marker);
-      } else {
-        map.removeLayer(town.marker);
-      }
-    }
-  });
-};
-
 // Handle map zoom events
 const handleZoomEvents = () => {
   map.on('zoomend', () => {
     const zoomLevel = map.getZoom();
-    if (zoomLevel >= 8) {
-      towns.forEach((town) => {
-        //map.removeLayer(town);
-      });
-    }
     if (zoomLevel >= 6) {
       if (map.hasLayer(ISWAG_LAYER)) {
         map.removeLayer(ISWAG_LAYER);
@@ -378,7 +331,6 @@ const addChildMarkers = (group) => {
 
       // Add tooltip instead of popup
       marker.bindTooltip(child.name, { permanent: false, direction: 'top' });
-      //marker.on('click', function(e) {     window.open("http://www.google.com", '_blank');   });
       if (child.addLink) {
         marker.on('click', function (e) {
           window.open(child.page, '_parent');
@@ -390,29 +342,6 @@ const addChildMarkers = (group) => {
       map.addLayer(child.marker);
     }
   });
-};
-
-// Create checkbox for towns
-const createTownCheckbox = (town, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.id = `town-${index}`;
-  checkbox.checked = town.isVisible;
-  checkbox.onchange = () => {
-    town.isVisible = checkbox.checked;
-    // toggleTownMarkers();
-  };
-
-  const label = document.createElement('label');
-  label.htmlFor = `town-${index}`;
-  label.appendChild(document.createTextNode(town.name));
-
-  const br = document.createElement('br');
-
-  const townsFilters = document.getElementById('towns-filters');
-  townsFilters.appendChild(checkbox);
-  townsFilters.appendChild(label);
-  townsFilters.appendChild(br);
 };
 
 // Create checkbox for TO Groups
@@ -441,10 +370,6 @@ const createTOGroupCheckbox = (group, index) => {
 
 // Create filter controls for toggling visibility
 const createFilterControls = () => {
-  towns.forEach((town, index) => {
-    createTownCheckbox(town, index);
-  });
-
   toGroups.forEach((group, index) => {
     createTOGroupCheckbox(group, index);
   });
@@ -478,9 +403,6 @@ const main = () => {
   Ngarla_LAYER.on('click', function (e) {
     window.open('/who-we-are/traditional-custodians/eighty-mile', '_parent');
   });
-  Yawuru_LAYER.on('click', function (e) {
-    window.open('#', '_self');
-  });
   Nyangumarta_LAYER.on('click', function (e) {
     window.open('/who-we-are/traditional-custodians/eighty-mile', '_parent');
   });
@@ -495,7 +417,6 @@ const main = () => {
   });
 
   addTOGroupMarkers();
-  //addTownMarkers();
   createFilterControls();
   handleZoomEvents();
 };
