@@ -49,6 +49,8 @@ spec:
             timeoutSeconds: 3
           securityContext:
             runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
             runAsUser: 33
             privileged: false
             allowPrivilegeEscalation: false
