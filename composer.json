@@ -48,7 +48,7 @@
     "drupal/webform": "^6.2",
     "drupal/webform_deprecated": "^6.3@beta",
     "drush/drush": "^13",
-    "predis/predis": "^3.4"
+    "predis/predis": "^3.6"
   },
   "conflict": {
     "drupal/drupal": "*"
