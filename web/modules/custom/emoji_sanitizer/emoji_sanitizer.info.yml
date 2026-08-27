@@ -1,0 +1,7 @@
+name: Emoji Sanitizer
+type: module
+description: Replaces unsupported Unicode characters in Webform submissions.
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - webform:webform

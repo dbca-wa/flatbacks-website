@@ -1,0 +1,45 @@
+<?php
+
+declare(strict_types=1);
+
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * Implements hook_webform_submission_presave().
+ *
+ * Replaces supplementary Unicode characters (including most emoji)
+ * with their Unicode codepoint representation before the submission
+ * is saved to the database.
+ *
+ * Example:
+ *   "Thanks again 🙂"
+ *
+ * becomes:
+ *   "Thanks again [U+1F642]"
+ */
+function emoji_sanitizer_webform_submission_presave(WebformSubmissionInterface $submission): void {
+
+  // Restrict sanitization to the enquiry form.
+  if ($submission->getWebform()->id() !== 'enquiry_form') {
+    return;
+  }
+
+  $data = $submission->getData();
+
+  array_walk_recursive($data, static function (&$value): void {
+    if (!is_string($value)) {
+      return;
+    }
+
+    $value = preg_replace_callback(
+      '/[\x{10000}-\x{10FFFF}]/u',
+      static function (array $matches): string {
+        $codepoint = mb_ord($matches[0], 'UTF-8');
+        return '[U+' . strtoupper(dechex($codepoint)) . ']';
+      },
+      $value
+    );
+  });
+
+  $submission->setData($data);
+}
