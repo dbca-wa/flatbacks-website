@@ -42,11 +42,11 @@ Prerequisites:
 `.env.mysql` example:
 
     TZ=Australia/Perth
-    MARIADB_ROOT_PASSWORD=database_root_password
+    MYSQL_ROOT_PASSWORD=database_root_password
 
-Example SQL commands to set up a new development database in the MariaDB container:
+Example SQL commands to set up a new development database in the MySQL container:
 
-    mariadb -h localhost -u root -p
+    mysql -h localhost -u root -p
     CREATE USER 'flatbacks'@'%' IDENTIFIED BY 'flatbacks_password';
     CREATE DATABASE flatbacks_database;
     GRANT ALL PRIVILEGES ON flatbacks_database.* TO 'flatbacks'@'%' WITH GRANT OPTION;
