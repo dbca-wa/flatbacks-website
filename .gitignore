@@ -8,8 +8,7 @@
 .vscode
 *.sql
 settings*.php
-default.conf
-ports.conf
+*.conf
 php-config.ini
 dhi-registry-config.json
 
