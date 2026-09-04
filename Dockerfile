@@ -3,15 +3,16 @@ FROM drupal:10.6-php8.4-apache
 LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
 LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
 
-# Install system dependencies
+# Install system dependencies and PHP extensions
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update -q \
-  && apt-get install -y -q default-mysql-client \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extension(s)
-RUN pecl install apcu uploadprogress
+RUN <<EOF
+set -euxo pipefail
+apt-get update -q
+apt-get install -y --no-install-recommends \
+  default-mysql-client
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+pecl install apcu uploadprogress
+EOF
 
 # Install project dependencies
 WORKDIR /opt/drupal
