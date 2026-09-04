@@ -1,0 +1,53 @@
+# Project-level PHPStan configuration for the Flatbacks website.
+#
+# Scans only first-party code (web/modules/custom, web/themes/custom).
+# Contrib and core are Composer-managed and gitignored, so they are not
+# analysed here.
+#
+# Why not include web/core/phpstan.neon.dist directly?
+#   That file pins `paths: [., ../composer]` (relative to web/core). The
+#   ../composer directory does not exist in this scaffold, so PHPStan aborts
+#   on a missing path. Drupal core's own CI dodges this by always passing
+#   explicit paths on the CLI. We instead reuse the useful pieces: the
+#   bleeding-edge ruleset and the Yaml bootstrap, plus phpstan-deprecation-rules
+#   (auto-registered via phpstan-extension-installer from web/core's require).
+#
+# NOTE: the default PHP memory_limit (128M) is too small to analyse the custom
+# theme. Run with a higher limit, e.g.:
+#   vendor/bin/phpstan analyse --memory-limit=1G
+
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+
+parameters:
+    # Core pins level 1; raise this as the custom codebase matures.
+    level: 6
+
+    paths:
+        - web/modules/custom
+        - web/themes/custom
+
+    # Drupal source files use extensions beyond .php. (.module/.theme/.inc etc.
+    # are PHP; without this they are skipped entirely.)
+    fileExtensions:
+        - php
+        - module
+        - inc
+        - theme
+        - profile
+        - engine
+
+    excludePaths:
+        - web/sites/*/files
+        - web/themes/custom/*/node_modules
+
+    # Load Drupal's Yaml class so PHPStan understands config parsing.
+    bootstrapFiles:
+        - web/core/lib/Drupal/Core/Serialization/Yaml.php
+
+    # Drupal intentionally uses `new static()` in many factory patterns.
+    ignoreErrors:
+        - '#^Unsafe usage of new static#'
+
+    # Be lenient about ignoreErrors entries that don't match anything.
+    reportUnmatchedIgnoredErrors: false
