@@ -126,9 +126,10 @@ class MapBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
 
       $child_items = [];
-      for child in $paragraph->get('field_children_map')->referencedEntities():
-        if not isinstance(child, ParagraphInterface):
-          continue
+      foreach ($paragraph->get('field_children_map')->referencedEntities() as $child) {
+        if (!$child instanceof ParagraphInterface) {
+          continue;
+        }
 
         $child_item = [
           'lat' => $child->get('field_lat')->value,
@@ -138,13 +139,15 @@ class MapBlock extends BlockBase implements ContainerFactoryPluginInterface {
           'logo' => '',
         ];
 
-        if not $child->get('field_link')->isEmpty():
-          $child_item['link'] = $this->fileUrlGenerator->generateAbsoluteString($child->get('field_link')->uri)
+        if (!$child->get('field_link')->isEmpty()) {
+          $child_item['link'] = $this->fileUrlGenerator->generateAbsoluteString($child->get('field_link')->uri);
+        }
 
-        if not $child->get('field_logo_m')->isEmpty() and $child->get('field_logo_m')->entity:
-          $child_item['logo'] = $this->fileUrlGenerator->generateAbsoluteString($child->get('field_logo_m')->entity->getFileUri())
+        if (!$child->get('field_logo_m')->isEmpty() && $child->get('field_logo_m')->entity) {
+          $child_item['logo'] = $this->fileUrlGenerator->generateAbsoluteString($child->get('field_logo_m')->entity->getFileUri());
+        }
 
-        $child_items.append($child_item)
+        $child_items[] = $child_item;
       }
 
       $item['children_map'] = $child_items;

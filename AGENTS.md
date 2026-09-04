@@ -35,4 +35,4 @@ Drupal 10.6 public site (PHP 8.4, Composer-managed). DBCA North West Shelf Flatb
 ## Conventions
 
 - Commits are short, lowercase, imperative: `Update Drupal core to 10.6.16`, `Added emoji_sanitizer custom module`.
-- `nws_misc` maps hardcode node 68 and use four near-identical map blocks that recurse into `field_children_map` paragraphs — read `web/modules/custom/nws_misc/README.md` before changing map behaviour.
+- `nws_misc` maps are provided by a single `MapBlock` plugin (id `nws_misc_map`) that hardcodes node 68 (configurable via the block's `node_id` setting) and recurses into `field_children_map` paragraphs — read `web/modules/custom/nws_misc/README.md` before changing map behaviour.

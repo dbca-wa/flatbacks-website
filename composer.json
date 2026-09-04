@@ -103,6 +103,7 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
+    "mglaman/phpstan-drupal": "^2.0",
     "palantirnet/drupal-rector": "^1.0",
     "phpstan/phpstan": "^2.2",
     "vincentlanglet/twig-cs-fixer": "^4.1"

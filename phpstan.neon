@@ -9,8 +9,14 @@
 #   ../composer directory does not exist in this scaffold, so PHPStan aborts
 #   on a missing path. Drupal core's own CI dodges this by always passing
 #   explicit paths on the CLI. We instead reuse the useful pieces: the
-#   bleeding-edge ruleset and the Yaml bootstrap, plus phpstan-deprecation-rules
-#   (auto-registered via phpstan-extension-installer from web/core's require).
+#   bleeding-edge ruleset and the Yaml bootstrap.
+#
+# Drupal module/theme classes (e.g. Drupal\node\NodeInterface,
+# Drupal\paragraphs\ParagraphInterface, Drupal\webform\WebformSubmissionInterface)
+# are NOT autoloadable by Composer. The mglaman/phpstan-drupal extension is
+# therefore included manually below (phpstan/extension-installer is not
+# installed, so it cannot auto-register) to scan the Drupal root and register
+# those namespaces.
 #
 # NOTE: the default PHP memory_limit (128M) is too small to analyse the custom
 # theme. Run with a higher limit, e.g.:
@@ -18,10 +24,14 @@
 
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/mglaman/phpstan-drupal/extension.neon
 
 parameters:
     # Core pins level 1; raise this as the custom codebase matures.
     level: 6
+
+    # Drupal module/theme classes are resolved by the mglaman/phpstan-drupal
+    # extension included above (it auto-discovers the Drupal root).
 
     paths:
         - web/modules/custom

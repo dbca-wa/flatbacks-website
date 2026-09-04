@@ -4,7 +4,7 @@ Custom module for the nws website to provide map block functions.
 
 1. **Interactive map block(s)**
    - Registers a `map_block` theme (`nws_misc_theme()`).
-   - Provides four nearly identical block plugins — `mapBlock`, `map2Block`, `map3Block`, `map4Block` — that load **node 68**, read its `field_content_map` paragraph field, and recurse into nested `field_children_map` paragraphs.
+   - Provides a single block plugin — `MapBlock` (plugin id `nws_misc_map`) — that loads **node 68** (configurable via the block's `node_id` setting), reads its `field_content_map` paragraph field, and recurses into nested `field_children_map` paragraphs.
    - Each paragraph contributes `lat`, `lon`, `name`, a link, and a logo, rendered into a Leaflet/OpenStreetMap via `templates/map-block.html.twig`.
    - The Twig/JS builds a map centered on the Kimberley/Pilbara coast, adds an ISWAG marker, plots parent group markers, and reveals child markers when zoomed in past level 7.
 
