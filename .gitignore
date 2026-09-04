@@ -38,3 +38,7 @@ web/example.gitignore
 web/info.php
 web/web.config
 web/sites/development.services.yml
+
+# Linter caches
+.php-cs-fixer.cache
+.twig-cs-fixer.cache
