@@ -7,15 +7,29 @@ website is developed using the Drupal content management system.
 ## Development
 
 The project dependencies (including Drupal) are installed and managed using Composer.
-Set up a local development environment like so:
+Set up a local development environment using `mise`:
 
-1. Install and set up Composer and any local dependencies.
-1. Clone the project locally.
-1. Change into the project directory and install dependencies: `composer install`
-1. Set up the required Drupal database and user.
-1. Create a local configuration file at `web/sites/default/settings.php` (should be gitignored).
-1. Develop and test the site as normal, taking care to commit any custom elements
-   under `web/` into the project repository (while avoiding to commit "generic" elements).
+```bash
+# Clone the project locally.
+# Ensure configured tools exist
+mise install
+
+# Verify versions
+php -v
+composer --version
+
+# Install dependencies
+composer install
+pecl install apcu uploadprogress
+
+# Run Drupal maintenance
+vendor/bin/drush status
+```
+
+Create a local configuration file at `web/sites/default/settings.php` (should be gitignored).
+
+Develop and test the site as normal, taking care to commit any custom elements
+under `web/` into the project repository (while avoiding to commit "generic" elements).
 
 ## Docker image
 

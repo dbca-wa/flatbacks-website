@@ -1,0 +1,7 @@
+[tools]
+php = "8.4"
+"github:composer/composer" = "latest"
+
+[env]
+PHP_MEMORY_LIMIT = "-1"
+COMPOSER_MEMORY_LIMIT = "-1"
