@@ -102,6 +102,9 @@
     }
   },
   "require-dev": {
-    "palantirnet/drupal-rector": "^1.0.1"
+    "friendsofphp/php-cs-fixer": "^3.95",
+    "palantirnet/drupal-rector": "^1.0",
+    "phpstan/phpstan": "^2.2",
+    "vincentlanglet/twig-cs-fixer": "^4.1"
   }
 }
