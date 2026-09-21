@@ -5,13 +5,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: flatbacks-uat.dbca.wa.gov.au
+    - host: flatbacks.dbca.wa.gov.au
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: flatbacks-clusterip-uat
+                name: flatbacks-webserver-prod
                 port:
                   number: 8080
