@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04fbc452fdf498f755ecf99a10d68f41",
+    "content-hash": "9645024f00f80a1227faddc24f6cf022",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3410,26 +3410,30 @@
         },
         {
             "name": "drupal/we_megamenu",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/we_megamenu.git",
-                "reference": "8.x-1.16"
+                "reference": "8.x-1.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/we_megamenu-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "c26d2b2abddb2b247c7b663d8fd4b5081f74ad18"
+                "url": "https://ftp.drupal.org/files/projects/we_megamenu-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "b173a61ad674b186abf671d5a32dbe243880fdd1"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^10.3 || >= 11"
+            },
+            "require-dev": {
+                "drupal/upgrade_status": "^4.3",
+                "drush/drush": "^13.7"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1693387972",
+                    "version": "8.x-1.17",
+                    "datestamp": "1790067882",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3476,17 +3480,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.3.0",
+            "version": "6.3.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.3.0"
+                "reference": "6.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.3.0.zip",
-                "reference": "6.3.0",
-                "shasum": "67b09271edfd2fb38dc699ff733911ad500ae5d7"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.3.1.zip",
+                "reference": "6.3.1",
+                "shasum": "f737cb4e614df7f54b9bb77fe40109e7abab789b"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11.0"
@@ -3501,6 +3505,7 @@
                 "drupal/entity": "^1.0",
                 "drupal/entity_print": "^2.0",
                 "drupal/hal": "^2.0",
+                "drupal/honeypot": "^2.0",
                 "drupal/jquery_ui": "^1.0",
                 "drupal/jquery_ui_button": "^2.0",
                 "drupal/jquery_ui_checkboxradio": "^2.0",
@@ -3531,8 +3536,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.3.0",
-                    "datestamp": "1783989705",
+                    "version": "6.3.1",
+                    "datestamp": "1790179518",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3895,16 +3900,16 @@
         },
         {
             "name": "google/recaptcha",
-            "version": "1.5",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/recaptcha.git",
-                "reference": "c57f0b96babc8c9fb64cb555cd7b2c5aadfbe58d"
+                "reference": "ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/recaptcha/zipball/c57f0b96babc8c9fb64cb555cd7b2c5aadfbe58d",
-                "reference": "c57f0b96babc8c9fb64cb555cd7b2c5aadfbe58d",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17",
+                "reference": "ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17",
                 "shasum": ""
             },
             "require": {
@@ -3919,7 +3924,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.4.x-dev"
+                    "dev-main": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -3944,7 +3949,7 @@
                 "issues": "https://github.com/google/recaptcha/issues",
                 "source": "https://github.com/google/recaptcha"
             },
-            "time": "2026-04-27T09:26:38+00:00"
+            "time": "2026-09-22T09:50:41+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -4644,16 +4649,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.2.0",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "d5b72bea7b8c8b2c21599b890af030f335a97395"
+                "reference": "99d198489a50bf5a654187bf2e6acd55786157d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/d5b72bea7b8c8b2c21599b890af030f335a97395",
-                "reference": "d5b72bea7b8c8b2c21599b890af030f335a97395",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/99d198489a50bf5a654187bf2e6acd55786157d7",
+                "reference": "99d198489a50bf5a654187bf2e6acd55786157d7",
                 "shasum": ""
             },
             "require": {
@@ -4725,7 +4730,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.2.0"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.2.2"
             },
             "funding": [
                 {
@@ -4741,7 +4746,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-09T14:50:40+00:00"
+            "time": "2026-09-18T16:07:28+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -5268,11 +5273,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.14",
+            "version": "2.2.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9c672e7a8e791dfc3d30e55f683e73fc0b63a3ac",
-                "reference": "9c672e7a8e791dfc3d30e55f683e73fc0b63a3ac",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b158556ffd26825cf615a1c1f72fb5157a2301b7",
+                "reference": "b158556ffd26825cf615a1c1f72fb5157a2301b7",
                 "shasum": ""
             },
             "require": {
@@ -5328,7 +5333,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-12T21:39:33+00:00"
+            "time": "2026-09-23T12:23:07+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -8650,16 +8655,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.28.0",
+            "version": "v3.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b"
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
                 "shasum": ""
             },
             "require": {
@@ -8714,7 +8719,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.28.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.29.0"
             },
             "funding": [
                 {
@@ -8726,7 +8731,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-03T20:44:34+00:00"
+            "time": "2026-09-18T09:10:14+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -9161,16 +9166,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.95.25",
+            "version": "v3.95.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "2cdfc1f3daf173d83a1ebb6177949b58c95de6ff"
+                "reference": "1d0c68ee5f37446d8ad5970b82384cd1bb0a3317"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/2cdfc1f3daf173d83a1ebb6177949b58c95de6ff",
-                "reference": "2cdfc1f3daf173d83a1ebb6177949b58c95de6ff",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/1d0c68ee5f37446d8ad5970b82384cd1bb0a3317",
+                "reference": "1d0c68ee5f37446d8ad5970b82384cd1bb0a3317",
                 "shasum": ""
             },
             "require": {
@@ -9204,15 +9209,15 @@
             "require-dev": {
                 "facile-it/paraunit": "^1.3.1 || ^2.11.0",
                 "infection/infection": "^0.32.7",
-                "justinrainbow/json-schema": "^6.10.0",
+                "justinrainbow/json-schema": "^6.12.0",
                 "keradus/cli-executor": "^2.3",
                 "php-coveralls/php-coveralls": "^2.9.1",
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.8",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.8",
-                "phpunit/phpunit": "^9.6.35 || ^10.5.64 || ^11.5.56 || ^12.5.31 || ^13.0.6",
-                "symfony/polyfill-php85": "^1.38",
-                "symfony/var-dumper": "^5.4.48 || ^6.4.36 || ^7.4.8 || ^8.1.1",
-                "symfony/yaml": "^5.4.53 || ^6.4.41 || ^7.4.13 || ^8.1.1"
+                "phpunit/phpunit": "^9.6.36 || ^10.5.64 || ^11.5.56 || ^12.5.35 || ^13.3.3",
+                "symfony/polyfill-php85": "^1.41",
+                "symfony/var-dumper": "^5.4.48 || ^6.4.45 || ^7.4.18 || ^8.1.7",
+                "symfony/yaml": "^5.4.53 || ^6.4.45 || ^7.4.18 || ^8.1.6"
             },
             "suggest": {
                 "ext-dom": "For handling output formats in XML",
@@ -9253,7 +9258,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.25"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.27"
             },
             "funding": [
                 {
@@ -9261,7 +9266,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-08T11:11:37+00:00"
+            "time": "2026-09-22T09:54:55+00:00"
         },
         {
             "name": "palantirnet/drupal-rector",
