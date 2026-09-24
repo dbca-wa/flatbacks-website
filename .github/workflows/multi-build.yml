@@ -81,6 +81,7 @@ jobs:
         id: bake
         uses: docker/bake-action@d3418bd7d0e9324001bca92fa8ba175ea7e6dc9b # v7.3.0
         with:
+          files: docker-bake.hcl
           push: true
           set: |
             app.tags=${{ env.GHCR_IMAGE }}:latest
