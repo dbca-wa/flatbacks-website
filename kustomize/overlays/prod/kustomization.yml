@@ -42,4 +42,4 @@ patches:
   - path: valkey_patch.yml
 images:
   - name: ghcr.io/dbca-wa/flatbacks-website
-    newTag: 10.6.17
+    newTag: 10.6.17.1
