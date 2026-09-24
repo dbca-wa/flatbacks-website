@@ -66,9 +66,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          tag="$(git tag --points-at HEAD | grep -E '^v?[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1 || true)"
+          # Parse any valid semver tag, including optional leading 'v' and prerelease/build metadata.
+          tag="$(git tag --points-at HEAD | grep -E '^v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$' | head -n 1 || true)"
           if [ -n "$tag" ]; then
-            # strip a leading 'v' (e.g. v1.2.3 -> 1.2.3)
+            # strip a leading 'v' (e.g. v1.2.3-rc.1 -> 1.2.3-rc.1)
             semtag="${tag#v}"
             echo "value=${semtag}" >> "$GITHUB_OUTPUT"
             echo "has_version_tag=true" >> "$GITHUB_OUTPUT"
