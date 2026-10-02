@@ -43,3 +43,6 @@ web/sites/development.services.yml
 # Linter caches
 .php-cs-fixer.cache
 .twig-cs-fixer.cache
+
+# Agent artifacts
+.omo/
