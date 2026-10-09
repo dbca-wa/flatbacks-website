@@ -1,7 +1,10 @@
 # syntax=docker/dockerfile:1
-FROM drupal:10.6-php8.4-apache
-LABEL org.opencontainers.image.authors=asi@dbca.wa.gov.au
-LABEL org.opencontainers.image.source=https://github.com/dbca-wa/flatbacks-website
+FROM drupal:11.4-php8.4-apache
+LABEL org.opencontainers.image.title="flatbacks-website" \
+  org.opencontainers.image.description="North West Shelf Flatback Turtles Conservation Program public website" \
+  org.opencontainers.image.source="https://github.com/dbca-wa/flatbacks-website" \
+  org.opencontainers.image.vendor="DBCA" \
+  org.opencontainers.image.authors="asi@dbca.wa.gov.au"
 
 # Install system dependencies and PHP extensions
 ENV DEBIAN_FRONTEND=noninteractive

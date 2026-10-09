@@ -24,10 +24,12 @@
     "drupal/better_exposed_filters": "^7.1",
     "drupal/colorbox": "^2.2",
     "drupal/colorbox_inline": "^2.1",
-    "drupal/core-composer-scaffold": "10.6.18",
-    "drupal/core-recommended": "10.6.18",
+    "drupal/contact": "^1.0",
+    "drupal/core-composer-scaffold": "11.4.8",
+    "drupal/core-recommended": "11.4.8",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entityqueue": "^1.10",
+    "drupal/history": "^1.0",
     "drupal/htmlmail": "^4.0@beta",
     "drupal/mailsystem": "^4.5",
     "drupal/metatag": "^2.2",
@@ -61,7 +63,8 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
       "php-http/discovery": true,
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "symfony/runtime": true
     },
     "sort-packages": true
   },
@@ -104,7 +107,7 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
     "mglaman/phpstan-drupal": "^2.0",
-    "palantirnet/drupal-rector": "^1.0",
+    "palantirnet/drupal-rector": "^1.1",
     "phpstan/phpstan": "^2.2",
     "vincentlanglet/twig-cs-fixer": "^4.1"
   }
