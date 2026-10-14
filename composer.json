@@ -1,7 +1,7 @@
 {
   "name": "dbca-wa/flatbacks-website",
   "description": "North West Shelf Flatback Turtles Conservation Program public website",
-  "version": "10.6.18",
+  "version": "10.6.19",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "homepage": "https://github.com/dbca-wa/flatbacks-website",
@@ -21,11 +21,11 @@
     "drupal/admin_toolbar": "^3.6",
     "drupal/back_to_top": "^3.0",
     "drupal/backup_migrate": "^5.1",
-    "drupal/better_exposed_filters": "^7.1",
+    "drupal/better_exposed_filters": "^7.2",
     "drupal/colorbox": "^2.2",
     "drupal/colorbox_inline": "^2.1",
-    "drupal/core-composer-scaffold": "10.6.18",
-    "drupal/core-recommended": "10.6.18",
+    "drupal/core-composer-scaffold": "10.6.19",
+    "drupal/core-recommended": "10.6.19",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entityqueue": "^1.10",
     "drupal/htmlmail": "^4.0@beta",
@@ -48,7 +48,7 @@
     "drupal/webform": "^6.3",
     "drupal/webform_deprecated": "^6.3@beta",
     "drush/drush": "^13",
-    "predis/predis": "^3.6"
+    "predis/predis": "^3.7"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -61,7 +61,8 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
       "php-http/discovery": true,
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "symfony/runtime": true
     },
     "sort-packages": true
   },
