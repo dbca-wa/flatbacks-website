@@ -14,7 +14,7 @@ updates:
     commit-message:
       prefix: '[composer] '
     cooldown:
-      default-days: 7
+      default-days: 3
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
