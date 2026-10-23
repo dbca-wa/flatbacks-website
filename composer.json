@@ -1,7 +1,7 @@
 {
   "name": "dbca-wa/flatbacks-website",
   "description": "North West Shelf Flatback Turtles Conservation Program public website",
-  "version": "11.4.10",
+  "version": "11.4.11",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "homepage": "https://github.com/dbca-wa/flatbacks-website",
@@ -25,8 +25,8 @@
     "drupal/colorbox": "^2.2",
     "drupal/colorbox_inline": "^2.1",
     "drupal/contact": "^1.0",
-    "drupal/core-composer-scaffold": "11.4.10",
-    "drupal/core-recommended": "11.4.10",
+    "drupal/core-composer-scaffold": "11.4.11",
+    "drupal/core-recommended": "11.4.11",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entityqueue": "^1.10",
     "drupal/history": "^1.0",
@@ -50,7 +50,7 @@
     "drupal/webform": "^6.3",
     "drupal/webform_deprecated": "^6.3@beta",
     "drush/drush": "^13",
-    "predis/predis": "^3.6"
+    "predis/predis": "^3.7"
   },
   "conflict": {
     "drupal/drupal": "*"

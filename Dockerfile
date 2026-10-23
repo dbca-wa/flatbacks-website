@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM drupal:11.4-php8.4-apache
+FROM drupal:11.4-php8.4-apache-trixie
 LABEL org.opencontainers.image.title="flatbacks-website" \
   org.opencontainers.image.description="North West Shelf Flatback Turtles Conservation Program public website" \
   org.opencontainers.image.source="https://github.com/dbca-wa/flatbacks-website" \
