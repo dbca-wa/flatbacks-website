@@ -13,6 +13,7 @@ spec:
   mountOptions:
     - -o allow_other
     - --file-cache-timeout-in-seconds=120
+    - --attr-cache-timeout=10
   csi:
     driver: blob.csi.azure.com
     volumeHandle: dbcaturtlesmedia_flatbacks-website-files-prod
