@@ -1361,20 +1361,20 @@
         },
         {
             "name": "drupal/captcha",
-            "version": "2.0.11",
+            "version": "2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/captcha.git",
-                "reference": "2.0.11"
+                "reference": "2.0.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/captcha-2.0.11.zip",
-                "reference": "2.0.11",
-                "shasum": "566bd0d80ceb667e2df56f2442840c85378df39c"
+                "url": "https://ftp.drupal.org/files/projects/captcha-2.0.12.zip",
+                "reference": "2.0.12",
+                "shasum": "989f89f9462b0c43a871b54d55527bbf385fc3e3"
             },
             "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "require-dev": {
                 "drupal/crowdsec": "^1"
@@ -1382,8 +1382,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.11",
-                    "datestamp": "1793215346",
+                    "version": "2.0.12",
+                    "datestamp": "1793669216",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2336,17 +2336,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "2.2.4"
+                "reference": "2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.4.zip",
-                "reference": "2.2.4",
-                "shasum": "08ca0e9c22acf47cb8312220c12c8229f43c304d"
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.5.zip",
+                "reference": "2.2.5",
+                "shasum": "2851a7dd5e5b3c0c15defa658790386af4556199"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -2361,14 +2361,13 @@
                 "drupal/metatag_open_graph": "*",
                 "drupal/page_manager": "^4.0",
                 "drupal/redirect": "^1.0",
-                "ergebnis/composer-normalize": "*",
-                "mpyw/phpunit-patch-serializable-comparison": "*"
+                "ergebnis/composer-normalize": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.4",
-                    "datestamp": "1793239109",
+                    "version": "2.2.5",
+                    "datestamp": "1793445181",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3111,29 +3110,26 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.17.0",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token.git",
-                "reference": "8.x-1.17"
+                "reference": "8.x-1.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.17.zip",
-                "reference": "8.x-1.17",
-                "shasum": "21d11adf0be16f1aa95b6348b4ceadbe9a625824"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "7db67f644c83136cac78c7c5dbaef29599e7a7d7"
             },
             "require": {
-                "drupal/core": "^10.3 || ^11"
-            },
-            "require-dev": {
-                "drupal/book": "^1 || ^2"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.17",
-                    "datestamp": "1767942434",
+                    "version": "8.x-1.18",
+                    "datestamp": "1793355985",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5284,11 +5280,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f20ce6f3c82556cfcfc086b152445a12d1d64fff",
-                "reference": "f20ce6f3c82556cfcfc086b152445a12d1d64fff",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/645a1bd6bead15fc1b8474137467961d0fa30a79",
+                "reference": "645a1bd6bead15fc1b8474137467961d0fa30a79",
                 "shasum": ""
             },
             "require": {
@@ -5344,7 +5340,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-28T22:38:53+00:00"
+            "time": "2026-11-03T12:14:22+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -5399,16 +5395,16 @@
         },
         {
             "name": "predis/predis",
-            "version": "v3.7.0",
+            "version": "v3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "4d91f3b08a60c3bacc2afbd8dc41724559b7626a"
+                "reference": "2496e6d91ba4e137b47a6b802dc7e088ebf31df4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/4d91f3b08a60c3bacc2afbd8dc41724559b7626a",
-                "reference": "4d91f3b08a60c3bacc2afbd8dc41724559b7626a",
+                "url": "https://api.github.com/repos/predis/predis/zipball/2496e6d91ba4e137b47a6b802dc7e088ebf31df4",
+                "reference": "2496e6d91ba4e137b47a6b802dc7e088ebf31df4",
                 "shasum": ""
             },
             "require": {
@@ -5450,7 +5446,7 @@
             ],
             "support": {
                 "issues": "https://github.com/predis/predis/issues",
-                "source": "https://github.com/predis/predis/tree/v3.7.0"
+                "source": "https://github.com/predis/predis/tree/v3.7.1"
             },
             "funding": [
                 {
@@ -5458,7 +5454,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-08T16:46:04+00:00"
+            "time": "2026-11-03T17:55:20+00:00"
         },
         {
             "name": "psr/container",
