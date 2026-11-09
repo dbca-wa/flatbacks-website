@@ -27,6 +27,7 @@
     "drupal/contact": "^1.0",
     "drupal/core-composer-scaffold": "11.4.12",
     "drupal/core-recommended": "11.4.12",
+    "drupal/csp": "^2.2",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entityqueue": "^1.10",
     "drupal/history": "^1.0",
