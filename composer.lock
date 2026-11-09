@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ff67a43e7a19f40e7b2da6726d07c31",
+    "content-hash": "9c554d4c6d614bef381cc16c9614e041",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1938,6 +1938,61 @@
             }
         },
         {
+            "name": "drupal/csp_log",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/csp_log.git",
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/csp_log-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "23d0c1537aaaf3651703e12681eaf2f5f2343411"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/csp": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.2",
+                    "datestamp": "1788974147",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "daften",
+                    "homepage": "https://www.drupal.org/user/176274"
+                },
+                {
+                    "name": "l_vandamme",
+                    "homepage": "https://www.drupal.org/user/3162503"
+                },
+                {
+                    "name": "mr.baileys",
+                    "homepage": "https://www.drupal.org/user/383424"
+                }
+            ],
+            "description": "Provide Content-Security-Policy report endpoint with dedicated logging.",
+            "homepage": "https://www.drupal.org/project/csp_log",
+            "support": {
+                "source": "https://git.drupalcode.org/project/csp_log"
+            }
+        },
+        {
             "name": "drupal/ctools",
             "version": "4.1.1",
             "source": {
@@ -2982,6 +3037,58 @@
             "homepage": "https://www.drupal.org/project/redis",
             "support": {
                 "source": "https://git.drupalcode.org/project/redis"
+            }
+        },
+        {
+            "name": "drupal/reporting",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/reporting.git",
+                "reference": "2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/reporting-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b4505b5f8f0d44d1cfcbbeb2d1712e67f0a36c89"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11 || ^12",
+                "gapple/structured-fields": "^2.0"
+            },
+            "require-dev": {
+                "drupal/csp": "^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.0",
+                    "datestamp": "1787456620",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "gapple",
+                    "homepage": "https://www.drupal.org/user/490940"
+                }
+            ],
+            "description": "Provide Reporting API endpoints",
+            "homepage": "https://www.drupal.org/project/reporting",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/reporting",
+                "issues": "https://www.drupal.org/project/issues/reporting"
             }
         },
         {
@@ -4033,6 +4140,78 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/1.1.1"
             },
             "time": "2026-10-20T09:45:10+00:00"
+        },
+        {
+            "name": "gapple/structured-fields",
+            "version": "v2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gapple/structured-fields.git",
+                "reference": "4c6936249482d100cc56732aed8c163a76c10dd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gapple/structured-fields/zipball/4c6936249482d100cc56732aed8c163a76c10dd3",
+                "reference": "4c6936249482d100cc56732aed8c163a76c10dd3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "httpwg/structured-field-tests": "*@dev",
+                "paragonie/constant_time_encoding": "^3.0.0",
+                "phpcompatibility/php-compatibility": "^10@dev",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^10.5",
+                "slevomat/coding-standard": "^8.15",
+                "squizlabs/php_codesniffer": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "gapple\\StructuredFields\\": "src/",
+                    "gapple\\Tests\\StructuredFields\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Geoff Appleby"
+                }
+            ],
+            "description": "Library for Structured Field Values for HTTP",
+            "keywords": [
+                "http",
+                "rfc8941",
+                "rfc9651"
+            ],
+            "support": {
+                "issues": "https://github.com/gapple/structured-fields/issues",
+                "source": "https://github.com/gapple/structured-fields"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/gapple",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/gapple",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2026-06-12T23:47:46+00:00"
         },
         {
             "name": "google/recaptcha",
