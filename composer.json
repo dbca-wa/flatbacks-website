@@ -1,7 +1,7 @@
 {
   "name": "dbca-wa/flatbacks-website",
   "description": "North West Shelf Flatback Turtles Conservation Program public website",
-  "version": "10.6.20",
+  "version": "11.4.12",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "homepage": "https://github.com/dbca-wa/flatbacks-website",
@@ -24,10 +24,14 @@
     "drupal/better_exposed_filters": "^7.2",
     "drupal/colorbox": "^2.2",
     "drupal/colorbox_inline": "^2.1",
-    "drupal/core-composer-scaffold": "10.6.20",
-    "drupal/core-recommended": "10.6.20",
+    "drupal/contact": "^1.0",
+    "drupal/core-composer-scaffold": "11.4.12",
+    "drupal/core-recommended": "11.4.12",
+    "drupal/csp": "^2.2",
+    "drupal/csp_log": "^1.0",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entityqueue": "^1.10",
+    "drupal/history": "^1.0",
     "drupal/htmlmail": "^4.0@beta",
     "drupal/mailsystem": "^4.5",
     "drupal/metatag": "^2.2",
@@ -37,6 +41,7 @@
     "drupal/recaptcha": "^3.4",
     "drupal/redirect": "^1.13",
     "drupal/redis": "^1.11",
+    "drupal/reporting": "^2.2",
     "drupal/smtp": "^1.4",
     "drupal/social_media": "^2.0",
     "drupal/social_share": "^2.0@beta",
@@ -105,7 +110,7 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
     "mglaman/phpstan-drupal": "^2.0",
-    "palantirnet/drupal-rector": "^1.0",
+    "palantirnet/drupal-rector": "^1.1",
     "phpstan/phpstan": "^2.2",
     "vincentlanglet/twig-cs-fixer": "^4.1"
   }
