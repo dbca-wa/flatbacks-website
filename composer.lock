@@ -1619,6 +1619,9 @@
             ],
             "description": "Provides site-wide contact forms and forms to contact individual users.",
             "homepage": "https://www.drupal.org/project/contact",
+            "keywords": [
+                "Actively maintained"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/contact"
             }
@@ -3593,17 +3596,17 @@
         },
         {
             "name": "drupal/upgrade_status",
-            "version": "4.3.10",
+            "version": "4.3.11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/upgrade_status.git",
-                "reference": "4.3.10"
+                "reference": "4.3.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/upgrade_status-4.3.10.zip",
-                "reference": "4.3.10",
-                "shasum": "977dbf24874b2394b74fd6c7f9787bcc508a4e37"
+                "url": "https://ftp.drupal.org/files/projects/upgrade_status-4.3.11.zip",
+                "reference": "4.3.11",
+                "shasum": "4d61c623c71e868cdf66317468f3172d7e47ec29"
             },
             "require": {
                 "dekor/php-array-table": "^2.0",
@@ -3620,8 +3623,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.3.10",
-                    "datestamp": "1780927635",
+                    "version": "4.3.11",
+                    "datestamp": "1794748745",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3645,6 +3648,10 @@
             ],
             "description": "Review Drupal major upgrade readiness of the environment and components of the site.",
             "homepage": "http://drupal.org/project/upgrade_status",
+            "keywords": [
+                "Actively maintained",
+                "Administration tools"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/upgrade_status"
             }
@@ -5959,11 +5966,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.3.5",
+            "version": "2.3.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/645a1bd6bead15fc1b8474137467961d0fa30a79",
-                "reference": "645a1bd6bead15fc1b8474137467961d0fa30a79",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/00cedebb76cc82c1592414fa4f616cefdccda16f",
+                "reference": "00cedebb76cc82c1592414fa4f616cefdccda16f",
                 "shasum": ""
             },
             "require": {
@@ -6019,7 +6026,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-03T12:14:22+00:00"
+            "time": "2026-11-15T19:58:26+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -8794,16 +8801,16 @@
         },
         {
             "name": "symfony/polyfill-php85",
-            "version": "v1.43.0",
+            "version": "v1.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php85.git",
-                "reference": "86a42cbcc07adc331481a5ab310a4024bfc227f6"
+                "reference": "94c794cb5ba51784bc259f11e9f128593297d8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php85/zipball/86a42cbcc07adc331481a5ab310a4024bfc227f6",
-                "reference": "86a42cbcc07adc331481a5ab310a4024bfc227f6",
+                "url": "https://api.github.com/repos/symfony/polyfill-php85/zipball/94c794cb5ba51784bc259f11e9f128593297d8dc",
+                "reference": "94c794cb5ba51784bc259f11e9f128593297d8dc",
                 "shasum": ""
             },
             "require": {
@@ -8850,7 +8857,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php85/tree/v1.43.0"
+                "source": "https://github.com/symfony/polyfill-php85/tree/v1.44.0"
             },
             "funding": [
                 {
@@ -8870,7 +8877,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T15:46:47+00:00"
+            "time": "2026-10-30T15:20:09+00:00"
         },
         {
             "name": "symfony/polyfill-php86",
