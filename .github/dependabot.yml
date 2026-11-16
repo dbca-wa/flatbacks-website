@@ -23,3 +23,16 @@ updates:
       prefix: '[actions] '
     cooldown:
       default-days: 7
+  # Base image bumps (see the FROM comment in the Dockerfile: tag-only is
+  # deliberate, no digest pins, minor/patch updates only).
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+    commit-message:
+      prefix: '[docker] '
+    cooldown:
+      default-days: 7
