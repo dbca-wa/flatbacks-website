@@ -3,7 +3,7 @@
   "description": "North West Shelf Flatback Turtles Conservation Program public website",
   "version": "11.4.12",
   "type": "project",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-only",
   "homepage": "https://github.com/dbca-wa/flatbacks-website",
   "support": {
     "source": "https://github.com/dbca-wa/flatbacks-website",
