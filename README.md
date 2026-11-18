@@ -33,23 +33,26 @@ under `web/` into the project repository (while avoiding to commit "generic" ele
 
 ## Docker image
 
-To build a new Docker image from the `Dockerfile`:
+To build a local Docker image from the `Dockerfile`:
 
-    docker image build -t ghcr.io/dbca-wa/flatbacks-website .
+    docker buildx bake local
 
 ## Docker Compose
 
-Use the included Compose file to start the required services to serve the project.
+Use the included Compose file to start the required services to serve the project:
+
+    IMAGE_TAG=dev docker compose up --remove-orphans
+
 Prerequisites:
 
-1. Docker image is built (see above).
-1. Local `ports.conf`, `apache.conf` and `php-config.ini` files should be generated to
-   configure Apache within the running container (examples are in the `kustomize\overlays`
-   directory). These files will be bind-mounted in the container.
+1. Local Docker image is built (see above).
+1. Local `php-config.ini` and `settings.php` files should be generated (examples are
+   in the `kustomize\overlays` directory). These files will be bind-mounted in the
+   containers. The nginx configuration is baked into the image and needs no local copy.
 1. A local `settings.php` should be generated containing site configuration that will be
    bind-mounted at `web/sites/default/settings.php`.
 1. Local `.env.mysql` and `.env.flatbacks` files should be created, containing secrets.
-1. Start services: `docker compose up`
+1. Start services: `IMAGE_TAG=dev docker compose up --remove-orphans`
 1. After Docker volume is generated, copy any local contents of `web/sites/default/files`
    into the relevant Docker volumes so that the webserver can serve those files.
 

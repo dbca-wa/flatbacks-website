@@ -13,17 +13,47 @@ services:
       - '6379:6379'
     environment:
       TZ: 'Australia/Perth'
+  # php-fpm. The image's default CMD is php-fpm; nginx is the webserver.
+  # IMAGE_TAG selects the tag to run (e.g. IMAGE_TAG=dev for a `docker buildx
+  # bake local` build); it defaults to :latest from GHCR.
+  # nginx shares this service's network namespace (see below), so the published
+  # port lives here - this mirrors how the two containers share a pod in k8s.
   flatbacks:
-    image: 'ghcr.io/dbca-wa/flatbacks-website'
+    image: 'ghcr.io/dbca-wa/flatbacks-website:${IMAGE_TAG:-latest}'
     env_file: '.env.flatbacks'
     ports:
       - '8080:8080'
     volumes:
-      - '${PWD}/ports.conf:/etc/apache2/ports.conf:ro'
-      - '${PWD}/apache.conf:/etc/apache2/sites-enabled/000-default.conf:ro'
-      - 'flatbacks_files:/opt/drupal/web/sites/default/files'
       - '${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro'
       - '${PWD}/php-config.ini:/usr/local/etc/php/conf.d/php-config.ini:ro'
+      - 'flatbacks_files:/opt/drupal/web/sites/default/files'
+    healthcheck:
+      test: ['CMD', 'bash', '-c', 'exec 3<>/dev/tcp/127.0.0.1/9000']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+  # nginx proxies to php-fpm and serves the docroot from the same image.
+  # Sharing php-fpm's network namespace makes 127.0.0.1:9000 reachable, exactly
+  # as it is between containers in a pod. Stopping or recreating `flatbacks`
+  # also takes this container's network with it: recover with
+  # `docker compose up -d` (`restart`/`start` alone will not restore it).
+  nginx:
+    image: 'ghcr.io/dbca-wa/flatbacks-website:${IMAGE_TAG:-latest}'
+    command: ['nginx', '-g', 'daemon off;']
+    network_mode: 'service:flatbacks'
+    environment:
+      TZ: 'Australia/Perth'
+    depends_on:
+      flatbacks:
+        condition: service_healthy
+    volumes:
+      - 'flatbacks_files:/opt/drupal/web/sites/default/files:ro'
+    healthcheck:
+      # Probe through nginx to php-fpm, so this is unhealthy if PHP is down.
+      test: ['CMD', 'curl', '-fsS', 'http://127.0.0.1:8080/fpm-ping']
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
 volumes:
   mysql8_data:

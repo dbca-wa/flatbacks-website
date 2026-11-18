@@ -22,8 +22,6 @@ secretGenerator:
 configMapGenerator:
   - name: flatbacks-configmap
     files:
-      - apache.conf
-      - ports.conf
       - settings.php
       - php-config.ini
   - name: valkey-configmap
