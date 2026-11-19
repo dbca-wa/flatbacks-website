@@ -24,7 +24,6 @@ spec:
         # nginx serves static and aggregated files straight from the shared
         # files volume, so it needs the same mount (read-only).
         - name: nginx
-          imagePullPolicy: IfNotPresent
           volumeMounts:
             - mountPath: /opt/drupal/web/sites/default/files
               name: flatbacks-files
