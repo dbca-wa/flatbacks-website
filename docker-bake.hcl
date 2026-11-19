@@ -6,7 +6,8 @@
 # Multi-arch with overrides:                    IMAGE=ghcr.io/me/project PLATFORMS=linux/arm64 docker buildx bake --push app
 #                                               TAG=experiment docker buildx bake --push app
 # Override a Dockerfile ARG:                    docker buildx bake --set app.args.PHP_VERSION=8.5
-# GitHub CI builds the "ci" target (see .github/workflows/multi-build.yml).
+# GitHub CI builds the "ci" target once per architecture, on a native runner
+# (see .github/workflows/multi-build.yml).
 
 variable "IMAGE" {
   description = "Fully-qualified image name, without the tag."
@@ -27,6 +28,11 @@ variable "PLATFORMS" {
   description = "Platforms used by the multi-arch targets."
   type        = list(string)
   default     = ["linux/amd64", "linux/arm64"]
+}
+
+variable "CACHE_SCOPE" {
+  description = "GitHub Actions cache scope for the ci target. CI sets one per architecture so the two per-platform builds keep separate cache entries."
+  default     = "flatbacks"
 }
 
 group "default" {
@@ -59,12 +65,19 @@ target "app" {
   attest    = ["type=provenance,mode=max", "type=sbom"]
 }
 
-# CI-only: GitHub Actions cache, and always refresh base images so any
-# scheduled rebuild picks up upstream security fixes.
-# Note that CI overrides tags in multi-build.yml via set: ci.tags=...
+# CI-only: one platform per run (see multi-build.yml), pushed as a per-arch
+# staging tag that the workflow merges into the final multi-arch manifest.
+# Always refresh base images so any scheduled rebuild picks up upstream
+# security fixes, and cache layers via GitHub Actions cache so an unchanged
+# apt/pecl/composer chain is restored instead of rebuilt.
+# Note that CI overrides tag, platform and cache scope in multi-build.yml via
+# set: ci.tags=... / set: ci.platforms=... and the CACHE_SCOPE variable.
 target "ci" {
   inherits   = ["app"]
-  cache-from = ["type=gha"]
-  cache-to   = ["type=gha,mode=max"]
+  # Scoped per architecture: the two matrix jobs must not share cache entries.
+  # ignore-error means a failed cache export degrades to a slower build instead
+  # of failing a release.
+  cache-from = ["type=gha,scope=${CACHE_SCOPE}"]
+  cache-to   = ["type=gha,scope=${CACHE_SCOPE},mode=max,ignore-error=true"]
   pull       = true
 }

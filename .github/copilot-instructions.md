@@ -29,7 +29,7 @@ Drupal 10.6 public site (PHP 8.4, Composer-managed). DBCA North West Shelf Flatb
 
 - PHP: php-cs-fixer with `@auto` rules (`.php-cs-fixer.dist.php`). Twig: twig-cs-fixer. Both leave a `.cache` file in the working tree (currently untracked, not in `.gitignore`); they regenerate on each run, so there's no need to commit them — add them to `.gitignore`. The binaries are NOT Composer-managed (not in require-dev); run them via a globally installed phar/CLI, not `vendor/bin`.
 - PHPStan (`vendor/bin/phpstan`) runs against the project `phpstan.neon` (scans `web/modules/custom` + `web/themes/custom`; run with `--memory-limit=1G`). drupal-rector (`vendor/bin/rector`, require-dev) is available for Drupal 11 upgrade prep, but there is no project-level rector config — it relies on Drupal core's rules.
-- **No PHPUnit tests and no lint/typecheck CI step.** CI (`.github/workflows/multi-build.yaml`) only builds multi-arch images and runs a Trivy scan on push to `main`/tags. Verification is manual.
+- **No PHPUnit tests and no lint/typecheck CI step.** CI (`.github/workflows/multi-build.yml`) only builds multi-arch images (per-arch native runners, merged in a final job) and runs an Anchore scan on push to `main`/tags. Verification is manual.
 - EditorConfig enforces 2-space indent (4 for `composer.json`/`composer.lock`).
 
 ## Conventions
