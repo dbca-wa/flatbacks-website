@@ -9,6 +9,11 @@
 *.sql
 settings*.php
 *.conf
+# Container configuration that ships in the image is tracked; the blanket rule
+# above is for local-only, environment-specific files.
+!docker/nginx/nginx.conf
+!docker/php-fpm/zz-health.conf
+!docker/php-fpm/zz-flatbacks.conf
 php-config.ini
 dhi-registry-config.json
 *.debug

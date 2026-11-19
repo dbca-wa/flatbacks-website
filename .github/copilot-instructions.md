@@ -21,8 +21,8 @@ Drupal 10.6 public site (PHP 8.4, Composer-managed). DBCA North West Shelf Flatb
 ## Build & run
 
 - Install deps: `composer install` (scaffolds `web/core` etc. via composer/installers).
-- Docker image: `docker image build -t ghcr.io/dbca-wa/flatbacks-website .` — the Dockerfile copies **only** `web/libraries`, `web/modules/custom`, `web/sites/maps`, `web/themes/custom` plus runs `composer install`. Contrib/core come from Composer at build time, so custom changes must be committed to those dirs to ship.
-- `docker compose up` (MySQL 8 + Valkey/Redis, app on :8080). Requires local `ports.conf`, `apache.conf`, `php-config.ini`, `settings.php` present — these are bind-mounted and have examples in `kustomize/overlays`.
+- Docker image: `docker image build -t ghcr.io/dbca-wa/flatbacks-website .` — the Dockerfile copies **only** `web/libraries`, `web/modules/custom`, `web/sites/maps`, `web/themes/custom` and `docker/` (nginx/php-fpm config) plus runs `composer install`. Contrib/core come from Composer at build time, so custom changes must be committed to those dirs to ship.
+- `docker compose up` (MySQL 8 + Valkey/Redis, app on :8080). Requires local `php-config.ini`, `settings.php` present — these are bind-mounted and have examples in `kustomize/overlays`. nginx configuration is baked into the image (`docker/nginx/nginx.conf`); the app runs as two containers in the pod: `php` (php-fpm) and `nginx`.
 - Deploy: `kubectl apply -k kustomize/overlays/<uat|prod> --namespace flatbacks` (see `kustomize/README.md`). Needs `.env`, `.azurestorageaccountsecret`, `dhi-registry-config.json`, `settings.php` in the overlay dir.
 
 ## Code style & static analysis

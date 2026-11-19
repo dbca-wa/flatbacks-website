@@ -6,19 +6,11 @@ spec:
   template:
     spec:
       containers:
-        - name: flatbacks-website
+        - name: php
           envFrom:
             - secretRef:
                 name: flatbacks-env-uat
           volumeMounts:
-            - mountPath: /etc/apache2/ports.conf
-              name: flatbacks-configmap
-              readOnly: true
-              subPath: ports.conf
-            - mountPath: /etc/apache2/sites-enabled/000-default.conf
-              name: flatbacks-configmap
-              readOnly: true
-              subPath: apache.conf
             - mountPath: /opt/drupal/web/sites/default/settings.php
               name: flatbacks-configmap
               readOnly: true
@@ -29,6 +21,13 @@ spec:
               subPath: php-config.ini
             - mountPath: /opt/drupal/web/sites/default/files
               name: flatbacks-files
+        # nginx serves static and aggregated files straight from the shared
+        # files volume, so it needs the same mount (read-only).
+        - name: nginx
+          volumeMounts:
+            - mountPath: /opt/drupal/web/sites/default/files
+              name: flatbacks-files
+              readOnly: true
       volumes:
         - name: flatbacks-configmap
           configMap:

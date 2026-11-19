@@ -4,6 +4,7 @@
 #                                                (needs a docker-container builder)
 # Override variables at build time:             LOCAL_TAG=local IMAGE=ghcr.io/me/project docker buildx bake local
 # Multi-arch with overrides:                    IMAGE=ghcr.io/me/project PLATFORMS=linux/arm64 docker buildx bake --push app
+#                                               TAG=experiment docker buildx bake --push app
 # Override a Dockerfile ARG:                    docker buildx bake --set app.args.PHP_VERSION=8.5
 # GitHub CI builds the "ci" target (see .github/workflows/multi-build.yml).
 
