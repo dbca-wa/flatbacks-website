@@ -47,7 +47,7 @@
     "drupal/social_share": "^2.0@beta",
     "drupal/svg_image": "^3.2",
     "drupal/twig_tweak": "^3.4",
-    "drupal/upgrade_status": "^4.3",
+    "drupal/upgrade_status": "^5.0",
     "drupal/video_embed_field": "^3.1",
     "drupal/we_megamenu": "^1.17",
     "drupal/webform": "^6.3",
