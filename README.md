@@ -33,13 +33,14 @@ under `web/` into the project repository (while avoiding to commit "generic" ele
 
 ## Docker image
 
-To build a local Docker image from the `Dockerfile`:
+To build a local Docker image from the `Dockerfile` (tagged `:dev`):
 
     docker buildx bake local
 
 ## Docker Compose
 
-Use the included Compose file to start the required services to serve the project:
+Use the included Compose file to start the required services to serve the project,
+optionally using the locally-built image:
 
     IMAGE_TAG=dev docker compose up --remove-orphans
 
