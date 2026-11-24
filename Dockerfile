@@ -6,7 +6,7 @@ ARG PHP_VERSION=8.4
 # Dependabot tracks the Dockerfile FROM tags, not a third-party apt repository.
 # NGINX_PKG_RELEASE is the Debian suite in the package version
 # (1.30.7-1~trixie) and must move with the base image's distro.
-ARG NGINX_VERSION=1.30.7
+ARG NGINX_VERSION=1.30.8
 ARG NGINX_PKG_RELEASE=1~trixie
 
 # Note that there is no DHI Drupal image available.
