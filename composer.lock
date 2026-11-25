@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2421cfd0d1c4f2b497b880cfb8645524",
+    "content-hash": "dcd3ef019d6fe54602eed516dfdbcbb9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2011,26 +2011,26 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "4.1.1"
+                "reference": "4.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-4.1.1.zip",
-                "reference": "4.1.1",
-                "shasum": "a04db6a0b6a22ddcfb9fe8f16955d55297b5da1c"
+                "url": "https://ftp.drupal.org/files/projects/ctools-4.1.2.zip",
+                "reference": "4.1.2",
+                "shasum": "d83e1f79258305ce72ad1e206c1395d0923b78eb"
             },
             "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.1",
-                    "datestamp": "1784926417",
+                    "version": "4.1.2",
+                    "datestamp": "1795482101",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2865,28 +2865,28 @@
         },
         {
             "name": "drupal/recaptcha",
-            "version": "3.5.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/recaptcha.git",
-                "reference": "8.x-3.5"
+                "reference": "8.x-3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-3.5.zip",
-                "reference": "8.x-3.5",
-                "shasum": "ab6b18e75759c0739054cb876e40256c2150c777"
+                "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-3.6.zip",
+                "reference": "8.x-3.6",
+                "shasum": "d42e3fd524ae8d734d655883f063c4ae6ac4a638"
             },
             "require": {
                 "drupal/captcha": "^1.15 || ^2.0",
-                "drupal/core": "^10 || ^11",
-                "google/recaptcha": "^1.3"
+                "drupal/core": "^10 || ^11 || ^12",
+                "google/recaptcha": "^1.3 || ^2.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.5",
-                    "datestamp": "1786398980",
+                    "version": "8.x-3.6",
+                    "datestamp": "1795554670",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2941,6 +2941,10 @@
             ],
             "description": "Protect your website from spam and abuse while letting real people pass through with ease.",
             "homepage": "https://www.drupal.org/project/recaptcha",
+            "keywords": [
+                "Actively maintained",
+                "Integrations"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/recaptcha.git",
                 "issues": "https://www.drupal.org/project/issues/recaptcha"
@@ -3859,6 +3863,10 @@
             ],
             "description": "Enables the creation of webforms and questionnaires.",
             "homepage": "https://drupal.org/project/webform",
+            "keywords": [
+                "Actively maintained",
+                "Integrations"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/webform",
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
@@ -4253,31 +4261,36 @@
         },
         {
             "name": "google/recaptcha",
-            "version": "1.5.2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/recaptcha.git",
-                "reference": "ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17"
+                "reference": "5dd511e6f1f586984066f932c7293ccd571d42cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/recaptcha/zipball/ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17",
-                "reference": "ee4352ff2fe5ee23f2a8fbd165375dab3a1bad17",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/5dd511e6f1f586984066f932c7293ccd571d42cc",
+                "reference": "5dd511e6f1f586984066f932c7293ccd571d42cc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.4"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.95",
-                "php-coveralls/php-coveralls": "^2.9.1",
-                "phpstan/phpstan": "^2.1.51",
-                "phpunit/phpunit": "^13.1"
+                "friendsofphp/php-cs-fixer": "^3.95.32",
+                "phpstan/phpstan": "^2.3.6",
+                "phpstan/phpstan-phpunit": "^2.1.2",
+                "phpstan/phpstan-strict-rules": "^2.1.1",
+                "phpunit/phpunit": "^13.4.7"
+            },
+            "suggest": {
+                "ext-curl": "Recommended for sending requests via CurlPost",
+                "ext-openssl": "Required for sending TLS requests via Post or SocketPost"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.5.x-dev"
+                    "dev-main": "2.2.x-dev"
                 }
             },
             "autoload": {
@@ -4302,7 +4315,7 @@
                 "issues": "https://github.com/google/recaptcha/issues",
                 "source": "https://github.com/google/recaptcha"
             },
-            "time": "2026-09-22T09:50:41+00:00"
+            "time": "2026-11-19T11:21:43+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -4905,16 +4918,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.27",
+            "version": "v0.3.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2"
+                "reference": "72247703c4d4ac1d6122955c90433aa9429bd236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/abdfc75a1ae6c6f21522daed50da7124cbff09d2",
-                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/72247703c4d4ac1d6122955c90433aa9429bd236",
+                "reference": "72247703c4d4ac1d6122955c90433aa9429bd236",
                 "shasum": ""
             },
             "require": {
@@ -4957,9 +4970,9 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "source": "https://github.com/laravel/prompts/tree/v0.3.27"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.28"
             },
-            "time": "2026-11-09T16:07:10+00:00"
+            "time": "2026-11-23T14:41:10+00:00"
         },
         {
             "name": "league/container",
@@ -5998,21 +6011,21 @@
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
-                "reference": "67bedd65c24bc72840afc45aed48b1059dd44bec"
+                "reference": "bcb050f0a5c923798ff408926ec5f9b9b59faafc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/67bedd65c24bc72840afc45aed48b1059dd44bec",
-                "reference": "67bedd65c24bc72840afc45aed48b1059dd44bec",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/bcb050f0a5c923798ff408926ec5f9b9b59faafc",
+                "reference": "bcb050f0a5c923798ff408926ec5f9b9b59faafc",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.1.39"
+                "phpstan/phpstan": "^2.3.6"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
@@ -6043,22 +6056,22 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/2.0.5"
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/2.0.6"
             },
-            "time": "2026-07-22T06:50:43+00:00"
+            "time": "2026-11-23T08:55:59+00:00"
         },
         {
             "name": "predis/predis",
-            "version": "v3.7.1",
+            "version": "v3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "2496e6d91ba4e137b47a6b802dc7e088ebf31df4"
+                "reference": "874b4e62982c541ffeea4dc7227a8965e695462d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/2496e6d91ba4e137b47a6b802dc7e088ebf31df4",
-                "reference": "2496e6d91ba4e137b47a6b802dc7e088ebf31df4",
+                "url": "https://api.github.com/repos/predis/predis/zipball/874b4e62982c541ffeea4dc7227a8965e695462d",
+                "reference": "874b4e62982c541ffeea4dc7227a8965e695462d",
                 "shasum": ""
             },
             "require": {
@@ -6069,7 +6082,7 @@
                 "friendsofphp/php-cs-fixer": "^3.3",
                 "phpstan/phpstan": "^1.9",
                 "phpunit/phpcov": "^6.0 || ^8.0",
-                "phpunit/phpunit": "^8.0 || ~9.4.4"
+                "phpunit/phpunit": "^8.0 || ^9.6"
             },
             "suggest": {
                 "ext-relay": "Faster connection with in-memory caching (>=0.6.2)"
@@ -6100,7 +6113,7 @@
             ],
             "support": {
                 "issues": "https://github.com/predis/predis/issues",
-                "source": "https://github.com/predis/predis/tree/v3.7.1"
+                "source": "https://github.com/predis/predis/tree/v3.8.0"
             },
             "funding": [
                 {
@@ -6108,7 +6121,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-03T17:55:20+00:00"
+            "time": "2026-11-23T20:38:59+00:00"
         },
         {
             "name": "psr/cache",
@@ -9964,16 +9977,16 @@
         },
         {
             "name": "twig/html-extra",
-            "version": "v3.29.0",
+            "version": "v3.31.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/html-extra.git",
-                "reference": "7147611979df81edb78baf7d003860b72e335c3f"
+                "reference": "e25770102c1447ba769fedb76552864a7c82d900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/7147611979df81edb78baf7d003860b72e335c3f",
-                "reference": "7147611979df81edb78baf7d003860b72e335c3f",
+                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/e25770102c1447ba769fedb76552864a7c82d900",
+                "reference": "e25770102c1447ba769fedb76552864a7c82d900",
                 "shasum": ""
             },
             "require": {
@@ -9983,7 +9996,7 @@
                 "twig/twig": "^3.13|^4.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^6.4|^7.0"
+                "symfony/phpunit-bridge": "^7.4|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -10016,7 +10029,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/html-extra/tree/v3.29.0"
+                "source": "https://github.com/twigphp/html-extra/tree/v3.31.1"
             },
             "funding": [
                 {
@@ -10028,20 +10041,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-06T20:35:36+00:00"
+            "time": "2026-11-24T11:48:58+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.30.0",
+            "version": "v3.31.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "8c737079b726af72ff8ef3c595be9f6a810ea1ef"
+                "reference": "6f6ec372231b53d1d564567a78beb8844cafa132"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8c737079b726af72ff8ef3c595be9f6a810ea1ef",
-                "reference": "8c737079b726af72ff8ef3c595be9f6a810ea1ef",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6f6ec372231b53d1d564567a78beb8844cafa132",
+                "reference": "6f6ec372231b53d1d564567a78beb8844cafa132",
                 "shasum": ""
             },
             "require": {
@@ -10096,7 +10109,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.30.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.31.1"
             },
             "funding": [
                 {
@@ -10108,7 +10121,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T13:20:01+00:00"
+            "time": "2026-11-24T12:48:40+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -10366,20 +10379,20 @@
         },
         {
             "name": "ergebnis/agent-detector",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/agent-detector.git",
-                "reference": "ae2169d42024c6009abd0bb0aec5cf46c902fb1d"
+                "reference": "b575df5338fa3208485e4ed169660a8a9388194c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/agent-detector/zipball/ae2169d42024c6009abd0bb0aec5cf46c902fb1d",
-                "reference": "ae2169d42024c6009abd0bb0aec5cf46c902fb1d",
+                "url": "https://api.github.com/repos/ergebnis/agent-detector/zipball/b575df5338fa3208485e4ed169660a8a9388194c",
+                "reference": "b575df5338fa3208485e4ed169660a8a9388194c",
                 "shasum": ""
             },
             "require": {
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0 || ~8.7.0"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.56.1",
@@ -10401,7 +10414,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 },
                 "composer-normalize": {
                     "indent-size": 2,
@@ -10431,7 +10444,7 @@
                 "security": "https://github.com/ergebnis/agent-detector/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/agent-detector"
             },
-            "time": "2026-11-19T13:07:04+00:00"
+            "time": "2026-11-24T09:23:24+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -11259,16 +11272,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.8.5",
+            "version": "2.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "bf2982e3e2b8dfbcb43e5589fa301431cb1e479e"
+                "reference": "8a06053cae42915224f9357566162ccb1076001a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/bf2982e3e2b8dfbcb43e5589fa301431cb1e479e",
-                "reference": "bf2982e3e2b8dfbcb43e5589fa301431cb1e479e",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/8a06053cae42915224f9357566162ccb1076001a",
+                "reference": "8a06053cae42915224f9357566162ccb1076001a",
                 "shasum": ""
             },
             "require": {
@@ -11304,7 +11317,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.8.5"
+                "source": "https://github.com/rectorphp/rector/tree/2.9.2"
             },
             "funding": [
                 {
@@ -11312,7 +11325,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-14T23:24:35+00:00"
+            "time": "2026-11-24T23:34:02+00:00"
         },
         {
             "name": "symfony/options-resolver",

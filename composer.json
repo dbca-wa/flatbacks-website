@@ -38,7 +38,7 @@
     "drupal/paragraphs": "^1.20",
     "drupal/pathauto": "^1.15",
     "drupal/quick_node_clone": "^1.22",
-    "drupal/recaptcha": "^3.4",
+    "drupal/recaptcha": "^3.6",
     "drupal/redirect": "^1.13",
     "drupal/redis": "^1.11",
     "drupal/reporting": "^2.2",
@@ -53,7 +53,7 @@
     "drupal/webform": "^6.3",
     "drupal/webform_deprecated": "^6.3@beta",
     "drush/drush": "^13",
-    "predis/predis": "^3.7"
+    "predis/predis": "^3.8"
   },
   "conflict": {
     "drupal/drupal": "*"
