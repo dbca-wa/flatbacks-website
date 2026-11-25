@@ -1,5 +1,16 @@
 jQuery(document).ready(function () {
-  jQuery('.single-slider').slick({
+  // A failing carousel must not abort the rest of this handler (AOS, menus,
+  // filter pills). Slick can throw on jQuery upgrades, e.g. the jQuery 4
+  // incompatibility that broke slick 1.9.0.
+  function initSlick(selector, options) {
+    try {
+      jQuery(selector).slick(options);
+    } catch (error) {
+      console.error('Slick failed to initialise ' + selector, error);
+    }
+  }
+
+  initSlick('.single-slider', {
     dots: true,
   });
 
@@ -75,7 +86,7 @@ jQuery(document).ready(function () {
     jQuery('.view-id-upper_secondary fieldset#edit-field-course-value--wrapper input:checkbox').removeAttr('checked');
   });
 
-  jQuery('.slider-three').slick({
+  initSlick('.slider-three', {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -96,7 +107,7 @@ jQuery(document).ready(function () {
     ],
   });
 
-  jQuery('.gallery').slick({
+  initSlick('.gallery', {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
@@ -142,14 +153,29 @@ jQuery(document).ready(function () {
     }
   });
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    AOS.init({
-      duration: 1900,
-      offset: 10,
-      once: true,
-      mirror: false,
-      anchorPlacement: 'top-bottom',
+  // AOS is progressive enhancement: content carrying data-aos is hidden by CSS
+  // until .aos-animate is added, so never leave it hidden when AOS is missing,
+  // fails, or the user prefers reduced motion.
+  function revealAosContent() {
+    document.querySelectorAll('[data-aos]').forEach(function (element) {
+      element.classList.add('aos-animate');
     });
+  }
+
+  if (window.AOS && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    try {
+      AOS.init({
+        duration: 1900,
+        offset: 10,
+        once: true,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
+      });
+    } catch (error) {
+      revealAosContent();
+    }
+  } else {
+    revealAosContent();
   }
 
   var urlParams = new URLSearchParams(window.location.search);

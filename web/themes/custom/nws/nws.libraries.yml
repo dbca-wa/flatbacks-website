@@ -1,5 +1,5 @@
 global-styling:
-  version: '1.1'
+  version: '1.2'
   css:
     theme:
       'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css':
@@ -14,11 +14,12 @@ global-styling:
           minified: true,
           attributes: { integrity: 'LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr', crossorigin: 'anonymous' },
         }
-      'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css':
+      # Slick 2.0.0 is the first release compatible with jQuery 4 (Drupal 11.4+).
+      'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.css':
         {
           type: external,
           minified: true,
-          attributes: { integrity: 'ZwVa1S/NX6dEzJaHv2OILVrnj7ERqTH6pd/ubsDTHTrgAEz2kUufO/KLo6frtnOB', crossorigin: 'anonymous' },
+          attributes: { integrity: 'sha512-4LYsNd7rZ3w/Nb4egddt7n38KBIpvr8djGpHdWVYS04IGO90ma9q2WUIOvgE2APdCFGbpX0/cl0OoLotWhFmVA==', crossorigin: 'anonymous' },
         }
       assets/css/style.css: { preprocess: true }
       assets/css/my.css: { preprocess: true }
@@ -33,6 +34,7 @@ maintenance_page:
       assets/css/mobile.css: { preprocess: true }
 
 global-script:
+  version: '1.2'
   js:
     'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js':
       {
@@ -46,11 +48,11 @@ global-script:
         minified: true,
         attributes: { integrity: '7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK', crossorigin: 'anonymous' },
       }
-    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js':
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.js':
       {
         type: external,
         minified: true,
-        attributes: { integrity: 'OOQxAlvDeToeGLa7+PiUtbtpQyESK8Ej4fNM8foz5VaMpO8TCp1vbi2HIOIzMurt', crossorigin: 'anonymous' },
+        attributes: { integrity: 'sha512-BOKtfC8+2NxiElU0ZCwEd2N7nnWGKEoSXrlJNrQZEXvTBoyWdhlFUKxGbmRXb5Oe+yQK4I4S3jJHH081wq5kEg==', crossorigin: 'anonymous' },
       }
     assets/js/custom.js: {}
 
