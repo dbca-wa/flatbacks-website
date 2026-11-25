@@ -7,12 +7,33 @@ services:
     volumes:
       - 'mysql8_data:/var/lib/mysql'
       # - '${PWD}/flatbacks.sql:/tmp/flatbacks.sql:ro'
+    healthcheck:
+      # -h 127.0.0.1 forces TCP, so this probes the same path Drupal uses rather
+      # than a unix socket. MYSQL_PWD keeps the password off the command line.
+      # $$ stops Compose interpolating the variable; the shell expands it.
+      test:
+        [
+          'CMD-SHELL',
+          'MYSQL_PWD="$$MYSQL_ROOT_PASSWORD" mysqladmin ping -h 127.0.0.1 --silent',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s # first boot initialises the data directory
   valkey:
     image: 'valkey/valkey:9-alpine'
     ports:
       - '6379:6379'
     environment:
       TZ: 'Australia/Perth'
+    healthcheck:
+      # The client exits 0 whenever it can talk to the server, even on NOAUTH
+      # or LOADING replies, so assert on PONG instead.
+      test: ['CMD-SHELL', 'valkey-cli ping | grep -q PONG']
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
   # php-fpm. The image's default CMD is php-fpm; nginx is the webserver.
   # IMAGE_TAG selects the tag to run (e.g. IMAGE_TAG=dev for a `docker buildx
   # bake local` build); it defaults to :latest from GHCR.
@@ -27,6 +48,11 @@ services:
       - '${PWD}/settings.php:/opt/drupal/web/sites/default/settings.php:ro'
       - '${PWD}/php-config.ini:/usr/local/etc/php/conf.d/php-config.ini:ro'
       - 'flatbacks_files:/opt/drupal/web/sites/default/files'
+    depends_on:
+      mysql8:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
     healthcheck:
       test: ['CMD', 'bash', '-c', 'exec 3<>/dev/tcp/127.0.0.1/9000']
       interval: 15s
